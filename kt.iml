@@ -26,5 +26,16 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/NetBeansProjects/java-unofficial-opengl-SDK/javaUnofficialOpenglSDK/dist/javaUnofficialOpenglSDK.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/NetBeansProjects/java-unofficial-opengl-SDK/javaUnofficialOpenglSDK/dist/javaUnofficialOpenglSDK.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
