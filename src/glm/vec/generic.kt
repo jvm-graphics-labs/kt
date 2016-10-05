@@ -6,8 +6,6 @@ package glm.vec
 
 abstract class Vec2t<T : Number>(open var x: T, open var y: T) {
 
-    abstract var array: Array<T>
-
     fun length() = 2
 }
 

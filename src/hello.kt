@@ -43,7 +43,6 @@ class Hello : GLEventListener, KeyListener {
         animator.start()
     }
 
-
     object Buffer {
         val VERTEX = 0
         val ELEMENT = 1
