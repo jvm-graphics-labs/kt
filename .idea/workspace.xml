@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338facb5-8d0e-4ee7-87f1-b470436b1dbf" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/kt/HelloKt.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hello.kt" afterPath="$PROJECT_DIR$/src/hello.kt" />
     </list>
@@ -27,13 +28,15 @@
       <file leaf-file-name="hello.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hello.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="102" column="12" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="12" />
+            <state relative-caret-position="1751">
+              <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
               <folding>
                 <element signature="e#0#470#0" expanded="true" />
                 <element signature="n#!!doc;n#main#0" expanded="false" />
                 <element signature="n#!!block;n#Buffer#0;n#!!block;n#Hello#0" expanded="false" />
+                <element signature="n#!!block;n#initDebug#0;n#!!block;n#Hello#0" expanded="false" />
                 <element signature="n#!!block;n#initBuffers#0;n#!!block;n#Hello#0" expanded="false" />
+                <element signature="n#!!block;n#initVertexArray#0;n#!!block;n#Hello#0" expanded="false" />
                 <element signature="n#!!block;n#initProgram#0;n#!!block;n#Hello#0" expanded="false" />
               </folding>
             </state>
@@ -179,7 +182,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/NetBeansProjects/java-unofficial-opengl-SDK/javaUnofficialOpenglSDK/dist/javaUnofficialOpenglSDK.jar!/" />
@@ -429,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475672403620</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="small fix">
+      <created>1475672507848</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1475672507848</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -438,9 +448,9 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32895458" sideWeight="0.46944445" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32895458" sideWeight="0.46944445" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32895458" sideWeight="0.53055555" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32895458" sideWeight="0.53055555" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32895458" sideWeight="0.47685185" order="2" side_tool="false" content_ui="tabs" />
@@ -473,10 +483,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Hello Triangle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hello Triangle" />
+    <MESSAGE value="small fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fix" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -492,7 +505,9 @@
             <element signature="e#0#470#0" expanded="true" />
             <element signature="n#!!doc;n#main#0" expanded="false" />
             <element signature="n#!!block;n#Buffer#0;n#!!block;n#Hello#0" expanded="false" />
+            <element signature="n#!!block;n#initDebug#0;n#!!block;n#Hello#0" expanded="false" />
             <element signature="n#!!block;n#initBuffers#0;n#!!block;n#Hello#0" expanded="false" />
+            <element signature="n#!!block;n#initVertexArray#0;n#!!block;n#Hello#0" expanded="false" />
             <element signature="n#!!block;n#initProgram#0;n#!!block;n#Hello#0" expanded="false" />
           </folding>
         </state>
@@ -522,7 +537,9 @@
             <element signature="e#0#470#0" expanded="true" />
             <element signature="n#!!doc;n#main#0" expanded="false" />
             <element signature="n#!!block;n#Buffer#0;n#!!block;n#Hello#0" expanded="false" />
+            <element signature="n#!!block;n#initDebug#0;n#!!block;n#Hello#0" expanded="false" />
             <element signature="n#!!block;n#initBuffers#0;n#!!block;n#Hello#0" expanded="false" />
+            <element signature="n#!!block;n#initVertexArray#0;n#!!block;n#Hello#0" expanded="false" />
             <element signature="n#!!block;n#initProgram#0;n#!!block;n#Hello#0" expanded="false" />
           </folding>
         </state>
@@ -544,7 +561,9 @@
             <element signature="e#0#470#0" expanded="true" />
             <element signature="n#!!doc;n#main#0" expanded="false" />
             <element signature="n#!!block;n#Buffer#0;n#!!block;n#Hello#0" expanded="false" />
+            <element signature="n#!!block;n#initDebug#0;n#!!block;n#Hello#0" expanded="false" />
             <element signature="n#!!block;n#initBuffers#0;n#!!block;n#Hello#0" expanded="false" />
+            <element signature="n#!!block;n#initVertexArray#0;n#!!block;n#Hello#0" expanded="false" />
             <element signature="n#!!block;n#initProgram#0;n#!!block;n#Hello#0" expanded="false" />
           </folding>
         </state>
@@ -566,7 +585,9 @@
             <element signature="e#0#470#0" expanded="true" />
             <element signature="n#!!doc;n#main#0" expanded="false" />
             <element signature="n#!!block;n#Buffer#0;n#!!block;n#Hello#0" expanded="false" />
+            <element signature="n#!!block;n#initDebug#0;n#!!block;n#Hello#0" expanded="false" />
             <element signature="n#!!block;n#initBuffers#0;n#!!block;n#Hello#0" expanded="false" />
+            <element signature="n#!!block;n#initVertexArray#0;n#!!block;n#Hello#0" expanded="false" />
             <element signature="n#!!block;n#initProgram#0;n#!!block;n#Hello#0" expanded="false" />
           </folding>
         </state>
@@ -634,13 +655,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hello.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="102" column="12" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="12" />
+        <state relative-caret-position="1751">
+          <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
           <folding>
             <element signature="e#0#470#0" expanded="true" />
             <element signature="n#!!doc;n#main#0" expanded="false" />
             <element signature="n#!!block;n#Buffer#0;n#!!block;n#Hello#0" expanded="false" />
+            <element signature="n#!!block;n#initDebug#0;n#!!block;n#Hello#0" expanded="false" />
             <element signature="n#!!block;n#initBuffers#0;n#!!block;n#Hello#0" expanded="false" />
+            <element signature="n#!!block;n#initVertexArray#0;n#!!block;n#Hello#0" expanded="false" />
             <element signature="n#!!block;n#initProgram#0;n#!!block;n#Hello#0" expanded="false" />
           </folding>
         </state>

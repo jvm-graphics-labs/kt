@@ -24,6 +24,9 @@ fun main(args: Array<String>) {
 const val SHADERS_ROOT = "src/shaders"
 const val SHADERS_SRC = "hello-triangle"
 
+val Float.Companion.BYTES: Int get() = 4
+val Short.Companion.BYTES: Int get() = 2
+
 class Hello : GLEventListener, KeyListener {
 
     private val window = GLWindow.create(GLCapabilities(GLProfile.get(GLProfile.GL4)))
@@ -85,7 +88,7 @@ class Hello : GLEventListener, KeyListener {
             transformPointer = glMapNamedBufferRange(
                     bufferName.get(Buffer.TRANSFORM), // buffer
                     0, // offset
-                    (16 * java.lang.Float.BYTES).toLong(), // size
+                    (16 * Float.BYTES).toLong(), // size
                     GL_MAP_WRITE_BIT or GL_MAP_PERSISTENT_BIT or GL_MAP_COHERENT_BIT or GL_MAP_INVALIDATE_BUFFER_BIT) // flags
 
             glEnable(GL_DEPTH_TEST)
@@ -142,26 +145,24 @@ class Hello : GLEventListener, KeyListener {
 
             if (!bug1287) {
 
-                glNamedBufferStorage(bufferName.get(Buffer.VERTEX),
-                        (vertexBuffer.capacity() * java.lang.Float.BYTES).toLong(), vertexBuffer, GL_STATIC_DRAW)
+                glNamedBufferStorage(bufferName.get(Buffer.VERTEX), (vertexBuffer.capacity() * Float.BYTES).toLong(),
+                        vertexBuffer, GL_STATIC_DRAW)
 
-                glNamedBufferStorage(bufferName.get(Buffer.ELEMENT),
-                        (elementBuffer.capacity() * java.lang.Short.BYTES).toLong(), elementBuffer, GL_STATIC_DRAW)
+                glNamedBufferStorage(bufferName.get(Buffer.ELEMENT), (elementBuffer.capacity() * Short.BYTES).toLong(),
+                        elementBuffer, GL_STATIC_DRAW)
 
-                glNamedBufferStorage(bufferName.get(Buffer.TRANSFORM), (16 * java.lang.Float.BYTES).toLong(), null,
-                        GL_MAP_WRITE_BIT)
+                glNamedBufferStorage(bufferName.get(Buffer.TRANSFORM), (16 * Float.BYTES).toLong(), null, GL_MAP_WRITE_BIT)
 
             } else {
 
                 // vertices
                 glBindBuffer(GL_ARRAY_BUFFER, bufferName.get(Buffer.VERTEX))
-                glBufferStorage(GL_ARRAY_BUFFER, (vertexBuffer.capacity() * java.lang.Float.BYTES).toLong(),
-                        vertexBuffer, 0)
+                glBufferStorage(GL_ARRAY_BUFFER, (vertexBuffer.capacity() * Float.BYTES).toLong(), vertexBuffer, 0)
                 glBindBuffer(GL_ARRAY_BUFFER, 0);
 
                 // elements
                 glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, bufferName.get(Buffer.ELEMENT))
-                glBufferStorage(GL_ELEMENT_ARRAY_BUFFER, (elementBuffer.capacity() * java.lang.Short.BYTES).toLong(),
+                glBufferStorage(GL_ELEMENT_ARRAY_BUFFER, (elementBuffer.capacity() * Short.BYTES).toLong(),
                         elementBuffer, 0)
                 glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0)
 
@@ -170,7 +171,7 @@ class Hello : GLEventListener, KeyListener {
 
                 val uniformBufferOffset = GLBuffers.newDirectIntBuffer(1)
                 glGetIntegerv(GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT, uniformBufferOffset)
-                val uniformBlockSize = Math.max(16 * java.lang.Float.BYTES, uniformBufferOffset.get(0))
+                val uniformBlockSize = Math.max(16 * Float.BYTES, uniformBufferOffset.get(0))
 
                 glBufferStorage(GL_UNIFORM_BUFFER, uniformBlockSize.toLong(), null,
                         GL_MAP_WRITE_BIT or GL_MAP_PERSISTENT_BIT or GL_MAP_COHERENT_BIT)
@@ -194,15 +195,14 @@ class Hello : GLEventListener, KeyListener {
             glVertexArrayAttribBinding(vertexArrayName.get(0), Semantic.Attr.COLOR, Semantic.Stream._0)
 
             glVertexArrayAttribFormat(vertexArrayName.get(0), Semantic.Attr.POSITION, 2, GL_FLOAT, false, 0)
-            glVertexArrayAttribFormat(vertexArrayName.get(0), Semantic.Attr.COLOR, 3, GL_FLOAT, false,
-                    2 * java.lang.Float.BYTES)
+            glVertexArrayAttribFormat(vertexArrayName.get(0), Semantic.Attr.COLOR, 3, GL_FLOAT, false, 2 * Float.BYTES)
 
             glEnableVertexArrayAttrib(vertexArrayName.get(0), Semantic.Attr.POSITION)
             glEnableVertexArrayAttrib(vertexArrayName.get(0), Semantic.Attr.COLOR)
 
             glVertexArrayElementBuffer(vertexArrayName.get(0), bufferName.get(Buffer.ELEMENT))
             glVertexArrayVertexBuffer(vertexArrayName.get(0), Semantic.Stream._0, bufferName.get(Buffer.VERTEX), 0,
-                    (3 + 2) * java.lang.Float.BYTES)
+                    (3 + 2) * Float.BYTES)
         }
     }
 
