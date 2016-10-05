@@ -97,30 +97,33 @@ class Hello : GLEventListener, KeyListener {
     private fun initDebug(gl4: GL4) {
 
         window.context.addGLDebugListener(GlDebugOutput())
-        // Turn off all the debug
-        gl4.glDebugMessageControl(
-                GL_DONT_CARE, // source
-                GL_DONT_CARE, // type
-                GL_DONT_CARE, // severity
-                0, // count
-                null, // id
-                false) // enabled
-        // Turn on all OpenGL Errors, shader compilation/linking errors, or highly-dangerous undefined behavior
-        gl4.glDebugMessageControl(
-                GL_DONT_CARE, // source
-                GL_DONT_CARE, // type
-                GL_DEBUG_SEVERITY_HIGH, // severity
-                0, // count
-                null, // id
-                true) // enabled
-        // Turn on all major performance warnings, shader compilation/linking warnings or the use of deprecated functions
-        gl4.glDebugMessageControl(
-                GL_DONT_CARE, // source
-                GL_DONT_CARE, // type
-                GL_DEBUG_SEVERITY_MEDIUM, // severity
-                0, // count
-                null, // id
-                true) // enabled
+
+        with(gl4) {
+            // Turn off all the debug
+            glDebugMessageControl(
+                    GL_DONT_CARE, // source
+                    GL_DONT_CARE, // type
+                    GL_DONT_CARE, // severity
+                    0, // count
+                    null, // id
+                    false) // enabled
+            // Turn on all OpenGL Errors, shader compilation/linking errors, or highly-dangerous undefined behavior
+            glDebugMessageControl(
+                    GL_DONT_CARE, // source
+                    GL_DONT_CARE, // type
+                    GL_DEBUG_SEVERITY_HIGH, // severity
+                    0, // count
+                    null, // id
+                    true) // enabled
+            // Turn on all major performance warnings, shader compilation/linking warnings or the use of deprecated functions
+            glDebugMessageControl(
+                    GL_DONT_CARE, // source
+                    GL_DONT_CARE, // type
+                    GL_DEBUG_SEVERITY_MEDIUM, // severity
+                    0, // count
+                    null, // id
+                    true) // enabled
+        }
     }
 
     private fun initBuffers(gl4: GL4) {
