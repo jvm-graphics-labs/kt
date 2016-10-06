@@ -1,7 +1,7 @@
-package glm.vec
+package vec
 
 /**
- * Created by GBarbieri on 05.10.2016.
+ * Created bY GBarbieri on 05.10.2016.
  */
 
 abstract class Vec2t<T : Number>(open var x: T, open var y: T) {
