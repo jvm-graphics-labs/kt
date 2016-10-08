@@ -20,23 +20,23 @@ data class Vec2(override var x: Float = 0f, override var y: Float = 0f) : Vec2t<
     constructor(fa: Array<Float>) : this(fa[0], fa[1])
 
 
-    fun set(v: Vec2t<Number>): Vec2 {
+    fun to(v: Vec2t<Number>): Vec2 {
         x = v.x.toFloat(); y = v.y.toFloat(); return this
     }
 
-    fun set(s: Float): Vec2 {
+    fun to(s: Float): Vec2 {
         x = s; y = s; return this
     }
 
-    fun set(x: Float, y: Float): Vec2 {
+    fun to(x: Float, y: Float): Vec2 {
         this.x = x; this.y = y; return this
     }
 
-    fun set(fa: FloatArray): Vec2 {
+    fun to(fa: FloatArray): Vec2 {
         x = fa[0]; y = fa[1]; return this
     }
 
-    fun set(fa: Array<Float>): Vec2 {
+    fun to(fa: Array<Float>): Vec2 {
         x = fa[0]; y = fa[1]; return this
     }
 
@@ -125,7 +125,7 @@ data class Vec2(override var x: Float = 0f, override var y: Float = 0f) : Vec2t<
     fun div(bX: Float, bY: Float, res: Vec2) = glm.div(res, this, bX, bY)
     fun div(b: Vec2, res: Vec2) = glm.div(res, this, b.x, b.y)
 
-    operator fun mod(s: Float) = glm.mod(Vec2(), this, s, s)
+    operator fun mod(b: Float) = glm.mod(Vec2(), this, b, b)
     operator fun mod(b: Vec2) = glm.mod(Vec2(), this, b.x, b.y)
 
     fun mod(bX: Float, bY: Float) = glm.mod(Vec2(), this, bX, bY)

@@ -19,25 +19,26 @@ data class Vec2d(override var x: Double = 0.0, override var y: Double = 0.0) : V
     constructor(da: Array<Double>) : this(da[0], da[1])
 
 
-    fun set(v: Vec2t<Number>): Vec2d {
+    fun to(v: Vec2t<Number>): Vec2d {
         x = v.x.toDouble(); y = v.y.toDouble(); return this
     }
 
-    fun set(s: Double): Vec2d {
+    fun to(s: Double): Vec2d {
         x = s; y = s; return this
     }
 
-    fun set(x: Double, y: Double): Vec2d {
+    fun to(x: Double, y: Double): Vec2d {
         this.x = x; this.y = y; return this
     }
 
-    fun set(ba: DoubleArray): Vec2d {
+    fun to(ba: DoubleArray): Vec2d {
         x = ba[0]; y = ba[1]; return this
     }
 
-    fun set(ba: Array<Double>): Vec2d {
+    fun to(ba: Array<Double>): Vec2d {
         x = ba[0]; y = ba[1]; return this
     }
+
 
     // -- Component accesses --
     operator fun get(i: Int): Double = when (i) {0 -> x; else -> y; }
@@ -123,7 +124,7 @@ data class Vec2d(override var x: Double = 0.0, override var y: Double = 0.0) : V
     fun div(bX: Double, bY: Double, res: Vec2d) = glm.div(res, this, bX, bY)
     fun div(b: Vec2d, res: Vec2d) = glm.div(res, this, b.x, b.y)
 
-    operator fun mod(s: Double) = glm.mod(Vec2d(), this, s, s)
+    operator fun mod(b: Double) = glm.mod(Vec2d(), this, b, b)
     operator fun mod(b: Vec2d) = glm.mod(Vec2d(), this, b.x, b.y)
 
     fun mod(bX: Double, bY: Double) = glm.mod(Vec2d(), this, bX, bY)

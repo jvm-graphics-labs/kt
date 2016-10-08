@@ -19,23 +19,23 @@ data class Vec2l(override var x: Long = 0, override var y: Long = 0) : Vec2t<Lon
     constructor(la: Array<Long>) : this(la[0], la[1])
 
 
-    fun set(v: Vec2t<Number>): Vec2l {
+    fun to(v: Vec2t<Number>): Vec2l {
         x = v.x.toLong(); y = v.y.toLong(); return this
     }
 
-    fun set(s: Long): Vec2l {
+    fun to(s: Long): Vec2l {
         x = s; y = s; return this
     }
 
-    fun set_(x: Long, y: Long): Vec2l {
+    fun to(x: Long, y: Long): Vec2l {
         this.x = x; this.y = y; return this
     }
 
-    fun set(ba: LongArray): Vec2l {
+    fun to(ba: LongArray): Vec2l {
         x = ba[0]; y = ba[1]; return this
     }
 
-    fun set(ba: Array<Long>): Vec2l {
+    fun to(ba: Array<Long>): Vec2l {
         x = ba[0]; y = ba[1]; return this
     }
 
@@ -204,17 +204,11 @@ data class Vec2l(override var x: Long = 0, override var y: Long = 0) : Vec2t<Lon
     fun shr(b: Vec2l, res: Vec2l) = glm.shr(res, this, b.x, b.y)
 
 
-    inline infix fun inv(b: Long) = glm.inv(Vec2l(), this, b, b)
-    fun inv(bX: Long, bY: Long) = glm.inv(Vec2l(), this, bX, bY)
-    fun inv(b: Vec2l) = glm.inv(Vec2l(), this, b.x, b.y)
+    fun inv() = glm.inv(Vec2l(), this)
 
-    infix inline fun invAss(b: Long) = glm.inv(this, this, b, b)
-    fun invAss(bX: Long, bY: Long) = glm.inv(this, this, bX, bY)
-    infix inline fun invAss(b: Vec2l) = glm.inv(this, this, b.x, b.y)
+    fun invAss() = glm.inv(this, this)
 
-    fun inv(b: Long, res: Vec2l) = glm.inv(res, this, b, b)
-    fun inv(bX: Long, bY: Long, res: Vec2l) = glm.inv(res, this, bX, bY)
-    fun inv(b: Vec2l, res: Vec2l) = glm.inv(res, this, b.x, b.y)
+    fun inv(res: Vec2l) = glm.inv(res, this)
 }
 
 

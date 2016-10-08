@@ -21,19 +21,19 @@ data class Vec2bool(var x: Boolean = false, var y: Boolean = false) {
     operator fun set(i: Int, b: Boolean) = when (i) {0 -> x = b; else -> y = b; }
 
 
-    fun set(b: Boolean): Vec2bool {
+    fun to(b: Boolean): Vec2bool {
         x = b; y = b; return this
     }
 
-    fun set(x: Boolean, y: Boolean): Vec2bool {
+    fun to(x: Boolean, y: Boolean): Vec2bool {
         this.x = x; this.y = y; return this
     }
 
-    fun set(ba: BooleanArray): Vec2bool {
+    fun to(ba: BooleanArray): Vec2bool {
         x = ba[0]; y = ba[1]; return this
     }
 
-    fun set(ba: Array<Boolean>): Vec2bool {
+    fun to(ba: Array<Boolean>): Vec2bool {
         x = ba[0]; y = ba[1]; return this
     }
 

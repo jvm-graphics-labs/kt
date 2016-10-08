@@ -19,39 +19,39 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     constructor(sa: Array<Short>) : this(sa[0], sa[1])
 
 
-    fun set(v: Vec2t<Number>): Vec2s {
+    fun to(v: Vec2t<Number>): Vec2s {
         x = v.x.toShort(); y = v.y.toShort(); return this
     }
 
-    fun set(s: Short): Vec2s {
+    fun to(s: Short): Vec2s {
         x = s; y = s; return this
     }
 
-    fun set(s: Int): Vec2s {
+    fun to(s: Int): Vec2s {
         x = s.toShort(); y = s.toShort(); return this
     }
 
-    fun set(x: Short, y: Short): Vec2s {
+    fun to(x: Short, y: Short): Vec2s {
         this.x = x; this.y = y; return this
     }
 
-    fun set(x: Int, y: Int): Vec2s {
+    fun to(x: Int, y: Int): Vec2s {
         this.x = x.toShort(); this.y = y.toShort(); return this
     }
 
-    fun set(ba: ShortArray): Vec2s {
+    fun to(ba: ShortArray): Vec2s {
         x = ba[0]; y = ba[1]; return this
     }
 
-    fun set(ia: IntArray): Vec2s {
+    fun to(ia: IntArray): Vec2s {
         x = ia[0].toShort(); y = ia[1].toShort(); return this
     }
 
-    fun set(ba: Array<Short>): Vec2s {
+    fun to(ba: Array<Short>): Vec2s {
         x = ba[0]; y = ba[1]; return this
     }
 
-    fun set(ia: Array<Int>): Vec2s {
+    fun to(ia: Array<Int>): Vec2s {
         x = ia[0].toShort(); y = ia[1].toShort(); return this
     }
 
@@ -280,23 +280,11 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     fun shr(b: Vec2s, res: Vec2s) = glm.shr(res, this, b.x, b.y)
 
 
-    inline infix fun inv(b: Short) = glm.inv(Vec2s(), this, b, b)
-    inline infix fun inv(b: Int) = glm.inv(Vec2s(), this, b, b)
-    fun inv(bX: Short, bY: Short) = glm.inv(Vec2s(), this, bX, bY)
-    fun inv(bX: Int, bY: Int) = glm.inv(Vec2s(), this, bX, bY)
-    fun inv(b: Vec2s) = glm.inv(Vec2s(), this, b.x, b.y)
+    fun inv() = glm.inv(Vec2s(), this)
 
-    infix inline fun invAss(b: Short) = glm.inv(this, this, b, b)
-    infix inline fun invAss(b: Int) = glm.inv(this, this, b, b)
-    fun invAss(bX: Short, bY: Short) = glm.inv(this, this, bX, bY)
-    fun invAss(bX: Int, bY: Int) = glm.inv(this, this, bX, bY)
-    infix inline fun invAss(b: Vec2s) = glm.inv(this, this, b.x, b.y)
+    fun invAss() = glm.inv(this, this)
 
-    fun inv(b: Short, res: Vec2s) = glm.inv(res, this, b, b)
-    fun inv(b: Int, res: Vec2s) = glm.inv(res, this, b, b)
-    fun inv(bX: Short, bY: Short, res: Vec2s) = glm.inv(res, this, bX, bY)
-    fun inv(bX: Int, bY: Int, res: Vec2s) = glm.inv(res, this, bX, bY)
-    fun inv(b: Vec2s, res: Vec2s) = glm.inv(res, this, b.x, b.y)
+    fun inv(res: Vec2s) = glm.inv(res, this)
 }
 
 

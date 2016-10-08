@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="338facb5-8d0e-4ee7-87f1-b470436b1dbf" name="Default" comment="err">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/unsigned.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2ub.kt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Unsigned.kt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_12.xml" />
+    <list default="true" id="338facb5-8d0e-4ee7-87f1-b470436b1dbf" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2ui.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2ul.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2us.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_3/Vec3.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/glm.kt" afterPath="$PROJECT_DIR$/src/glm.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/unsigned.kt" afterPath="$PROJECT_DIR$/src/unsigned.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2.kt" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2b.kt" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2b.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2bool.kt" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2bool.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2d.kt" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2d.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2i.kt" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2i.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2l.kt" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2l.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2s.kt" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2s.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2ub.kt" afterPath="$PROJECT_DIR$/src/vec/_2/Vec2ub.kt" />
     </list>
     <ignored path="kt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,33 +41,27 @@
       <file leaf-file-name="glm.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/glm.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3240">
-              <caret line="182" column="4" selection-start-line="182" selection-start-column="4" selection-end-line="182" selection-end-column="4" />
+            <state relative-caret-position="144">
+              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
               <folding>
+                <element signature="e#0#34#0" expanded="true" />
                 <element signature="n#!!doc;n#glm#0" expanded="false" />
+                <element signature="n#!!block;n#ubyte_operators#0" expanded="false" />
+                <element signature="n#!!block;n#uint_operators#0" expanded="false" />
+                <element signature="n#!!block;n#ulong_operators#0" expanded="false" />
+                <element signature="n#!!block;n#ushort_operators#0" expanded="false" />
+                <element signature="n#!!block;n#vec2_operators#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vec2s.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2s.kt">
+      <file leaf-file-name="Vec3.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vec/_3/Vec3.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3645">
-              <caret line="278" column="70" selection-start-line="278" selection-start-column="70" selection-end-line="278" selection-end-column="70" />
+            <state relative-caret-position="1129">
+              <caret line="127" column="22" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vec2ub.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2ub.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
-              <folding>
-                <element signature="n#!!doc;n#Vec2ub#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -64,71 +69,27 @@
       <file leaf-file-name="unsigned.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/unsigned.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+            <state relative-caret-position="180">
+              <caret line="247" column="47" selection-start-line="247" selection-start-column="47" selection-end-line="247" selection-end-column="47" />
               <folding>
                 <element signature="n#!!doc;n#Ubyte#0" expanded="false" />
+                <element signature="n#!!block;n#Ubyte#0" expanded="false" />
                 <element signature="n#!!doc;n#MIN_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ubyte#0" expanded="false" />
                 <element signature="n#!!doc;n#MAX_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ubyte#0" expanded="false" />
-                <element signature="n#!!doc;n#MIN_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ulong#0" expanded="false" />
-                <element signature="n#!!doc;n#MAX_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ulong#0" expanded="false" />
-                <element signature="n#!!doc;n#MIN_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ushort#0" expanded="false" />
-                <element signature="n#!!doc;n#MAX_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ushort#0" expanded="false" />
+                <element signature="n#!!block;n#Uint#0" expanded="false" />
+                <element signature="n#!!block;n#Ulong#0" expanded="false" />
+                <element signature="n#!!block;n#Ushort#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vec2.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2.kt">
+      <file leaf-file-name="Vec2i.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2i.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+            <state relative-caret-position="1341">
+              <caret line="210" column="22" selection-start-line="210" selection-start-column="22" selection-end-line="210" selection-end-column="22" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generic.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vec/generic.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Number.kt" pinned="false" current-in-tab="false">
-        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Number.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vec2b.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2b.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1683">
-              <caret line="333" column="65" selection-start-line="8" selection-start-column="0" selection-end-line="333" selection-end-column="65" />
-              <folding>
-                <element signature="n#!!doc;n#Vec2b#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vec2d.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2d.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1944">
-              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc;n#Vec2d#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -139,6 +100,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
         <option value="Kotlin File" />
       </list>
     </option>
@@ -168,19 +130,27 @@
         <option value="$PROJECT_DIR$/src/glm/vec/_2/Vec2.kt" />
         <option value="$PROJECT_DIR$/src/glm/vec/_2/bool/Vec2bool.kt" />
         <option value="$PROJECT_DIR$/test/Vec2.kt" />
-        <option value="$PROJECT_DIR$/src/vec/_2/Vec2.kt" />
+        <option value="$PROJECT_DIR$/src/vec/op.kt" />
+        <option value="$PROJECT_DIR$/src/operators.kt" />
+        <option value="$PROJECT_DIR$/src/vec/generic.kt" />
+        <option value="$PROJECT_DIR$/src/Unsigned.kt" />
         <option value="$PROJECT_DIR$/src/vec/_2/Vec2bool.kt" />
-        <option value="$PROJECT_DIR$/src/vec/_2/Vec2d.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_2/main.java" />
+        <option value="$PROJECT_DIR$/src/umath.kt" />
+        <option value="$PROJECT_DIR$/src/unsigned.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_2/Vec2ub.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_2/Vec2ui.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_2/Vec2ul.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_2/Vec2us.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_3/Vec2.kt" />
+        <option value="$PROJECT_DIR$/src/glm.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_3/Vec3.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_2/Vec2.kt" />
         <option value="$PROJECT_DIR$/src/vec/_2/Vec2b.kt" />
         <option value="$PROJECT_DIR$/src/vec/_2/Vec2i.kt" />
         <option value="$PROJECT_DIR$/src/vec/_2/Vec2l.kt" />
-        <option value="$PROJECT_DIR$/src/vec/op.kt" />
-        <option value="$PROJECT_DIR$/src/operators.kt" />
-        <option value="$PROJECT_DIR$/src/glm.kt" />
         <option value="$PROJECT_DIR$/src/vec/_2/Vec2s.kt" />
-        <option value="$PROJECT_DIR$/src/vec/generic.kt" />
-        <option value="$PROJECT_DIR$/src/Unsigned.kt" />
-        <option value="$PROJECT_DIR$/src/vec/_2/Vec2ub.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_2/Vec2d.kt" />
       </list>
     </option>
   </component>
@@ -303,6 +273,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="_3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="_2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -315,7 +307,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/NetBeansProjects/java-unofficial-opengl-SDK/javaUnofficialOpenglSDK/dist/javaUnofficialOpenglSDK.jar!/" />
@@ -338,18 +330,19 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="glm.vec" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec\_2\bool" />
-      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec\_4" />
-      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\shaders" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\vec" />
       <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec\_2" />
       <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec._2" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="glm.vec" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/vec/_3" />
+      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec\_2\bool" />
+      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec\_4" />
+      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\shaders" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.Vec2">
@@ -710,7 +703,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475689409659</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="err">
+      <created>1475864495070</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1475864495070</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -751,14 +751,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894015" sideWeight="0.45833334" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894015" sideWeight="0.45833334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894015" sideWeight="0.5416667" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.18981482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="2358" y="995" width="373" height="894" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.18981482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="2387" y="977" width="373" height="894" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -803,89 +803,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/Vec2.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#48#183#0" expanded="false" />
-            <element signature="e#240#373#2" expanded="false" />
-            <element signature="e#386#543#2" expanded="false" />
-            <element signature="e#556#749#2" expanded="false" />
-            <element signature="e#762#917#2" expanded="false" />
-            <element signature="e#930#1123#2" expanded="false" />
-            <element signature="e#1136#1293#2" expanded="false" />
-            <element signature="e#1306#1489#2" expanded="false" />
-            <element signature="e#1502#2424#2" expanded="false" />
-            <element signature="e#2437#2639#2" expanded="false" />
-            <element signature="e#2652#2846#2" expanded="false" />
-            <element signature="e#2859#3063#2" expanded="false" />
-            <element signature="e#3076#3283#2" expanded="false" />
-            <element signature="e#3296#3396#2" expanded="false" />
-            <element signature="e#3409#3521#2" expanded="false" />
-            <element signature="e#3534#3645#2" expanded="false" />
-            <element signature="e#3658#3811#2" expanded="false" />
-            <element signature="e#3824#3935#2" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Primitives.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11832">
-          <caret line="710" column="24" selection-start-line="710" selection-start-column="24" selection-end-line="710" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/generic.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hello.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shaders/hello-triangle.vert">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shaders/hello-triangle.frag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hello.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shaders/hello-triangle.vert">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shaders/hello-triangle.frag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hello.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1014,70 +931,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2bool.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vec/op.kt" />
     <entry file="file://$PROJECT_DIR$/src/operators.kt" />
-    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2i.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2502">
-          <caret line="139" column="35" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2l.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc;n#Vec2l#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2d.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1944">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc;n#Vec2d#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3240">
-          <caret line="182" column="4" selection-start-line="182" selection-start-column="4" selection-end-line="182" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc;n#glm#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/math/BigInteger.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/lang/Number.java" />
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Primitives.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="225" column="24" selection-start-line="225" selection-start-column="24" selection-end-line="225" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/math/BigInteger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-753">
@@ -1085,32 +942,6 @@
           <folding>
             <element signature="e#22896#22897#0" expanded="false" />
             <element signature="e#22925#22926#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2s.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3645">
-          <caret line="278" column="70" selection-start-line="278" selection-start-column="70" selection-end-line="278" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Number.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2b.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="333" column="65" selection-start-line="8" selection-start-column="0" selection-end-line="333" selection-end-column="65" />
-          <folding>
-            <element signature="n#!!doc;n#Vec2b#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1123,29 +954,205 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/unsigned.kt">
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2bool.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+        <state relative-caret-position="666">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Number.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/umath.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/util/Tuples.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Long.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="1289" column="37" selection-start-line="1289" selection-start-column="23" selection-end-line="1289" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Primitives.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="477" column="13" selection-start-line="477" selection-start-column="13" selection-end-line="477" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="127" column="21" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
           <folding>
-            <element signature="n#!!doc;n#Ubyte#0" expanded="false" />
-            <element signature="n#!!doc;n#MIN_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ubyte#0" expanded="false" />
-            <element signature="n#!!doc;n#MAX_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ubyte#0" expanded="false" />
-            <element signature="n#!!doc;n#MIN_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ulong#0" expanded="false" />
-            <element signature="n#!!doc;n#MAX_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ulong#0" expanded="false" />
-            <element signature="n#!!doc;n#MIN_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ushort#0" expanded="false" />
-            <element signature="n#!!doc;n#MAX_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ushort#0" expanded="false" />
+            <element signature="e#48444#48445#0" expanded="false" />
+            <element signature="e#48491#48492#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2l.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1422">
+          <caret line="210" column="21" selection-start-line="210" selection-start-column="21" selection-end-line="210" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc;n#Vec2l#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2s.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="873">
+          <caret line="276" column="37" selection-start-line="276" selection-start-column="37" selection-end-line="276" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2ub.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+        <state relative-caret-position="981">
+          <caret line="295" column="36" selection-start-line="295" selection-start-column="36" selection-end-line="295" selection-end-column="36" />
           <folding>
+            <element signature="e#16#45#0" expanded="true" />
             <element signature="n#!!doc;n#Vec2ub#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2ul.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1359">
+          <caret line="261" column="4" selection-start-line="261" selection-start-column="4" selection-end-line="265" selection-end-column="45" />
+          <folding>
+            <element signature="e#16#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2ui.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1251">
+          <caret line="294" column="0" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2us.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4077">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="n#!!doc;n#glm#0" expanded="false" />
+            <element signature="n#!!block;n#ubyte_operators#0" expanded="false" />
+            <element signature="n#!!block;n#uint_operators#0" expanded="false" />
+            <element signature="n#!!block;n#ulong_operators#0" expanded="false" />
+            <element signature="n#!!block;n#ushort_operators#0" expanded="false" />
+            <element signature="n#!!block;n#vec2_operators#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_3/Vec3.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1129">
+          <caret line="127" column="22" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2b.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="927">
+          <caret line="175" column="63" selection-start-line="175" selection-start-column="63" selection-end-line="175" selection-end-column="63" />
+          <folding>
+            <element signature="n#!!doc;n#Vec2b#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2d.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc;n#Vec2d#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/unsigned.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="247" column="47" selection-start-line="247" selection-start-column="47" selection-end-line="247" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc;n#Ubyte#0" expanded="false" />
+            <element signature="n#!!block;n#Ubyte#0" expanded="false" />
+            <element signature="n#!!doc;n#MIN_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ubyte#0" expanded="false" />
+            <element signature="n#!!doc;n#MAX_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ubyte#0" expanded="false" />
+            <element signature="n#!!block;n#Uint#0" expanded="false" />
+            <element signature="n#!!block;n#Ulong#0" expanded="false" />
+            <element signature="n#!!block;n#Ushort#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2i.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1341">
+          <caret line="210" column="22" selection-start-line="210" selection-start-column="22" selection-end-line="210" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -19,39 +19,39 @@ data class Vec2b(override var x: Byte = 0, override var y: Byte = 0) : Vec2t<Byt
     constructor(ba: Array<Byte>) : this(ba[0], ba[1])
 
 
-    fun set(v: Vec2t<Number>): Vec2b {
+    fun to(v: Vec2t<Number>): Vec2b {
         x = v.x.toByte(); y = v.y.toByte(); return this
     }
 
-    fun set(s: Byte): Vec2b {
+    fun to(s: Byte): Vec2b {
         x = s; y = s; return this
     }
 
-    fun set(s: Int): Vec2b {
+    fun to(s: Int): Vec2b {
         x = s.toByte(); y = s.toByte(); return this
     }
 
-    fun set(x: Byte, y: Byte): Vec2b {
+    fun to(x: Byte, y: Byte): Vec2b {
         this.x = x; this.y = y; return this
     }
 
-    fun set(x: Int, y: Int): Vec2b {
+    fun to(x: Int, y: Int): Vec2b {
         this.x = x.toByte(); this.y = y.toByte(); return this
     }
 
-    fun set(ba: ByteArray): Vec2b {
+    fun to(ba: ByteArray): Vec2b {
         x = ba[0]; y = ba[1]; return this
     }
 
-    fun set(ia: IntArray): Vec2b {
+    fun to(ia: IntArray): Vec2b {
         x = ia[0].toByte(); y = ia[1].toByte(); return this
     }
 
-    fun set(ba: Array<Byte>): Vec2b {
+    fun to(ba: Array<Byte>): Vec2b {
         x = ba[0]; y = ba[1]; return this
     }
 
-    fun set(ia: Array<Int>): Vec2b {
+    fun to(ia: Array<Int>): Vec2b {
         x = ia[0].toByte(); y = ia[1].toByte(); return this
     }
 
@@ -60,6 +60,7 @@ data class Vec2b(override var x: Byte = 0, override var y: Byte = 0) : Vec2t<Byt
     operator fun get(i: Int): Byte = when (i) {0 -> x; else -> y; }
 
     operator fun set(i: Int, s: Byte) = when (i) {0 -> x = s; else -> y = s; }
+    operator fun set(i: Int, s: Int) = when (i) {0 -> x = s.toByte(); else -> y = s.toByte(); }
 
 
     // -- Unary arithmetic vecOperators --
@@ -164,8 +165,8 @@ data class Vec2b(override var x: Byte = 0, override var y: Byte = 0) : Vec2t<Byt
     fun div(bX: Int, bY: Int, res: Vec2b) = glm.div(res, this, bX, bY)
     fun div(b: Vec2b, res: Vec2b) = glm.div(res, this, b.x, b.y)
 
-    operator fun mod(s: Byte) = glm.mod(Vec2b(), this, s, s)
-    operator fun mod(s: Int) = glm.mod(Vec2b(), this, s, s)
+    operator fun mod(b: Byte) = glm.mod(Vec2b(), this, b, b)
+    operator fun mod(b: Int) = glm.mod(Vec2b(), this, b, b)
     operator fun mod(b: Vec2b) = glm.mod(Vec2b(), this, b.x, b.y)
 
     fun mod(bX: Byte, bY: Byte) = glm.mod(Vec2b(), this, bX, bY)
@@ -280,23 +281,11 @@ data class Vec2b(override var x: Byte = 0, override var y: Byte = 0) : Vec2t<Byt
     fun shr(b: Vec2b, res: Vec2b) = glm.shr(res, this, b.x, b.y)
 
 
-    inline infix fun inv(b: Byte) = glm.inv(Vec2b(), this, b, b)
-    inline infix fun inv(b: Int) = glm.inv(Vec2b(), this, b, b)
-    fun inv(bX: Byte, bY: Byte) = glm.inv(Vec2b(), this, bX, bY)
-    fun inv(bX: Int, bY: Int) = glm.inv(Vec2b(), this, bX, bY)
-    fun inv(b: Vec2b) = glm.inv(Vec2b(), this, b.x, b.y)
+    fun inv() = glm.inv(Vec2b(), this)
 
-    infix inline fun invAss(b: Byte) = glm.inv(this, this, b, b)
-    infix inline fun invAss(b: Int) = glm.inv(this, this, b, b)
-    fun invAss(bX: Byte, bY: Byte) = glm.inv(this, this, bX, bY)
-    fun invAss(bX: Int, bY: Int) = glm.inv(this, this, bX, bY)
-    infix inline fun invAss(b: Vec2b) = glm.inv(this, this, b.x, b.y)
+    fun invAss() = glm.inv(this, this)
 
-    fun inv(b: Byte, res: Vec2b) = glm.inv(res, this, b, b)
-    fun inv(b: Int, res: Vec2b) = glm.inv(res, this, b, b)
-    fun inv(bX: Byte, bY: Byte, res: Vec2b) = glm.inv(res, this, bX, bY)
-    fun inv(bX: Int, bY: Int, res: Vec2b) = glm.inv(res, this, bX, bY)
-    fun inv(b: Vec2b, res: Vec2b) = glm.inv(res, this, b.x, b.y)
+    fun inv(res: Vec2b) = glm.inv(res, this)
 }
 
 
