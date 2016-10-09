@@ -1,5 +1,8 @@
 package gli
 
+import gli.dx.ddpf.*
+import gli.dx.d3dfmt.*
+import gli.dx.dxgi_format_gli.*
 import glm.vec._4.Vec4ui
 
 
@@ -285,6 +288,8 @@ class dx {
         DXGI_FORMAT_FORCE_UINT(0xffffffffL.toInt()) // BUG https://youtrack.jetbrains.com/issue/KT-4749
     }
 
+    var c: Int = 0;
+
     enum class dxgi_format_gli(val i: Int = counter++) {
 
         DXGI_FORMAT_UNKNOWN(0),
@@ -429,23 +434,29 @@ class dx {
 
     class Format(ddPixelFormat: ddpf, d3dFormat: d3dfmt, dxgiFormat: dxgiFormat, mask: Vec4ui)
 
+    enum class ddpf(val i: Int) {
+        DDPF_ALPHAPIXELS(0x1),
+        DDPF_ALPHA(0x2),
+        DDPF_FOURCC(0x4),
+        DDPF_RGB(0x40),
+        DDPF_YUV(0x200),
+        DDPF_LUMINANCE(0x20000),
+        DDPF_LUMINANCE_ALPHA(DDPF_LUMINANCE.i or DDPF_ALPHA.i),
+        DDPF_RGBAPIXELS(DDPF_RGB.i or DDPF_ALPHAPIXELS.i),
+        DDPF_RGBA(DDPF_RGB.i or DDPF_ALPHA.i),
+        DDPF_LUMINANCE_ALPHAPIXELS(DDPF_LUMINANCE.i or DDPF_ALPHAPIXELS.i)
+    }
+
+    val table: Array<Format> = arrayOf(
+            Format(DDPF_FOURCC, D3DFMT_GLI1, dxgiFormat(DXGI_FORMAT_RG4_UNORM_GLI), Vec4ui(0x000F, 0x00F0, 0x0000, 0x0000))
+    )
+
     companion object {
 
-        enum class ddpf(val i: Int) {
-            DDPF_ALPHAPIXELS(0x1),
-            DDPF_ALPHA(0x2),
-            DDPF_FOURCC(0x4),
-            DDPF_RGB(0x40),
-            DDPF_YUV(0x200),
-            DDPF_LUMINANCE(0x20000),
-            DDPF_LUMINANCE_ALPHA(DDPF_LUMINANCE.i or DDPF_ALPHA.i),
-            DDPF_RGBAPIXELS(DDPF_RGB.i or DDPF_ALPHAPIXELS.i),
-            DDPF_RGBA(DDPF_RGB.i or DDPF_ALPHA.i),
-            DDPF_LUMINANCE_ALPHAPIXELS(DDPF_LUMINANCE.i or DDPF_ALPHAPIXELS.i)
+
+        init {
+
         }
 
-        private val table: Array<Format> = arrayOf(
-                Format(DDPF_FOURCC, d3dfmt.D3DFMT_GLI1, dxgiFormat(dxgi_format_gli.DXGI_FORMAT_RG4_UNORM_GLI), Vec4ui(0x000F, 0x00F0, 0x0000, 0x0000))
-        )
     }
 }

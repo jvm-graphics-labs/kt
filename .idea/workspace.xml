@@ -44,12 +44,14 @@
       <file leaf-file-name="dx.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gli/dx.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="846">
-              <caret line="449" column="5" selection-start-line="449" selection-start-column="5" selection-end-line="449" selection-end-column="5" />
+            <state relative-caret-position="720">
+              <caret line="453" column="22" selection-start-line="453" selection-start-column="22" selection-end-line="453" selection-end-column="22" />
               <folding>
+                <element signature="e#13#113#0" expanded="true" />
                 <element signature="n#!!block;n#d3dfmt#0;n#!!block;n#dx#0" expanded="false" />
                 <element signature="n#!!block;n#dxgi_format_dds#0;n#!!block;n#dx#0" expanded="false" />
                 <element signature="n#!!block;n#dxgi_format_gli#0;n#!!block;n#dx#0" expanded="false" />
+                <element signature="n#!!block;n#ddpf#0;n#!!block;n#dx#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -733,7 +735,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476043232936</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="upd">
+      <created>1476043323101</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1476043323101</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1249,12 +1258,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gli/dx.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="449" column="5" selection-start-line="449" selection-start-column="5" selection-end-line="449" selection-end-column="5" />
+        <state relative-caret-position="720">
+          <caret line="453" column="22" selection-start-line="453" selection-start-column="22" selection-end-line="453" selection-end-column="22" />
           <folding>
+            <element signature="e#13#113#0" expanded="true" />
             <element signature="n#!!block;n#d3dfmt#0;n#!!block;n#dx#0" expanded="false" />
             <element signature="n#!!block;n#dxgi_format_dds#0;n#!!block;n#dx#0" expanded="false" />
             <element signature="n#!!block;n#dxgi_format_gli#0;n#!!block;n#dx#0" expanded="false" />
+            <element signature="n#!!block;n#ddpf#0;n#!!block;n#dx#0" expanded="false" />
           </folding>
         </state>
       </provider>
