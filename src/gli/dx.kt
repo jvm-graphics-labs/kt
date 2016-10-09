@@ -442,7 +442,6 @@ class dx {
             DDPF_RGBAPIXELS(DDPF_RGB.i or DDPF_ALPHAPIXELS.i),
             DDPF_RGBA(DDPF_RGB.i or DDPF_ALPHA.i),
             DDPF_LUMINANCE_ALPHAPIXELS(DDPF_LUMINANCE.i or DDPF_ALPHAPIXELS.i)
-//        }
         }
 
         private val table: Array<Format> = arrayOf(

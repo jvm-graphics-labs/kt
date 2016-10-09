@@ -2,46 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338facb5-8d0e-4ee7-87f1-b470436b1dbf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gli/ddpf.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gli/dx.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gli/gli.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/glm.kt" afterPath="$PROJECT_DIR$/src/glm/glm.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2b.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2b.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2bool.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2bool.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2d.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2d.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2i.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2i.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2l.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2l.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2s.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2s.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2ub.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2ub.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2ui.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2ui.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2ul.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2ul.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_2/Vec2us.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2us.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3b.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3b.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3bool.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3bool.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3d.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3d.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3i.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3i.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3l.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3l.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3s.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3s.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3ub.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3ui.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3ui.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3ul.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3ul.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3us.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3us.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_4/Vec4.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4b.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_4/Vec4b.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4bool.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_4/Vec4bool.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4d.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_4/Vec4d.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4i.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_4/Vec4i.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4l.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_4/Vec4l.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4s.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_4/Vec4s.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4ub.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_4/Vec4ub.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4ui.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_4/Vec4ui.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4ul.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_4/Vec4ul.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4us.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_4/Vec4us.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vec/generic.kt" afterPath="$PROJECT_DIR$/src/glm/vec/generic.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Vec2.kt" afterPath="$PROJECT_DIR$/test/Vec2.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gli/dx.kt" afterPath="$PROJECT_DIR$/src/gli/dx.kt" />
     </list>
     <ignored path="kt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,8 +44,8 @@
       <file leaf-file-name="dx.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gli/dx.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="450" column="5" selection-start-line="450" selection-start-column="5" selection-end-line="450" selection-end-column="5" />
+            <state relative-caret-position="846">
+              <caret line="449" column="5" selection-start-line="449" selection-start-column="5" selection-end-line="449" selection-end-column="5" />
               <folding>
                 <element signature="n#!!block;n#d3dfmt#0;n#!!block;n#dx#0" expanded="false" />
                 <element signature="n#!!block;n#dxgi_format_dds#0;n#!!block;n#dx#0" expanded="false" />
@@ -203,8 +165,8 @@
         <option value="$PROJECT_DIR$/src/glm/vec/_4/Vec4i.kt" />
         <option value="$PROJECT_DIR$/src/glm/vec/_4/Vec4d.kt" />
         <option value="$PROJECT_DIR$/src/glm/vec/_4/Vec4ui.kt" />
-        <option value="$PROJECT_DIR$/src/gli/dx.kt" />
         <option value="$PROJECT_DIR$/src/gli/ddpf.kt" />
+        <option value="$PROJECT_DIR$/src/gli/dx.kt" />
       </list>
     </option>
   </component>
@@ -764,7 +726,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476031265113</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="upd">
+      <created>1476043232936</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1476043232936</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -845,9 +814,9 @@
     <MESSAGE value="fixed .BYTES" />
     <MESSAGE value="err" />
     <MESSAGE value="vec4d begin" />
-    <MESSAGE value="upd" />
     <MESSAGE value="vec ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="vec ready" />
+    <MESSAGE value="upd" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1280,8 +1249,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gli/dx.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="450" column="5" selection-start-line="450" selection-start-column="5" selection-end-line="450" selection-end-column="5" />
+        <state relative-caret-position="846">
+          <caret line="449" column="5" selection-start-line="449" selection-start-column="5" selection-end-line="449" selection-end-column="5" />
           <folding>
             <element signature="n#!!block;n#d3dfmt#0;n#!!block;n#dx#0" expanded="false" />
             <element signature="n#!!block;n#dxgi_format_dds#0;n#!!block;n#dx#0" expanded="false" />
