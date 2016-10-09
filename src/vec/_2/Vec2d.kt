@@ -41,7 +41,7 @@ data class Vec2d(override var x: Double = 0.0, override var y: Double = 0.0) : V
 
 
     // -- Component accesses --
-    operator fun get(i: Int): Double = when (i) {0 -> x; else -> y; }
+    operator fun get(i: Int) = when (i) {0 -> x; else -> y; }
 
     operator fun set(i: Int, s: Double) = when (i) {0 -> x = s; else -> y = s; }
 

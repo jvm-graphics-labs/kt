@@ -1,5 +1,5 @@
 import vec._2.*
-import vec._3.Vec3
+import vec._3.*
 
 /**
  * Created bY GBarbieri on 06.10.2016.
@@ -482,22 +482,22 @@ interface vec2_operators {
     fun mod(res: Vec2b, aX: Byte, aY: Byte, b: Vec2b) = res.to((aX % b.x).toByte(), (aY % b.y).toByte())
     fun mod(res: Vec2b, aX: Int, aY: Int, b: Vec2b) = res.to((aX % b.x).toByte(), (aY % b.y).toByte())
 
-    fun and(res: Vec2b, a: Vec2b, bX: Byte, bY: Byte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.x.toInt() and bY.toInt()).toByte())
-    fun and(res: Vec2b, a: Vec2b, bX: Int, bY: Int) = res.to((a.x.toInt() and bX).toByte(), (a.x.toInt() and bY).toByte())
+    fun and(res: Vec2b, a: Vec2b, bX: Byte, bY: Byte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.y.toInt() and bY.toInt()).toByte())
+    fun and(res: Vec2b, a: Vec2b, bX: Int, bY: Int) = res.to((a.x.toInt() and bX).toByte(), (a.y.toInt() and bY).toByte())
 
-    fun or(res: Vec2b, a: Vec2b, bX: Byte, bY: Byte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.x.toInt() or bY.toInt()).toByte())
-    fun or(res: Vec2b, a: Vec2b, bX: Int, bY: Int) = res.to((a.x.toInt() or bX).toByte(), (a.x.toInt() or bY).toByte())
+    fun or(res: Vec2b, a: Vec2b, bX: Byte, bY: Byte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.y.toInt() or bY.toInt()).toByte())
+    fun or(res: Vec2b, a: Vec2b, bX: Int, bY: Int) = res.to((a.x.toInt() or bX).toByte(), (a.y.toInt() or bY).toByte())
 
-    fun xor(res: Vec2b, a: Vec2b, bX: Byte, bY: Byte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.x.toInt() xor bY.toInt()).toByte())
-    fun xor(res: Vec2b, a: Vec2b, bX: Int, bY: Int) = res.to((a.x.toInt() xor bX).toByte(), (a.x.toInt() xor bY).toByte())
+    fun xor(res: Vec2b, a: Vec2b, bX: Byte, bY: Byte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.y.toInt() xor bY.toInt()).toByte())
+    fun xor(res: Vec2b, a: Vec2b, bX: Int, bY: Int) = res.to((a.x.toInt() xor bX).toByte(), (a.y.toInt() xor bY).toByte())
 
-    fun shl(res: Vec2b, a: Vec2b, bX: Byte, bY: Byte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.x.toInt() shl bY.toInt()).toByte())
-    fun shl(res: Vec2b, a: Vec2b, bX: Int, bY: Int) = res.to((a.x.toInt() shl bX).toByte(), (a.x.toInt() shl bY).toByte())
+    fun shl(res: Vec2b, a: Vec2b, bX: Byte, bY: Byte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.y.toInt() shl bY.toInt()).toByte())
+    fun shl(res: Vec2b, a: Vec2b, bX: Int, bY: Int) = res.to((a.x.toInt() shl bX).toByte(), (a.y.toInt() shl bY).toByte())
 
-    fun shr(res: Vec2b, a: Vec2b, bX: Byte, bY: Byte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.x.toInt() shr bY.toInt()).toByte())
-    fun shr(res: Vec2b, a: Vec2b, bX: Int, bY: Int) = res.to((a.x.toInt() shr bX).toByte(), (a.x.toInt() shr bY).toByte())
+    fun shr(res: Vec2b, a: Vec2b, bX: Byte, bY: Byte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.y.toInt() shr bY.toInt()).toByte())
+    fun shr(res: Vec2b, a: Vec2b, bX: Int, bY: Int) = res.to((a.x.toInt() shr bX).toByte(), (a.y.toInt() shr bY).toByte())
 
-    fun inv(res: Vec2b, a: Vec2b) = res.to(a.x.toInt().inv().toByte(), a.x.toInt().inv().toByte())
+    fun inv(res: Vec2b, a: Vec2b) = res.to(a.x.toInt().inv().toByte(), a.y.toInt().inv().toByte())
 
 
     fun add(res: Vec2d, a: Vec2d, bX: Double, bY: Double) = res.to(a.x + bX, a.y + bY)
@@ -511,7 +511,6 @@ interface vec2_operators {
     fun div(res: Vec2d, aX: Double, aY: Double, b: Vec2d) = res.to(aX / b.x, aY / b.y)
 
     fun mod(res: Vec2d, a: Vec2d, bX: Double, bY: Double) = res.to(a.x % bX, a.y % bY)
-
     fun mod(res: Vec2d, aX: Double, aY: Double, b: Vec2d) = res.to(aX % b.x, aY % b.y)
 
 
@@ -526,18 +525,17 @@ interface vec2_operators {
     fun div(res: Vec2i, aX: Int, aY: Int, b: Vec2i) = res.to(aX / b.x, aY / b.y)
 
     fun mod(res: Vec2i, a: Vec2i, bX: Int, bY: Int) = res.to(a.x % bX, a.y % bY)
-
     fun mod(res: Vec2i, aX: Int, aY: Int, b: Vec2i) = res.to(aX % b.x, aY % b.y)
 
-    fun and(res: Vec2i, a: Vec2i, bX: Int, bY: Int) = res.to(a.x and bX, a.x and bY)
+    fun and(res: Vec2i, a: Vec2i, bX: Int, bY: Int) = res.to(a.x and bX, a.y and bY)
 
-    fun or(res: Vec2i, a: Vec2i, bX: Int, bY: Int) = res.to(a.x or bX, a.x or bY)
+    fun or(res: Vec2i, a: Vec2i, bX: Int, bY: Int) = res.to(a.x or bX, a.y or bY)
 
-    fun xor(res: Vec2i, a: Vec2i, bX: Int, bY: Int) = res.to(a.x xor bX, a.x xor bY)
+    fun xor(res: Vec2i, a: Vec2i, bX: Int, bY: Int) = res.to(a.x xor bX, a.y xor bY)
 
-    fun shl(res: Vec2i, a: Vec2i, bX: Int, bY: Int) = res.to(a.x shl bX, a.x shl bY)
+    fun shl(res: Vec2i, a: Vec2i, bX: Int, bY: Int) = res.to(a.x shl bX, a.y shl bY)
 
-    fun shr(res: Vec2i, a: Vec2i, bX: Int, bY: Int) = res.to(a.x shr bX, a.x shr bY)
+    fun shr(res: Vec2i, a: Vec2i, bX: Int, bY: Int) = res.to(a.x shr bX, a.y shr bY)
 
     fun inv(res: Vec2i, a: Vec2i) = res.to(a.x.inv(), a.y.inv())
 
@@ -553,20 +551,19 @@ interface vec2_operators {
     fun div(res: Vec2l, aX: Long, aY: Long, b: Vec2l) = res.to(aX / b.x, aY / b.y)
 
     fun mod(res: Vec2l, a: Vec2l, bX: Long, bY: Long) = res.to(a.x % bX, a.y % bY)
-
     fun mod(res: Vec2l, aX: Long, aY: Long, b: Vec2l) = res.to(aX % b.x, aY % b.y)
 
-    fun and(res: Vec2l, a: Vec2l, bX: Long, bY: Long) = res.to(a.x and bX, a.x and bY)
+    fun and(res: Vec2l, a: Vec2l, bX: Long, bY: Long) = res.to(a.x and bX, a.y and bY)
 
-    fun or(res: Vec2l, a: Vec2l, bX: Long, bY: Long) = res.to(a.x or bX, a.x or bY)
+    fun or(res: Vec2l, a: Vec2l, bX: Long, bY: Long) = res.to(a.x or bX, a.y or bY)
 
-    fun xor(res: Vec2l, a: Vec2l, bX: Long, bY: Long) = res.to(a.x xor bX, a.x xor bY)
+    fun xor(res: Vec2l, a: Vec2l, bX: Long, bY: Long) = res.to(a.x xor bX, a.y xor bY)
 
-    fun shl(res: Vec2l, a: Vec2l, bX: Long, bY: Long) = res.to(a.x shl bX.toInt(), a.x shl bY.toInt())
-    fun shl(res: Vec2l, a: Vec2l, bX: Int, bY: Int) = res.to(a.x shl bX, a.x shl bY)
+    fun shl(res: Vec2l, a: Vec2l, bX: Long, bY: Long) = res.to(a.x shl bX.toInt(), a.y shl bY.toInt())
+    fun shl(res: Vec2l, a: Vec2l, bX: Int, bY: Int) = res.to(a.x shl bX, a.y shl bY)
 
-    fun shr(res: Vec2l, a: Vec2l, bX: Long, bY: Long) = res.to(a.x shr bX.toInt(), a.x shr bY.toInt())
-    fun shr(res: Vec2l, a: Vec2l, bX: Int, bY: Int) = res.to(a.x shr bX, a.x shr bY)
+    fun shr(res: Vec2l, a: Vec2l, bX: Long, bY: Long) = res.to(a.x shr bX.toInt(), a.y shr bY.toInt())
+    fun shr(res: Vec2l, a: Vec2l, bX: Int, bY: Int) = res.to(a.x shr bX, a.y shr bY)
 
     fun inv(res: Vec2l, a: Vec2l) = res.to(a.x.inv(), a.y.inv())
 
@@ -595,22 +592,22 @@ interface vec2_operators {
     fun mod(res: Vec2s, aX: Short, aY: Short, b: Vec2s) = res.to((aX % b.x).toShort(), (aY % b.y).toShort())
     fun mod(res: Vec2s, aX: Int, aY: Int, b: Vec2s) = res.to((aX % b.x).toShort(), (aY % b.y).toShort())
 
-    fun and(res: Vec2s, a: Vec2s, bX: Short, bY: Short) = res.to((a.x.toInt() and bX.toInt()).toShort(), (a.x.toInt() and bY.toInt()).toShort())
-    fun and(res: Vec2s, a: Vec2s, bX: Int, bY: Int) = res.to((a.x.toInt() and bX).toShort(), (a.x.toInt() and bY).toShort())
+    fun and(res: Vec2s, a: Vec2s, bX: Short, bY: Short) = res.to((a.x.toInt() and bX.toInt()).toShort(), (a.y.toInt() and bY.toInt()).toShort())
+    fun and(res: Vec2s, a: Vec2s, bX: Int, bY: Int) = res.to((a.x.toInt() and bX).toShort(), (a.y.toInt() and bY).toShort())
 
-    fun or(res: Vec2s, a: Vec2s, bX: Short, bY: Short) = res.to((a.x.toInt() or bX.toInt()).toShort(), (a.x.toInt() or bY.toInt()).toShort())
-    fun or(res: Vec2s, a: Vec2s, bX: Int, bY: Int) = res.to((a.x.toInt() or bX).toShort(), (a.x.toInt() or bY).toShort())
+    fun or(res: Vec2s, a: Vec2s, bX: Short, bY: Short) = res.to((a.x.toInt() or bX.toInt()).toShort(), (a.y.toInt() or bY.toInt()).toShort())
+    fun or(res: Vec2s, a: Vec2s, bX: Int, bY: Int) = res.to((a.x.toInt() or bX).toShort(), (a.y.toInt() or bY).toShort())
 
-    fun xor(res: Vec2s, a: Vec2s, bX: Short, bY: Short) = res.to((a.x.toInt() xor bX.toInt()).toShort(), (a.x.toInt() xor bY.toInt()).toShort())
-    fun xor(res: Vec2s, a: Vec2s, bX: Int, bY: Int) = res.to((a.x.toInt() xor bX).toShort(), (a.x.toInt() xor bY).toShort())
+    fun xor(res: Vec2s, a: Vec2s, bX: Short, bY: Short) = res.to((a.x.toInt() xor bX.toInt()).toShort(), (a.y.toInt() xor bY.toInt()).toShort())
+    fun xor(res: Vec2s, a: Vec2s, bX: Int, bY: Int) = res.to((a.x.toInt() xor bX).toShort(), (a.y.toInt() xor bY).toShort())
 
-    fun shl(res: Vec2s, a: Vec2s, bX: Short, bY: Short) = res.to((a.x.toInt() shl bX.toInt()).toShort(), (a.x.toInt() shl bY.toInt()).toShort())
-    fun shl(res: Vec2s, a: Vec2s, bX: Int, bY: Int) = res.to((a.x.toInt() shl bX).toShort(), (a.x.toInt() shl bY).toShort())
+    fun shl(res: Vec2s, a: Vec2s, bX: Short, bY: Short) = res.to((a.x.toInt() shl bX.toInt()).toShort(), (a.y.toInt() shl bY.toInt()).toShort())
+    fun shl(res: Vec2s, a: Vec2s, bX: Int, bY: Int) = res.to((a.x.toInt() shl bX).toShort(), (a.y.toInt() shl bY).toShort())
 
-    fun shr(res: Vec2s, a: Vec2s, bX: Short, bY: Short) = res.to((a.x.toInt() shr bX.toInt()).toShort(), (a.x.toInt() shr bY.toInt()).toShort())
-    fun shr(res: Vec2s, a: Vec2s, bX: Int, bY: Int) = res.to((a.x.toInt() shr bX).toShort(), (a.x.toInt() shr bY).toShort())
+    fun shr(res: Vec2s, a: Vec2s, bX: Short, bY: Short) = res.to((a.x.toInt() shr bX.toInt()).toShort(), (a.y.toInt() shr bY.toInt()).toShort())
+    fun shr(res: Vec2s, a: Vec2s, bX: Int, bY: Int) = res.to((a.x.toInt() shr bX).toShort(), (a.y.toInt() shr bY).toShort())
 
-    fun inv(res: Vec2s, a: Vec2s) = res.to(a.x.toInt().inv().toShort(), a.x.toInt().inv().toShort())
+    fun inv(res: Vec2s, a: Vec2s) = res.to(a.x.toInt().inv().toShort(), a.y.toInt().inv().toShort())
 
 
     fun add(res: Vec2ub, a: Vec2ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.v + bX.v).toByte(), (a.y.v + bY.v).toByte())
@@ -645,25 +642,25 @@ interface vec2_operators {
     fun mod(res: Vec2ub, aX: Byte, aY: Byte, b: Vec2ub) = res.to(Integer.remainderUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.remainderUnsigned(aY.toInt(), b.y.toInt()).toByte())
     fun mod(res: Vec2ub, aX: Int, aY: Int, b: Vec2ub) = res.to(Integer.remainderUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.remainderUnsigned(aY.toInt(), b.y.toInt()).toByte())
 
-    fun and(res: Vec2ub, a: Vec2ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.x.toInt() and bY.toInt()).toByte())
-    fun and(res: Vec2ub, a: Vec2ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.x.toInt() and bY.toInt()).toByte())
-    fun and(res: Vec2ub, a: Vec2ub, bX: Int, bY: Int) = res.to((a.x.toInt() and bX).toByte(), (a.x.toInt() and bY).toByte())
+    fun and(res: Vec2ub, a: Vec2ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.y.toInt() and bY.toInt()).toByte())
+    fun and(res: Vec2ub, a: Vec2ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.y.toInt() and bY.toInt()).toByte())
+    fun and(res: Vec2ub, a: Vec2ub, bX: Int, bY: Int) = res.to((a.x.toInt() and bX).toByte(), (a.y.toInt() and bY).toByte())
 
-    fun or(res: Vec2ub, a: Vec2ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.x.toInt() or bY.toInt()).toByte())
-    fun or(res: Vec2ub, a: Vec2ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.x.toInt() or bY.toInt()).toByte())
-    fun or(res: Vec2ub, a: Vec2ub, bX: Int, bY: Int) = res.to((a.x.toInt() or bX).toByte(), (a.x.toInt() or bY).toByte())
+    fun or(res: Vec2ub, a: Vec2ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.y.toInt() or bY.toInt()).toByte())
+    fun or(res: Vec2ub, a: Vec2ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.y.toInt() or bY.toInt()).toByte())
+    fun or(res: Vec2ub, a: Vec2ub, bX: Int, bY: Int) = res.to((a.x.toInt() or bX).toByte(), (a.y.toInt() or bY).toByte())
 
-    fun xor(res: Vec2ub, a: Vec2ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.x.toInt() xor bY.toInt()).toByte())
-    fun xor(res: Vec2ub, a: Vec2ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.x.toInt() xor bY.toInt()).toByte())
-    fun xor(res: Vec2ub, a: Vec2ub, bX: Int, bY: Int) = res.to((a.x.toInt() xor bX).toByte(), (a.x.toInt() xor bY).toByte())
+    fun xor(res: Vec2ub, a: Vec2ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.y.toInt() xor bY.toInt()).toByte())
+    fun xor(res: Vec2ub, a: Vec2ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.y.toInt() xor bY.toInt()).toByte())
+    fun xor(res: Vec2ub, a: Vec2ub, bX: Int, bY: Int) = res.to((a.x.toInt() xor bX).toByte(), (a.y.toInt() xor bY).toByte())
 
-    fun shl(res: Vec2ub, a: Vec2ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.x.toInt() shl bY.toInt()).toByte())
-    fun shl(res: Vec2ub, a: Vec2ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.x.toInt() shl bY.toInt()).toByte())
-    fun shl(res: Vec2ub, a: Vec2ub, bX: Int, bY: Int) = res.to((a.x.toInt() shl bX).toByte(), (a.x.toInt() shl bY).toByte())
+    fun shl(res: Vec2ub, a: Vec2ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.y.toInt() shl bY.toInt()).toByte())
+    fun shl(res: Vec2ub, a: Vec2ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.y.toInt() shl bY.toInt()).toByte())
+    fun shl(res: Vec2ub, a: Vec2ub, bX: Int, bY: Int) = res.to((a.x.toInt() shl bX).toByte(), (a.y.toInt() shl bY).toByte())
 
-    fun shr(res: Vec2ub, a: Vec2ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.x.toInt() shr bY.toInt()).toByte())
-    fun shr(res: Vec2ub, a: Vec2ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.x.toInt() shr bY.toInt()).toByte())
-    fun shr(res: Vec2ub, a: Vec2ub, bX: Int, bY: Int) = res.to((a.x.toInt() shr bX).toByte(), (a.x.toInt() shr bY).toByte())
+    fun shr(res: Vec2ub, a: Vec2ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.y.toInt() shr bY.toInt()).toByte())
+    fun shr(res: Vec2ub, a: Vec2ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.y.toInt() shr bY.toInt()).toByte())
+    fun shr(res: Vec2ub, a: Vec2ub, bX: Int, bY: Int) = res.to((a.x.toInt() shr bX).toByte(), (a.y.toInt() shr bY).toByte())
 
     fun inv(res: Vec2ub, a: Vec2ub) = res.to(a.x.toInt().inv().toByte(), a.x.toInt().inv().toByte())
 
@@ -692,20 +689,20 @@ interface vec2_operators {
     fun mod(res: Vec2ui, aX: Uint, aY: Uint, b: Vec2ui) = res.to(Integer.remainderUnsigned(aX.v, b.x.v), Integer.remainderUnsigned(aY.v, b.y.v))
     fun mod(res: Vec2ui, aX: Int, aY: Int, b: Vec2ui) = res.to(Integer.remainderUnsigned(aX, b.x.v), Integer.remainderUnsigned(aY, b.y.v))
 
-    fun and(res: Vec2ui, a: Vec2ui, bX: Uint, bY: Uint) = res.to(a.x.v and bX.v, a.x.v and bY.v)
-    fun and(res: Vec2ui, a: Vec2ui, bX: Int, bY: Int) = res.to(a.x.v and bX, a.x.v and bY)
+    fun and(res: Vec2ui, a: Vec2ui, bX: Uint, bY: Uint) = res.to(a.x.v and bX.v, a.y.v and bY.v)
+    fun and(res: Vec2ui, a: Vec2ui, bX: Int, bY: Int) = res.to(a.x.v and bX, a.y.v and bY)
 
-    fun or(res: Vec2ui, a: Vec2ui, bX: Uint, bY: Uint) = res.to(a.x.v or bX.v, a.x.v or bY.v)
-    fun or(res: Vec2ui, a: Vec2ui, bX: Int, bY: Int) = res.to(a.x.v or bX, a.x.v or bY)
+    fun or(res: Vec2ui, a: Vec2ui, bX: Uint, bY: Uint) = res.to(a.x.v or bX.v, a.y.v or bY.v)
+    fun or(res: Vec2ui, a: Vec2ui, bX: Int, bY: Int) = res.to(a.x.v or bX, a.y.v or bY)
 
-    fun xor(res: Vec2ui, a: Vec2ui, bX: Uint, bY: Uint) = res.to(a.x.v xor bX.v, a.x.v xor bY.v)
-    fun xor(res: Vec2ui, a: Vec2ui, bX: Int, bY: Int) = res.to(a.x.v xor bX, a.x.v xor bY)
+    fun xor(res: Vec2ui, a: Vec2ui, bX: Uint, bY: Uint) = res.to(a.x.v xor bX.v, a.y.v xor bY.v)
+    fun xor(res: Vec2ui, a: Vec2ui, bX: Int, bY: Int) = res.to(a.x.v xor bX, a.y.v xor bY)
 
-    fun shl(res: Vec2ui, a: Vec2ui, bX: Uint, bY: Uint) = res.to(a.x.v shl bX.v, a.x.v shl bY.v)
-    fun shl(res: Vec2ui, a: Vec2ui, bX: Int, bY: Int) = res.to(a.x.v shl bX, a.x.v shl bY)
+    fun shl(res: Vec2ui, a: Vec2ui, bX: Uint, bY: Uint) = res.to(a.x.v shl bX.v, a.y.v shl bY.v)
+    fun shl(res: Vec2ui, a: Vec2ui, bX: Int, bY: Int) = res.to(a.x.v shl bX, a.y.v shl bY)
 
-    fun shr(res: Vec2ui, a: Vec2ui, bX: Uint, bY: Uint) = res.to(a.x.v shr bX.v, a.x.v shr bY.v)
-    fun shr(res: Vec2ui, a: Vec2ui, bX: Int, bY: Int) = res.to(a.x.v shr bX, a.x.v shr bY)
+    fun shr(res: Vec2ui, a: Vec2ui, bX: Uint, bY: Uint) = res.to(a.x.v shr bX.v, a.y.v shr bY.v)
+    fun shr(res: Vec2ui, a: Vec2ui, bX: Int, bY: Int) = res.to(a.x.v shr bX, a.y.v shr bY)
 
     fun inv(res: Vec2ui, a: Vec2ui) = res.to(a.x.v.inv(), a.x.v.inv())
 
@@ -734,20 +731,20 @@ interface vec2_operators {
     fun mod(res: Vec2ul, aX: Ulong, aY: Ulong, b: Vec2ul) = res.to(java.lang.Long.remainderUnsigned(aX.v, b.x.v), java.lang.Long.remainderUnsigned(aY.v, b.y.v))
     fun mod(res: Vec2ul, aX: Long, aY: Long, b: Vec2ul) = res.to(java.lang.Long.remainderUnsigned(aX, b.x.v), java.lang.Long.remainderUnsigned(aY, b.y.v))
 
-    fun and(res: Vec2ul, a: Vec2ul, bX: Ulong, bY: Ulong) = res.to(a.x.v and bX.v, a.x.v and bY.v)
-    fun and(res: Vec2ul, a: Vec2ul, bX: Long, bY: Long) = res.to(a.x.v and bX, a.x.v and bY)
+    fun and(res: Vec2ul, a: Vec2ul, bX: Ulong, bY: Ulong) = res.to(a.x.v and bX.v, a.y.v and bY.v)
+    fun and(res: Vec2ul, a: Vec2ul, bX: Long, bY: Long) = res.to(a.x.v and bX, a.y.v and bY)
 
-    fun or(res: Vec2ul, a: Vec2ul, bX: Ulong, bY: Ulong) = res.to(a.x.v or bX.v, a.x.v or bY.v)
-    fun or(res: Vec2ul, a: Vec2ul, bX: Long, bY: Long) = res.to(a.x.v or bX, a.x.v or bY)
+    fun or(res: Vec2ul, a: Vec2ul, bX: Ulong, bY: Ulong) = res.to(a.x.v or bX.v, a.y.v or bY.v)
+    fun or(res: Vec2ul, a: Vec2ul, bX: Long, bY: Long) = res.to(a.x.v or bX, a.y.v or bY)
 
-    fun xor(res: Vec2ul, a: Vec2ul, bX: Ulong, bY: Ulong) = res.to(a.x.v xor bX.v, a.x.v xor bY.v)
-    fun xor(res: Vec2ul, a: Vec2ul, bX: Long, bY: Long) = res.to(a.x.v xor bX, a.x.v xor bY)
+    fun xor(res: Vec2ul, a: Vec2ul, bX: Ulong, bY: Ulong) = res.to(a.x.v xor bX.v, a.y.v xor bY.v)
+    fun xor(res: Vec2ul, a: Vec2ul, bX: Long, bY: Long) = res.to(a.x.v xor bX, a.y.v xor bY)
 
-    fun shl(res: Vec2ul, a: Vec2ul, bX: Int, bY: Int) = res.to(a.x.v shl bX, a.x.v shl bY)
+    fun shl(res: Vec2ul, a: Vec2ul, bX: Int, bY: Int) = res.to(a.x.v shl bX, a.y.v shl bY)
 
-    fun shr(res: Vec2ul, a: Vec2ul, bX: Int, bY: Int) = res.to(a.x.v shr bX, a.x.v shr bY)
+    fun shr(res: Vec2ul, a: Vec2ul, bX: Int, bY: Int) = res.to(a.x.v shr bX, a.y.v shr bY)
 
-    fun inv(res: Vec2ul, a: Vec2ul) = res.to(a.x.v.inv(), a.x.v.inv())
+    fun inv(res: Vec2ul, a: Vec2ul) = res.to(a.x.v.inv(), a.y.v.inv())
 
 
     fun add(res: Vec2us, a: Vec2us, bX: Ushort, bY: Ushort) = res.to((a.x.v + bX.v).toShort(), (a.y.v + bY.v).toShort())
@@ -782,27 +779,27 @@ interface vec2_operators {
     fun mod(res: Vec2us, aX: Short, aY: Short, b: Vec2us) = res.to(Integer.remainderUnsigned(aX.toInt(), b.x.toInt()).toShort(), Integer.remainderUnsigned(aY.toInt(), b.y.toInt()).toShort())
     fun mod(res: Vec2us, aX: Int, aY: Int, b: Vec2us) = res.to(Integer.remainderUnsigned(aX.toInt(), b.x.toInt()).toShort(), Integer.remainderUnsigned(aY.toInt(), b.y.toInt()).toShort())
 
-    fun and(res: Vec2us, a: Vec2us, bX: Ushort, bY: Ushort) = res.to((a.x.toInt() and bX.toInt()).toShort(), (a.x.toInt() and bY.toInt()).toShort())
-    fun and(res: Vec2us, a: Vec2us, bX: Short, bY: Short) = res.to((a.x.toInt() and bX.toInt()).toShort(), (a.x.toInt() and bY.toInt()).toShort())
-    fun and(res: Vec2us, a: Vec2us, bX: Int, bY: Int) = res.to((a.x.toInt() and bX).toShort(), (a.x.toInt() and bY).toShort())
+    fun and(res: Vec2us, a: Vec2us, bX: Ushort, bY: Ushort) = res.to((a.x.toInt() and bX.toInt()).toShort(), (a.y.toInt() and bY.toInt()).toShort())
+    fun and(res: Vec2us, a: Vec2us, bX: Short, bY: Short) = res.to((a.x.toInt() and bX.toInt()).toShort(), (a.y.toInt() and bY.toInt()).toShort())
+    fun and(res: Vec2us, a: Vec2us, bX: Int, bY: Int) = res.to((a.x.toInt() and bX).toShort(), (a.y.toInt() and bY).toShort())
 
-    fun or(res: Vec2us, a: Vec2us, bX: Ushort, bY: Ushort) = res.to((a.x.toInt() or bX.toInt()).toShort(), (a.x.toInt() or bY.toInt()).toShort())
-    fun or(res: Vec2us, a: Vec2us, bX: Short, bY: Short) = res.to((a.x.toInt() or bX.toInt()).toShort(), (a.x.toInt() or bY.toInt()).toShort())
-    fun or(res: Vec2us, a: Vec2us, bX: Int, bY: Int) = res.to((a.x.toInt() or bX).toShort(), (a.x.toInt() or bY).toShort())
+    fun or(res: Vec2us, a: Vec2us, bX: Ushort, bY: Ushort) = res.to((a.x.toInt() or bX.toInt()).toShort(), (a.y.toInt() or bY.toInt()).toShort())
+    fun or(res: Vec2us, a: Vec2us, bX: Short, bY: Short) = res.to((a.x.toInt() or bX.toInt()).toShort(), (a.y.toInt() or bY.toInt()).toShort())
+    fun or(res: Vec2us, a: Vec2us, bX: Int, bY: Int) = res.to((a.x.toInt() or bX).toShort(), (a.y.toInt() or bY).toShort())
 
-    fun xor(res: Vec2us, a: Vec2us, bX: Ushort, bY: Ushort) = res.to((a.x.toInt() xor bX.toInt()).toShort(), (a.x.toInt() xor bY.toInt()).toShort())
-    fun xor(res: Vec2us, a: Vec2us, bX: Short, bY: Short) = res.to((a.x.toInt() xor bX.toInt()).toShort(), (a.x.toInt() xor bY.toInt()).toShort())
-    fun xor(res: Vec2us, a: Vec2us, bX: Int, bY: Int) = res.to((a.x.toInt() xor bX).toShort(), (a.x.toInt() xor bY).toShort())
+    fun xor(res: Vec2us, a: Vec2us, bX: Ushort, bY: Ushort) = res.to((a.x.toInt() xor bX.toInt()).toShort(), (a.y.toInt() xor bY.toInt()).toShort())
+    fun xor(res: Vec2us, a: Vec2us, bX: Short, bY: Short) = res.to((a.x.toInt() xor bX.toInt()).toShort(), (a.y.toInt() xor bY.toInt()).toShort())
+    fun xor(res: Vec2us, a: Vec2us, bX: Int, bY: Int) = res.to((a.x.toInt() xor bX).toShort(), (a.y.toInt() xor bY).toShort())
 
-    fun shl(res: Vec2us, a: Vec2us, bX: Ushort, bY: Ushort) = res.to((a.x.toInt() shl bX.toInt()).toShort(), (a.x.toInt() shl bY.toInt()).toShort())
-    fun shl(res: Vec2us, a: Vec2us, bX: Short, bY: Short) = res.to((a.x.toInt() shl bX.toInt()).toShort(), (a.x.toInt() shl bY.toInt()).toShort())
-    fun shl(res: Vec2us, a: Vec2us, bX: Int, bY: Int) = res.to((a.x.toInt() shl bX).toShort(), (a.x.toInt() shl bY).toShort())
+    fun shl(res: Vec2us, a: Vec2us, bX: Ushort, bY: Ushort) = res.to((a.x.toInt() shl bX.toInt()).toShort(), (a.y.toInt() shl bY.toInt()).toShort())
+    fun shl(res: Vec2us, a: Vec2us, bX: Short, bY: Short) = res.to((a.x.toInt() shl bX.toInt()).toShort(), (a.y.toInt() shl bY.toInt()).toShort())
+    fun shl(res: Vec2us, a: Vec2us, bX: Int, bY: Int) = res.to((a.x.toInt() shl bX).toShort(), (a.y.toInt() shl bY).toShort())
 
-    fun shr(res: Vec2us, a: Vec2us, bX: Ushort, bY: Ushort) = res.to((a.x.toInt() shr bX.toInt()).toShort(), (a.x.toInt() shr bY.toInt()).toShort())
-    fun shr(res: Vec2us, a: Vec2us, bX: Short, bY: Short) = res.to((a.x.toInt() shr bX.toInt()).toShort(), (a.x.toInt() shr bY.toInt()).toShort())
-    fun shr(res: Vec2us, a: Vec2us, bX: Int, bY: Int) = res.to((a.x.toInt() shr bX).toShort(), (a.x.toInt() shr bY).toShort())
+    fun shr(res: Vec2us, a: Vec2us, bX: Ushort, bY: Ushort) = res.to((a.x.toInt() shr bX.toInt()).toShort(), (a.y.toInt() shr bY.toInt()).toShort())
+    fun shr(res: Vec2us, a: Vec2us, bX: Short, bY: Short) = res.to((a.x.toInt() shr bX.toInt()).toShort(), (a.y.toInt() shr bY.toInt()).toShort())
+    fun shr(res: Vec2us, a: Vec2us, bX: Int, bY: Int) = res.to((a.x.toInt() shr bX).toShort(), (a.y.toInt() shr bY).toShort())
 
-    fun inv(res: Vec2us, a: Vec2us) = res.to(a.x.toInt().inv().toShort(), a.x.toInt().inv().toShort())
+    fun inv(res: Vec2us, a: Vec2us) = res.to(a.x.toInt().inv().toShort(), a.y.toInt().inv().toShort())
 }
 
 interface vec3_operators {
@@ -821,257 +818,255 @@ interface vec3_operators {
     fun mod(res: Vec3, aX: Float, aY: Float, bZ: Float, b: Vec3) = res.to(aX % b.x, aY % b.y)
 
 
-//    fun add(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte) = res.to((a.x + bX).toByte(), (a.y + bY).toByte())
-//    fun add(res: Vec3b, a: Vec3b, bX: Int, bY: Int) = res.to((a.x + bX).toByte(), (a.y + bY).toByte())
-//
-//    fun sub(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte) = res.to((a.x - bX).toByte(), (a.y - bY).toByte())
-//    fun sub(res: Vec3b, a: Vec3b, bX: Int, bY: Int) = res.to((a.x - bX).toByte(), (a.y - bY).toByte())
-//
-//    fun sub(res: Vec3b, aX: Byte, aY: Byte, b: Vec3b) = res.to((aX - b.x).toByte(), (aY - b.y).toByte())
-//    fun sub(res: Vec3b, aX: Int, aY: Int, b: Vec3b) = res.to((aX - b.x).toByte(), (aY - b.y).toByte())
-//
-//    fun mul(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte) = res.to((a.x * bX).toByte(), (a.y * bY).toByte())
-//    fun mul(res: Vec3b, a: Vec3b, bX: Int, bY: Int) = res.to((a.x * bX).toByte(), (a.y * bY).toByte())
-//
-//    fun div(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte) = res.to((a.x / bX).toByte(), (a.y / bY).toByte())
-//    fun div(res: Vec3b, a: Vec3b, bX: Int, bY: Int) = res.to((a.x / bX).toByte(), (a.y / bY).toByte())
-//
-//    fun div(res: Vec3b, aX: Byte, aY: Byte, b: Vec3b) = res.to((aX / b.x).toByte(), (aY / b.y).toByte())
-//    fun div(res: Vec3b, aX: Int, aY: Int, b: Vec3b) = res.to((aX / b.x).toByte(), (aY / b.y).toByte())
-//
-//    fun mod(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte) = res.to((a.x % bX).toByte(), (a.y % bY).toByte())
-//    fun mod(res: Vec3b, a: Vec3b, bX: Int, bY: Int) = res.to((a.x % bX).toByte(), (a.y % bY).toByte())
-//
-//    fun mod(res: Vec3b, aX: Byte, aY: Byte, b: Vec3b) = res.to((aX % b.x).toByte(), (aY % b.y).toByte())
-//    fun mod(res: Vec3b, aX: Int, aY: Int, b: Vec3b) = res.to((aX % b.x).toByte(), (aY % b.y).toByte())
-//
-//    fun and(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.x.toInt() and bY.toInt()).toByte())
-//    fun and(res: Vec3b, a: Vec3b, bX: Int, bY: Int) = res.to((a.x.toInt() and bX).toByte(), (a.x.toInt() and bY).toByte())
-//
-//    fun or(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.x.toInt() or bY.toInt()).toByte())
-//    fun or(res: Vec3b, a: Vec3b, bX: Int, bY: Int) = res.to((a.x.toInt() or bX).toByte(), (a.x.toInt() or bY).toByte())
-//
-//    fun xor(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.x.toInt() xor bY.toInt()).toByte())
-//    fun xor(res: Vec3b, a: Vec3b, bX: Int, bY: Int) = res.to((a.x.toInt() xor bX).toByte(), (a.x.toInt() xor bY).toByte())
-//
-//    fun shl(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.x.toInt() shl bY.toInt()).toByte())
-//    fun shl(res: Vec3b, a: Vec3b, bX: Int, bY: Int) = res.to((a.x.toInt() shl bX).toByte(), (a.x.toInt() shl bY).toByte())
-//
-//    fun shr(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.x.toInt() shr bY.toInt()).toByte())
-//    fun shr(res: Vec3b, a: Vec3b, bX: Int, bY: Int) = res.to((a.x.toInt() shr bX).toByte(), (a.x.toInt() shr bY).toByte())
-//
-//    fun inv(res: Vec3b, a: Vec3b) = res.to(a.x.toInt().inv().toByte(), a.x.toInt().inv().toByte())
-//
-//
-//    fun add(res: Vec3d, a: Vec3d, bX: Double, bY: Double) = res.to(a.x + bX, a.y + bY)
-//
-//    fun sub(res: Vec3d, a: Vec3d, bX: Double, bY: Double) = res.to(a.x - bX, a.y - bY)
-//    fun sub(res: Vec3d, aX: Double, aY: Double, b: Vec3d) = res.to(aX - b.x, aY - b.y)
-//
-//    fun mul(res: Vec3d, a: Vec3d, bX: Double, bY: Double) = res.to(a.x * bX, a.y * bY)
-//
-//    fun div(res: Vec3d, a: Vec3d, bX: Double, bY: Double) = res.to(a.x / bX, a.y / bY)
-//    fun div(res: Vec3d, aX: Double, aY: Double, b: Vec3d) = res.to(aX / b.x, aY / b.y)
-//
-//    fun mod(res: Vec3d, a: Vec3d, bX: Double, bY: Double) = res.to(a.x % bX, a.y % bY)
-//
-//    fun mod(res: Vec3d, aX: Double, aY: Double, b: Vec3d) = res.to(aX % b.x, aY % b.y)
-//
-//
-//    fun add(res: Vec3i, a: Vec3i, bX: Int, bY: Int) = res.to(a.x + bX, a.y + bY)
-//
-//    fun sub(res: Vec3i, a: Vec3i, bX: Int, bY: Int) = res.to(a.x - bX, a.y - bY)
-//    fun sub(res: Vec3i, aX: Int, aY: Int, b: Vec3i) = res.to(aX - b.x, aY - b.y)
-//
-//    fun mul(res: Vec3i, a: Vec3i, bX: Int, bY: Int) = res.to(a.x * bX, a.y * bY)
-//
-//    fun div(res: Vec3i, a: Vec3i, bX: Int, bY: Int) = res.to(a.x / bX, a.y / bY)
-//    fun div(res: Vec3i, aX: Int, aY: Int, b: Vec3i) = res.to(aX / b.x, aY / b.y)
-//
-//    fun mod(res: Vec3i, a: Vec3i, bX: Int, bY: Int) = res.to(a.x % bX, a.y % bY)
-//
-//    fun mod(res: Vec3i, aX: Int, aY: Int, b: Vec3i) = res.to(aX % b.x, aY % b.y)
-//
-//    fun and(res: Vec3i, a: Vec3i, bX: Int, bY: Int) = res.to(a.x and bX, a.x and bY)
-//
-//    fun or(res: Vec3i, a: Vec3i, bX: Int, bY: Int) = res.to(a.x or bX, a.x or bY)
-//
-//    fun xor(res: Vec3i, a: Vec3i, bX: Int, bY: Int) = res.to(a.x xor bX, a.x xor bY)
-//
-//    fun shl(res: Vec3i, a: Vec3i, bX: Int, bY: Int) = res.to(a.x shl bX, a.x shl bY)
-//
-//    fun shr(res: Vec3i, a: Vec3i, bX: Int, bY: Int) = res.to(a.x shr bX, a.x shr bY)
-//
-//    fun inv(res: Vec3i, a: Vec3i) = res.to(a.x.inv(), a.y.inv())
-//
-//
-//    fun add(res: Vec3l, a: Vec3l, bX: Long, bY: Long) = res.to(a.x + bX, a.y + bY)
-//
-//    fun sub(res: Vec3l, a: Vec3l, bX: Long, bY: Long) = res.to(a.x - bX, a.y - bY)
-//    fun sub(res: Vec3l, aX: Long, aY: Long, b: Vec3l) = res.to(aX - b.x, aY - b.y)
-//
-//    fun mul(res: Vec3l, a: Vec3l, bX: Long, bY: Long) = res.to(a.x * bX, a.y * bY)
-//
-//    fun div(res: Vec3l, a: Vec3l, bX: Long, bY: Long) = res.to(a.x / bX, a.y / bY)
-//    fun div(res: Vec3l, aX: Long, aY: Long, b: Vec3l) = res.to(aX / b.x, aY / b.y)
-//
-//    fun mod(res: Vec3l, a: Vec3l, bX: Long, bY: Long) = res.to(a.x % bX, a.y % bY)
-//
-//    fun mod(res: Vec3l, aX: Long, aY: Long, b: Vec3l) = res.to(aX % b.x, aY % b.y)
-//
-//    fun and(res: Vec3l, a: Vec3l, bX: Long, bY: Long) = res.to(a.x and bX, a.x and bY)
-//
-//    fun or(res: Vec3l, a: Vec3l, bX: Long, bY: Long) = res.to(a.x or bX, a.x or bY)
-//
-//    fun xor(res: Vec3l, a: Vec3l, bX: Long, bY: Long) = res.to(a.x xor bX, a.x xor bY)
-//
-//    fun shl(res: Vec3l, a: Vec3l, bX: Long, bY: Long) = res.to(a.x shl bX.toInt(), a.x shl bY.toInt())
-//    fun shl(res: Vec3l, a: Vec3l, bX: Int, bY: Int) = res.to(a.x shl bX, a.x shl bY)
-//
-//    fun shr(res: Vec3l, a: Vec3l, bX: Long, bY: Long) = res.to(a.x shr bX.toInt(), a.x shr bY.toInt())
-//    fun shr(res: Vec3l, a: Vec3l, bX: Int, bY: Int) = res.to(a.x shr bX, a.x shr bY)
-//
-//    fun inv(res: Vec3l, a: Vec3l) = res.to(a.x.inv(), a.y.inv())
-//
-//
-//    fun add(res: Vec3s, a: Vec3s, bX: Short, bY: Short) = res.to((a.x + bX).toShort(), (a.y + bY).toShort())
-//    fun add(res: Vec3s, a: Vec3s, bX: Int, bY: Int) = res.to((a.x + bX).toShort(), (a.y + bY).toShort())
-//
-//    fun sub(res: Vec3s, a: Vec3s, bX: Short, bY: Short) = res.to((a.x - bX).toShort(), (a.y - bY).toShort())
-//    fun sub(res: Vec3s, a: Vec3s, bX: Int, bY: Int) = res.to((a.x - bX).toShort(), (a.y - bY).toShort())
-//
-//    fun sub(res: Vec3s, aX: Short, aY: Short, b: Vec3s) = res.to((aX - b.x).toShort(), (aY - b.y).toShort())
-//    fun sub(res: Vec3s, aX: Int, aY: Int, b: Vec3s) = res.to((aX - b.x).toShort(), (aY - b.y).toShort())
-//
-//    fun mul(res: Vec3s, a: Vec3s, bX: Short, bY: Short) = res.to((a.x * bX).toShort(), (a.y * bY).toShort())
-//    fun mul(res: Vec3s, a: Vec3s, bX: Int, bY: Int) = res.to((a.x * bX).toShort(), (a.y * bY).toShort())
-//
-//    fun div(res: Vec3s, a: Vec3s, bX: Short, bY: Short) = res.to((a.x / bX).toShort(), (a.y / bY).toShort())
-//    fun div(res: Vec3s, a: Vec3s, bX: Int, bY: Int) = res.to((a.x / bX).toShort(), (a.y / bY).toShort())
-//
-//    fun div(res: Vec3s, aX: Short, aY: Short, b: Vec3s) = res.to((aX / b.x).toShort(), (aY / b.y).toShort())
-//    fun div(res: Vec3s, aX: Int, aY: Int, b: Vec3s) = res.to((aX / b.x).toShort(), (aY / b.y).toShort())
-//
-//    fun mod(res: Vec3s, a: Vec3s, bX: Short, bY: Short) = res.to((a.x % bX).toShort(), (a.y % bY).toShort())
-//    fun mod(res: Vec3s, a: Vec3s, bX: Int, bY: Int) = res.to((a.x % bX).toShort(), (a.y % bY).toShort())
-//
-//    fun mod(res: Vec3s, aX: Short, aY: Short, b: Vec3s) = res.to((aX % b.x).toShort(), (aY % b.y).toShort())
-//    fun mod(res: Vec3s, aX: Int, aY: Int, b: Vec3s) = res.to((aX % b.x).toShort(), (aY % b.y).toShort())
-//
-//    fun and(res: Vec3s, a: Vec3s, bX: Short, bY: Short) = res.to((a.x.toInt() and bX.toInt()).toShort(), (a.x.toInt() and bY.toInt()).toShort())
-//    fun and(res: Vec3s, a: Vec3s, bX: Int, bY: Int) = res.to((a.x.toInt() and bX).toShort(), (a.x.toInt() and bY).toShort())
-//
-//    fun or(res: Vec3s, a: Vec3s, bX: Short, bY: Short) = res.to((a.x.toInt() or bX.toInt()).toShort(), (a.x.toInt() or bY.toInt()).toShort())
-//    fun or(res: Vec3s, a: Vec3s, bX: Int, bY: Int) = res.to((a.x.toInt() or bX).toShort(), (a.x.toInt() or bY).toShort())
-//
-//    fun xor(res: Vec3s, a: Vec3s, bX: Short, bY: Short) = res.to((a.x.toInt() xor bX.toInt()).toShort(), (a.x.toInt() xor bY.toInt()).toShort())
-//    fun xor(res: Vec3s, a: Vec3s, bX: Int, bY: Int) = res.to((a.x.toInt() xor bX).toShort(), (a.x.toInt() xor bY).toShort())
-//
-//    fun shl(res: Vec3s, a: Vec3s, bX: Short, bY: Short) = res.to((a.x.toInt() shl bX.toInt()).toShort(), (a.x.toInt() shl bY.toInt()).toShort())
-//    fun shl(res: Vec3s, a: Vec3s, bX: Int, bY: Int) = res.to((a.x.toInt() shl bX).toShort(), (a.x.toInt() shl bY).toShort())
-//
-//    fun shr(res: Vec3s, a: Vec3s, bX: Short, bY: Short) = res.to((a.x.toInt() shr bX.toInt()).toShort(), (a.x.toInt() shr bY.toInt()).toShort())
-//    fun shr(res: Vec3s, a: Vec3s, bX: Int, bY: Int) = res.to((a.x.toInt() shr bX).toShort(), (a.x.toInt() shr bY).toShort())
-//
-//    fun inv(res: Vec3s, a: Vec3s) = res.to(a.x.toInt().inv().toShort(), a.x.toInt().inv().toShort())
-//
-//
-//    fun add(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.v + bX.v).toByte(), (a.y.v + bY.v).toByte())
-//    fun add(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte) = res.to((a.x.v + bX).toByte(), (a.y.v + bY).toByte())
-//    fun add(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int) = res.to((a.x.v + bX).toByte(), (a.y.v + bY).toByte())
-//
-//    fun sub(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.v - bX.v).toByte(), (a.y.v - bY.v).toByte())
-//    fun sub(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte) = res.to((a.x.v - bX).toByte(), (a.y.v - bY).toByte())
-//    fun sub(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int) = res.to((a.x.v - bX).toByte(), (a.y.v - bY).toByte())
-//
-//    fun sub(res: Vec3ub, aX: Ubyte, aY: Ubyte, b: Vec3ub) = res.to((aX.v - b.x.v).toByte(), (aY.v - b.y.v).toByte())
-//    fun sub(res: Vec3ub, aX: Byte, aY: Byte, b: Vec3ub) = res.to((aX - b.x.v).toByte(), (aY - b.y.v).toByte())
-//    fun sub(res: Vec3ub, aX: Int, aY: Int, b: Vec3ub) = res.to((aX - b.x.v).toByte(), (aY - b.y.v).toByte())
-//
-//    fun mul(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.v * bX.v).toByte(), (a.y.v * bY.v).toByte())
-//    fun mul(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte) = res.to((a.x.v * bX).toByte(), (a.y.v * bY).toByte())
-//    fun mul(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int) = res.to((a.x.v * bX).toByte(), (a.y.v * bY).toByte())
-//
-//    fun div(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte) = res.to(Integer.divideUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.divideUnsigned(a.y.toInt(), bY.toInt()).toByte())
-//    fun div(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte) = res.to(Integer.divideUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.divideUnsigned(a.y.toInt(), bY.toInt()).toByte())
-//    fun div(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int) = res.to(Integer.divideUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.divideUnsigned(a.y.toInt(), bY.toInt()).toByte())
-//
-//    fun div(res: Vec3ub, aX: Ubyte, aY: Ubyte, b: Vec3ub) = res.to(Integer.divideUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.divideUnsigned(aY.toInt(), b.y.toInt()).toByte())
-//    fun div(res: Vec3ub, aX: Byte, aY: Byte, b: Vec3ub) = res.to(Integer.divideUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.divideUnsigned(aY.toInt(), b.y.toInt()).toByte())
-//    fun div(res: Vec3ub, aX: Int, aY: Int, b: Vec3ub) = res.to(Integer.divideUnsigned(aX, b.x.toInt()).toByte(), Integer.divideUnsigned(aY, b.y.toInt()).toByte())
-//
-//    fun mod(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte) = res.to(Integer.remainderUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.remainderUnsigned(a.y.toInt(), bY.toInt()).toByte())
-//    fun mod(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte) = res.to(Integer.remainderUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.remainderUnsigned(a.y.toInt(), bY.toInt()).toByte())
-//    fun mod(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int) = res.to(Integer.remainderUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.remainderUnsigned(a.y.toInt(), bY.toInt()).toByte())
-//
-//    fun mod(res: Vec3ub, aX: Ubyte, aY: Ubyte, b: Vec3ub) = res.to(Integer.remainderUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.remainderUnsigned(aY.toInt(), b.y.toInt()).toByte())
-//    fun mod(res: Vec3ub, aX: Byte, aY: Byte, b: Vec3ub) = res.to(Integer.remainderUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.remainderUnsigned(aY.toInt(), b.y.toInt()).toByte())
-//    fun mod(res: Vec3ub, aX: Int, aY: Int, b: Vec3ub) = res.to(Integer.remainderUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.remainderUnsigned(aY.toInt(), b.y.toInt()).toByte())
-//
-//    fun and(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.x.toInt() and bY.toInt()).toByte())
-//    fun and(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.x.toInt() and bY.toInt()).toByte())
-//    fun and(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int) = res.to((a.x.toInt() and bX).toByte(), (a.x.toInt() and bY).toByte())
-//
-//    fun or(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.x.toInt() or bY.toInt()).toByte())
-//    fun or(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.x.toInt() or bY.toInt()).toByte())
-//    fun or(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int) = res.to((a.x.toInt() or bX).toByte(), (a.x.toInt() or bY).toByte())
-//
-//    fun xor(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.x.toInt() xor bY.toInt()).toByte())
-//    fun xor(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.x.toInt() xor bY.toInt()).toByte())
-//    fun xor(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int) = res.to((a.x.toInt() xor bX).toByte(), (a.x.toInt() xor bY).toByte())
-//
-//    fun shl(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.x.toInt() shl bY.toInt()).toByte())
-//    fun shl(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.x.toInt() shl bY.toInt()).toByte())
-//    fun shl(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int) = res.to((a.x.toInt() shl bX).toByte(), (a.x.toInt() shl bY).toByte())
-//
-//    fun shr(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.x.toInt() shr bY.toInt()).toByte())
-//    fun shr(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.x.toInt() shr bY.toInt()).toByte())
-//    fun shr(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int) = res.to((a.x.toInt() shr bX).toByte(), (a.x.toInt() shr bY).toByte())
-//
-//    fun inv(res: Vec3ub, a: Vec3ub) = res.to(a.x.toInt().inv().toByte(), a.x.toInt().inv().toByte())
-//
-//
-//    fun add(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint) = res.to(a.x.v + bX.v, a.y.v + bY.v)
-//    fun add(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int) = res.to(a.x.v + bX, a.y.v + bY)
-//
-//    fun sub(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint) = res.to(a.x.v - bX.v, a.y.v - bY.v)
-//    fun sub(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int) = res.to(a.x.v - bX, a.y.v - bY)
-//
-//    fun sub(res: Vec3ui, aX: Uint, aY: Uint, b: Vec3ui) = res.to(aX.v - b.x.v, aY.v - b.y.v)
-//    fun sub(res: Vec3ui, aX: Int, aY: Int, b: Vec3ui) = res.to(aX - b.x.v, aY - b.y.v)
-//
-//    fun mul(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint) = res.to(a.x.v * bX.v, a.y.v * bY.v)
-//    fun mul(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int) = res.to(a.x.v * bX, a.y.v * bY)
-//
-//    fun div(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint) = res.to(Integer.divideUnsigned(a.x.v, bX.v), Integer.divideUnsigned(a.y.v, bY.v))
-//    fun div(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int) = res.to(Integer.divideUnsigned(a.x.v, bX), Integer.divideUnsigned(a.y.v, bY))
-//
-//    fun div(res: Vec3ui, aX: Uint, aY: Uint, b: Vec3ui) = res.to(Integer.divideUnsigned(aX.v, b.x.v), Integer.divideUnsigned(aY.v, b.y.v))
-//    fun div(res: Vec3ui, aX: Int, aY: Int, b: Vec3ui) = res.to(Integer.divideUnsigned(aX, b.x.v), Integer.divideUnsigned(aY, b.y.v))
-//
-//    fun mod(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint) = res.to(Integer.remainderUnsigned(a.x.v, bX.v), Integer.remainderUnsigned(a.y.v, bY.v))
-//    fun mod(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int) = res.to(Integer.remainderUnsigned(a.x.v, bX), Integer.remainderUnsigned(a.y.v, bY))
-//
-//    fun mod(res: Vec3ui, aX: Uint, aY: Uint, b: Vec3ui) = res.to(Integer.remainderUnsigned(aX.v, b.x.v), Integer.remainderUnsigned(aY.v, b.y.v))
-//    fun mod(res: Vec3ui, aX: Int, aY: Int, b: Vec3ui) = res.to(Integer.remainderUnsigned(aX, b.x.v), Integer.remainderUnsigned(aY, b.y.v))
-//
-//    fun and(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint) = res.to(a.x.v and bX.v, a.x.v and bY.v)
-//    fun and(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int) = res.to(a.x.v and bX, a.x.v and bY)
-//
-//    fun or(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint) = res.to(a.x.v or bX.v, a.x.v or bY.v)
-//    fun or(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int) = res.to(a.x.v or bX, a.x.v or bY)
-//
-//    fun xor(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint) = res.to(a.x.v xor bX.v, a.x.v xor bY.v)
-//    fun xor(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int) = res.to(a.x.v xor bX, a.x.v xor bY)
-//
-//    fun shl(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint) = res.to(a.x.v shl bX.v, a.x.v shl bY.v)
-//    fun shl(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int) = res.to(a.x.v shl bX, a.x.v shl bY)
-//
-//    fun shr(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint) = res.to(a.x.v shr bX.v, a.x.v shr bY.v)
-//    fun shr(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int) = res.to(a.x.v shr bX, a.x.v shr bY)
-//
-//    fun inv(res: Vec3ui, a: Vec3ui) = res.to(a.x.v.inv(), a.x.v.inv())
-//
+    fun add(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x + bX).toByte(), (a.y + bY).toByte(), (a.z + bZ).toByte())
+    fun add(res: Vec3b, a: Vec3b, bX: Int, bY: Int, bZ: Int) = res.to((a.x + bX).toByte(), (a.y + bY).toByte(), (a.z + bZ).toByte())
+
+    fun sub(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x - bX).toByte(), (a.y - bY).toByte(), (a.z - bZ).toByte())
+    fun sub(res: Vec3b, a: Vec3b, bX: Int, bY: Int, bZ: Int) = res.to((a.x - bX).toByte(), (a.y - bY).toByte(), (a.z - bZ).toByte())
+
+    fun sub(res: Vec3b, aX: Byte, aY: Byte, aZ: Byte, b: Vec3b) = res.to((aX - b.x).toByte(), (aY - b.y).toByte(), (aZ - b.z).toByte())
+    fun sub(res: Vec3b, aX: Int, aY: Int, aZ: Int, b: Vec3b) = res.to((aX - b.x).toByte(), (aY - b.y).toByte(), (aZ - b.z).toByte())
+
+    fun mul(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x * bX).toByte(), (a.y * bY).toByte(), (a.z * bZ).toByte())
+    fun mul(res: Vec3b, a: Vec3b, bX: Int, bY: Int, bZ: Int) = res.to((a.x * bX).toByte(), (a.y * bY).toByte(), (a.z * bZ).toByte())
+
+    fun div(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x / bX).toByte(), (a.y / bY).toByte(), (a.z / bZ).toByte())
+    fun div(res: Vec3b, a: Vec3b, bX: Int, bY: Int, bZ: Int) = res.to((a.x / bX).toByte(), (a.y / bY).toByte(), (a.z / bZ).toByte())
+
+    fun div(res: Vec3b, aX: Byte, aY: Byte, aZ: Byte, b: Vec3b) = res.to((aX / b.x).toByte(), (aY / b.y).toByte(), (aZ / b.z).toByte())
+    fun div(res: Vec3b, aX: Int, aY: Int, aZ: Int, b: Vec3b) = res.to((aX / b.x).toByte(), (aY / b.y).toByte(), (aZ / b.z).toByte())
+
+    fun mod(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x % bX).toByte(), (a.y % bY).toByte(), (a.z % bZ).toByte())
+    fun mod(res: Vec3b, a: Vec3b, bX: Int, bY: Int, bZ: Int) = res.to((a.x % bX).toByte(), (a.y % bY).toByte(), (a.z % bZ).toByte())
+
+    fun mod(res: Vec3b, aX: Byte, aY: Byte, aZ: Byte, b: Vec3b) = res.to((aX % b.x).toByte(), (aY % b.y).toByte(), (aZ % b.z).toByte())
+    fun mod(res: Vec3b, aX: Int, aY: Int, aZ: Int, b: Vec3b) = res.to((aX % b.x).toByte(), (aY % b.y).toByte(), (aZ % b.z).toByte())
+
+    fun and(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.y.toInt() and bY.toInt()).toByte(), (a.z.toInt() and bZ.toInt()).toByte())
+    fun and(res: Vec3b, a: Vec3b, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() and bX).toByte(), (a.y.toInt() and bY).toByte(), (a.z.toInt() and bZ.toInt()).toByte())
+
+    fun or(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.y.toInt() or bY.toInt()).toByte(), (a.z.toInt() or bZ.toInt()).toByte())
+    fun or(res: Vec3b, a: Vec3b, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() or bX).toByte(), (a.y.toInt() or bY).toByte(), (a.z.toInt() or bZ.toInt()).toByte())
+
+    fun xor(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.y.toInt() xor bY.toInt()).toByte(), (a.z.toInt() xor bZ.toInt()).toByte())
+    fun xor(res: Vec3b, a: Vec3b, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() xor bX).toByte(), (a.y.toInt() xor bY).toByte(), (a.z.toInt() xor bZ.toInt()).toByte())
+
+    fun shl(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.y.toInt() shl bY.toInt()).toByte(), (a.z.toInt() shl bZ.toInt()).toByte())
+    fun shl(res: Vec3b, a: Vec3b, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() shl bX).toByte(), (a.y.toInt() shl bY).toByte(), (a.z.toInt() shl bZ.toInt()).toByte())
+
+    fun shr(res: Vec3b, a: Vec3b, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.y.toInt() shr bY.toInt()).toByte(), (a.z.toInt() shr bZ.toInt()).toByte())
+    fun shr(res: Vec3b, a: Vec3b, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() shr bX).toByte(), (a.y.toInt() shr bY).toByte(), (a.z.toInt() shr bZ.toInt()).toByte())
+
+    fun inv(res: Vec3b, a: Vec3b) = res.to(a.x.toInt().inv().toByte(), a.y.toInt().inv().toByte(), a.z.toInt().inv().toByte())
+
+
+    fun add(res: Vec3d, a: Vec3d, bX: Double, bY: Double, bZ: Double) = res.to(a.x + bX, a.y + bY, a.z + bZ)
+
+    fun sub(res: Vec3d, a: Vec3d, bX: Double, bY: Double, bZ: Double) = res.to(a.x - bX, a.y - bY, a.z - bZ)
+    fun sub(res: Vec3d, aX: Double, aY: Double, aZ: Double, b: Vec3d) = res.to(aX - b.x, aY - b.y, aZ - b.z)
+
+    fun mul(res: Vec3d, a: Vec3d, bX: Double, bY: Double, bZ: Double) = res.to(a.x * bX, a.y * bY, a.z * bZ)
+
+    fun div(res: Vec3d, a: Vec3d, bX: Double, bY: Double, bZ: Double) = res.to(a.x / bX, a.y / bY, a.z / bZ)
+    fun div(res: Vec3d, aX: Double, aY: Double, aZ: Double, b: Vec3d) = res.to(aX / b.x, aY / b.y, aZ / b.z)
+
+    fun mod(res: Vec3d, a: Vec3d, bX: Double, bY: Double, bZ: Double) = res.to(a.x % bX, a.y % bY, a.z % bZ)
+
+    fun mod(res: Vec3d, aX: Double, aY: Double, aZ: Double, b: Vec3d) = res.to(aX % b.x, aY % b.y, aZ % b.z)
+
+
+    fun add(res: Vec3i, a: Vec3i, bX: Int, bY: Int, bZ: Int) = res.to(a.x + bX, a.y + bY, a.z + bZ)
+
+    fun sub(res: Vec3i, a: Vec3i, bX: Int, bY: Int, bZ: Int) = res.to(a.x - bX, a.y - bY, a.z - bZ)
+    fun sub(res: Vec3i, aX: Int, aY: Int, aZ: Int, b: Vec3i) = res.to(aX - b.x, aY - b.y, aZ - b.z)
+
+    fun mul(res: Vec3i, a: Vec3i, bX: Int, bY: Int, bZ: Int) = res.to(a.x * bX, a.y * bY, a.z * bZ)
+
+    fun div(res: Vec3i, a: Vec3i, bX: Int, bY: Int, bZ: Int) = res.to(a.x / bX, a.y / bY, a.z / bZ)
+    fun div(res: Vec3i, aX: Int, aY: Int, aZ: Int, b: Vec3i) = res.to(aX / b.x, aY / b.y, aZ / b.z)
+
+    fun mod(res: Vec3i, a: Vec3i, bX: Int, bY: Int, bZ: Int) = res.to(a.x % bX, a.y % bY, a.z % bZ)
+    fun mod(res: Vec3i, aX: Int, aY: Int, aZ: Int, b: Vec3i) = res.to(aX % b.x, aY % b.y, aZ % b.z)
+
+    fun and(res: Vec3i, a: Vec3i, bX: Int, bY: Int, bZ: Int) = res.to(a.x and bX, a.y and bY, a.z and bZ)
+
+    fun or(res: Vec3i, a: Vec3i, bX: Int, bY: Int, bZ: Int) = res.to(a.x or bX, a.y or bY, a.z or bZ)
+
+    fun xor(res: Vec3i, a: Vec3i, bX: Int, bY: Int, bZ: Int) = res.to(a.x xor bX, a.y xor bY, a.z xor bZ)
+
+    fun shl(res: Vec3i, a: Vec3i, bX: Int, bY: Int, bZ: Int) = res.to(a.x shl bX, a.y shl bY, a.z shl bZ)
+
+    fun shr(res: Vec3i, a: Vec3i, bX: Int, bY: Int, bZ: Int) = res.to(a.x shr bX, a.y shr bY, a.z shr bZ)
+
+    fun inv(res: Vec3i, a: Vec3i) = res.to(a.x.inv(), a.y.inv(), a.z.inv())
+
+
+    fun add(res: Vec3l, a: Vec3l, bX: Long, bY: Long, bZ: Long) = res.to(a.x + bX, a.y + bY, a.z + bZ)
+
+    fun sub(res: Vec3l, a: Vec3l, bX: Long, bY: Long, bZ: Long) = res.to(a.x - bX, a.y - bY, a.z - bZ)
+    fun sub(res: Vec3l, aX: Long, aY: Long, aZ: Long, b: Vec3l) = res.to(aX - b.x, aY - b.y, aZ - b.z)
+
+    fun mul(res: Vec3l, a: Vec3l, bX: Long, bY: Long, bZ: Long) = res.to(a.x * bX, a.y * bY, a.z * bZ)
+
+    fun div(res: Vec3l, a: Vec3l, bX: Long, bY: Long, bZ: Long) = res.to(a.x / bX, a.y / bY, a.z / bZ)
+    fun div(res: Vec3l, aX: Long, aY: Long, aZ: Long, b: Vec3l) = res.to(aX / b.x, aY / b.y, aZ / b.z)
+
+    fun mod(res: Vec3l, a: Vec3l, bX: Long, bY: Long, bZ: Long) = res.to(a.x % bX, a.y % bY, a.z % bZ)
+    fun mod(res: Vec3l, aX: Long, aY: Long, aZ: Long, b: Vec3l) = res.to(aX % b.x, aY % b.y, aZ % b.z)
+
+    fun and(res: Vec3l, a: Vec3l, bX: Long, bY: Long, bZ: Long) = res.to(a.x and bX, a.y and bY, a.z and bZ)
+
+    fun or(res: Vec3l, a: Vec3l, bX: Long, bY: Long, bZ: Long) = res.to(a.x or bX, a.y or bY, a.z or bZ)
+
+    fun xor(res: Vec3l, a: Vec3l, bX: Long, bY: Long, bZ: Long) = res.to(a.x xor bX, a.y xor bY, a.z xor bZ)
+
+    fun shl(res: Vec3l, a: Vec3l, bX: Long, bY: Long, bZ: Long) = res.to(a.x shl bX.toInt(), a.y shl bY.toInt(), a.z shl bZ.toInt())
+    fun shl(res: Vec3l, a: Vec3l, bX: Int, bY: Int, bZ: Int) = res.to(a.x shl bX, a.y shl bY, a.z shl bZ)
+
+    fun shr(res: Vec3l, a: Vec3l, bX: Long, bY: Long, bZ: Long) = res.to(a.x shr bX.toInt(), a.y shr bY.toInt(), a.z shr bZ.toInt())
+    fun shr(res: Vec3l, a: Vec3l, bX: Int, bY: Int, bZ: Int) = res.to(a.x shr bX, a.y shr bY, a.z shr bZ)
+
+    fun inv(res: Vec3l, a: Vec3l) = res.to(a.x.inv(), a.y.inv(), a.z.inv())
+
+
+    fun add(res: Vec3s, a: Vec3s, bX: Short, bY: Short, bZ: Short) = res.to((a.x + bX).toShort(), (a.y + bY).toShort(), (a.z + bZ).toShort())
+    fun add(res: Vec3s, a: Vec3s, bX: Int, bY: Int, bZ: Int) = res.to((a.x + bX).toShort(), (a.y + bY).toShort(), (a.z + bZ).toShort())
+
+    fun sub(res: Vec3s, a: Vec3s, bX: Short, bY: Short, bZ: Short) = res.to((a.x - bX).toShort(), (a.y - bY).toShort(), (a.z - bZ).toShort())
+    fun sub(res: Vec3s, a: Vec3s, bX: Int, bY: Int, bZ: Int) = res.to((a.x - bX).toShort(), (a.y - bY).toShort(), (a.z - bZ).toShort())
+
+    fun sub(res: Vec3s, aX: Short, aY: Short, aZ: Short, b: Vec3s) = res.to((aX - b.x).toShort(), (aY - b.y).toShort(), (aZ - b.z).toShort())
+    fun sub(res: Vec3s, aX: Int, aY: Int, aZ: Int, b: Vec3s) = res.to((aX - b.x).toShort(), (aY - b.y).toShort(), (aZ - b.z).toShort())
+
+    fun mul(res: Vec3s, a: Vec3s, bX: Short, bY: Short, bZ: Short) = res.to((a.x * bX).toShort(), (a.y * bY).toShort(), (a.z * bZ).toShort())
+    fun mul(res: Vec3s, a: Vec3s, bX: Int, bY: Int, bZ: Int) = res.to((a.x * bX).toShort(), (a.y * bY).toShort(), (a.z * bZ).toShort())
+
+    fun div(res: Vec3s, a: Vec3s, bX: Short, bY: Short, bZ: Short) = res.to((a.x / bX).toShort(), (a.y / bY).toShort(), (a.z / bZ).toShort())
+    fun div(res: Vec3s, a: Vec3s, bX: Int, bY: Int, bZ: Int) = res.to((a.x / bX).toShort(), (a.y / bY).toShort(), (a.z / bZ).toShort())
+
+    fun div(res: Vec3s, aX: Short, aY: Short, aZ: Short, b: Vec3s) = res.to((aX / b.x).toShort(), (aY / b.y).toShort(), (aZ / b.z).toShort())
+    fun div(res: Vec3s, aX: Int, aY: Int, aZ: Int, b: Vec3s) = res.to((aX / b.x).toShort(), (aY / b.y).toShort(), (aZ / b.z).toShort())
+
+    fun mod(res: Vec3s, a: Vec3s, bX: Short, bY: Short, bZ: Short) = res.to((a.x % bX).toShort(), (a.y % bY).toShort(), (a.z % bZ).toShort())
+    fun mod(res: Vec3s, a: Vec3s, bX: Int, bY: Int, bZ: Int) = res.to((a.x % bX).toShort(), (a.y % bY).toShort(), (a.z % bZ).toShort())
+
+    fun mod(res: Vec3s, aX: Short, aY: Short, aZ: Short, b: Vec3s) = res.to((aX % b.x).toShort(), (aY % b.y).toShort(), (aZ % b.z).toShort())
+    fun mod(res: Vec3s, aX: Int, aY: Int, aZ: Int, b: Vec3s) = res.to((aX % b.x).toShort(), (aY % b.y).toShort(), (aZ % b.z).toShort())
+
+    fun and(res: Vec3s, a: Vec3s, bX: Short, bY: Short, bZ: Short) = res.to((a.x.toInt() and bX.toInt()).toShort(), (a.y.toInt() and bY.toInt()).toShort(), (a.z.toInt() and bZ.toInt()).toShort())
+    fun and(res: Vec3s, a: Vec3s, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() and bX).toShort(), (a.y.toInt() and bY).toShort(), (a.z.toInt() and bZ).toShort())
+
+    fun or(res: Vec3s, a: Vec3s, bX: Short, bY: Short, bZ: Short) = res.to((a.x.toInt() or bX.toInt()).toShort(), (a.y.toInt() or bY.toInt()).toShort(), (a.z.toInt() or bZ.toInt()).toShort())
+    fun or(res: Vec3s, a: Vec3s, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() or bX).toShort(), (a.y.toInt() or bY).toShort(), (a.z.toInt() or bZ).toShort())
+
+    fun xor(res: Vec3s, a: Vec3s, bX: Short, bY: Short, bZ: Short) = res.to((a.x.toInt() xor bX.toInt()).toShort(), (a.y.toInt() xor bY.toInt()).toShort(), (a.z.toInt() xor bZ.toInt()).toShort())
+    fun xor(res: Vec3s, a: Vec3s, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() xor bX).toShort(), (a.y.toInt() xor bY).toShort(), (a.z.toInt() xor bZ).toShort())
+
+    fun shl(res: Vec3s, a: Vec3s, bX: Short, bY: Short, bZ: Short) = res.to((a.x.toInt() shl bX.toInt()).toShort(), (a.y.toInt() shl bY.toInt()).toShort(), (a.z.toInt() shl bZ.toInt()).toShort())
+    fun shl(res: Vec3s, a: Vec3s, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() shl bX).toShort(), (a.y.toInt() shl bY).toShort(), (a.z.toInt() shl bZ).toShort())
+
+    fun shr(res: Vec3s, a: Vec3s, bX: Short, bY: Short, bZ: Short) = res.to((a.x.toInt() shr bX.toInt()).toShort(), (a.y.toInt() shr bY.toInt()).toShort(), (a.z.toInt() shr bZ.toInt()).toShort())
+    fun shr(res: Vec3s, a: Vec3s, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() shr bX).toShort(), (a.y.toInt() shr bY).toShort(), (a.z.toInt() shr bZ).toShort())
+
+    fun inv(res: Vec3s, a: Vec3s) = res.to(a.x.toInt().inv().toShort(), a.y.toInt().inv().toShort(), a.z.toInt().inv().toShort())
+
+
+    fun add(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte, bZ: Ubyte) = res.to((a.x.v + bX.v).toByte(), (a.y.v + bY.v).toByte(), (a.z.v + bZ.v).toByte())
+    fun add(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.v + bX).toByte(), (a.y.v + bY).toByte(), (a.z.v + bZ).toByte())
+    fun add(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int, bZ: Int) = res.to((a.x.v + bX).toByte(), (a.y.v + bY).toByte(), (a.z.v + bZ).toByte())
+
+    fun sub(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte, bZ: Ubyte) = res.to((a.x.v - bX.v).toByte(), (a.y.v - bY.v).toByte(), (a.z.v - bZ.v).toByte())
+    fun sub(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.v - bX).toByte(), (a.y.v - bY).toByte(), (a.z.v - bZ).toByte())
+    fun sub(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int, bZ: Int) = res.to((a.x.v - bX).toByte(), (a.y.v - bY).toByte(), (a.z.v - bZ).toByte())
+
+    fun sub(res: Vec3ub, aX: Ubyte, aY: Ubyte, aZ: Ubyte, b: Vec3ub) = res.to((aX.v - b.x.v).toByte(), (aY.v - b.y.v).toByte(), (aZ.v - b.z.v).toByte())
+    fun sub(res: Vec3ub, aX: Byte, aY: Byte, aZ: Byte, b: Vec3ub) = res.to((aX - b.x.v).toByte(), (aY - b.y.v).toByte(), (aZ - b.z.toInt()).toByte())
+    fun sub(res: Vec3ub, aX: Int, aY: Int, aZ: Int, b: Vec3ub) = res.to((aX - b.x.v).toByte(), (aY - b.y.v).toByte(), (aZ - b.z.toInt()).toByte())
+
+    fun mul(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte, bZ: Ubyte) = res.to((a.x.v * bX.v).toByte(), (a.y.v * bY.v).toByte(), (a.z.v * bZ.v).toByte())
+    fun mul(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.v * bX).toByte(), (a.y.v * bY).toByte(), (a.z.v * bZ.toInt()).toByte())
+    fun mul(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int, bZ: Int) = res.to((a.x.v * bX).toByte(), (a.y.v * bY).toByte(), (a.z.v * bZ.toInt()).toByte())
+
+    fun div(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte, bZ: Ubyte) = res.to(Integer.divideUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.divideUnsigned(a.y.toInt(), bY.toInt()).toByte(), Integer.divideUnsigned(a.z.toInt(), bZ.toInt()).toByte())
+    fun div(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte, bZ: Byte) = res.to(Integer.divideUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.divideUnsigned(a.y.toInt(), bY.toInt()).toByte(), Integer.divideUnsigned(a.z.toInt(), bZ.toInt()).toByte())
+    fun div(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int, bZ: Int) = res.to(Integer.divideUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.divideUnsigned(a.y.toInt(), bY.toInt()).toByte(), Integer.divideUnsigned(a.z.toInt(), bZ.toInt()).toByte())
+
+    fun div(res: Vec3ub, aX: Ubyte, aY: Ubyte, aZ: Ubyte, b: Vec3ub) = res.to(Integer.divideUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.divideUnsigned(aY.toInt(), b.y.toInt()).toByte(), Integer.divideUnsigned(aZ.toInt(), b.z.toInt()).toByte())
+    fun div(res: Vec3ub, aX: Byte, aY: Byte, aZ: Byte, b: Vec3ub) = res.to(Integer.divideUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.divideUnsigned(aY.toInt(), b.y.toInt()).toByte(), Integer.divideUnsigned(aZ.toInt(), b.z.toInt()).toByte())
+    fun div(res: Vec3ub, aX: Int, aY: Int, aZ: Int, b: Vec3ub) = res.to(Integer.divideUnsigned(aX, b.x.toInt()).toByte(), Integer.divideUnsigned(aY, b.y.toInt()).toByte(), Integer.divideUnsigned(aZ, b.z.toInt()).toByte())
+
+    fun mod(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte, bZ: Ubyte) = res.to(Integer.remainderUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.remainderUnsigned(a.y.toInt(), bY.toInt()).toByte(), Integer.remainderUnsigned(a.z.toInt(), bZ.toInt()).toByte())
+    fun mod(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte, bZ: Byte) = res.to(Integer.remainderUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.remainderUnsigned(a.y.toInt(), bY.toInt()).toByte(), Integer.remainderUnsigned(a.z.toInt(), bZ.toInt()).toByte())
+    fun mod(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int, bZ: Int) = res.to(Integer.remainderUnsigned(a.x.toInt(), bX.toInt()).toByte(), Integer.remainderUnsigned(a.y.toInt(), bY.toInt()).toByte(), Integer.remainderUnsigned(a.z.toInt(), bZ.toInt()).toByte())
+
+    fun mod(res: Vec3ub, aX: Ubyte, aY: Ubyte, aZ: Ubyte, b: Vec3ub) = res.to(Integer.remainderUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.remainderUnsigned(aY.toInt(), b.y.toInt()).toByte(), Integer.remainderUnsigned(aZ.toInt(), b.z.toInt()).toByte())
+    fun mod(res: Vec3ub, aX: Byte, aY: Byte, aZ: Byte, b: Vec3ub) = res.to(Integer.remainderUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.remainderUnsigned(aY.toInt(), b.y.toInt()).toByte(), Integer.remainderUnsigned(aZ.toInt(), b.z.toInt()).toByte())
+    fun mod(res: Vec3ub, aX: Int, aY: Int, aZ: Int, b: Vec3ub) = res.to(Integer.remainderUnsigned(aX.toInt(), b.x.toInt()).toByte(), Integer.remainderUnsigned(aY.toInt(), b.y.toInt()).toByte(), Integer.remainderUnsigned(aZ.toInt(), b.z.toInt()).toByte())
+
+    fun and(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte, bZ: Ubyte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.y.toInt() and bY.toInt()).toByte(), (a.z.toInt() and bZ.toInt()).toByte())
+    fun and(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.toInt() and bX.toInt()).toByte(), (a.y.toInt() and bY.toInt()).toByte(), (a.z.toInt() and bZ.toInt()).toByte())
+    fun and(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() and bX).toByte(), (a.y.toInt() and bY).toByte(), (a.z.toInt() and bZ).toByte())
+
+    fun or(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte, bZ: Ubyte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.y.toInt() or bY.toInt()).toByte(), (a.z.toInt() or bZ.toInt()).toByte())
+    fun or(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.toInt() or bX.toInt()).toByte(), (a.y.toInt() or bY.toInt()).toByte(), (a.z.toInt() or bZ.toInt()).toByte())
+    fun or(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() or bX).toByte(), (a.y.toInt() or bY).toByte(), (a.z.toInt() or bZ).toByte())
+
+    fun xor(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte, bZ: Ubyte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.y.toInt() xor bY.toInt()).toByte(), (a.z.toInt() xor bZ.toInt()).toByte())
+    fun xor(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.toInt() xor bX.toInt()).toByte(), (a.y.toInt() xor bY.toInt()).toByte(), (a.z.toInt() xor bZ.toInt()).toByte())
+    fun xor(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() xor bX).toByte(), (a.y.toInt() xor bY).toByte(), (a.z.toInt() xor bZ).toByte())
+
+    fun shl(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte, bZ: Ubyte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.y.toInt() shl bY.toInt()).toByte(), (a.z.toInt() shl bZ.toInt()).toByte())
+    fun shl(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.toInt() shl bX.toInt()).toByte(), (a.y.toInt() shl bY.toInt()).toByte(), (a.z.toInt() shl bZ.toInt()).toByte())
+    fun shl(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() shl bX).toByte(), (a.y.toInt() shl bY).toByte(), (a.z.toInt() shl bZ).toByte())
+
+    fun shr(res: Vec3ub, a: Vec3ub, bX: Ubyte, bY: Ubyte, bZ: Ubyte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.y.toInt() shr bY.toInt()).toByte(), (a.z.toInt() shr bZ.toInt()).toByte())
+    fun shr(res: Vec3ub, a: Vec3ub, bX: Byte, bY: Byte, bZ: Byte) = res.to((a.x.toInt() shr bX.toInt()).toByte(), (a.y.toInt() shr bY.toInt()).toByte(), (a.z.toInt() shr bZ.toInt()).toByte())
+    fun shr(res: Vec3ub, a: Vec3ub, bX: Int, bY: Int, bZ: Int) = res.to((a.x.toInt() shr bX).toByte(), (a.y.toInt() shr bY).toByte(), (a.z.toInt() shr bZ).toByte())
+
+    fun inv(res: Vec3ub, a: Vec3ub) = res.to(a.x.toInt().inv().toByte(), a.y.toInt().inv().toByte(), a.z.toInt().inv().toByte())
+
+
+    fun add(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint, bZ: Uint) = res.to(a.x.v + bX.v, a.y.v + bY.v, a.z.v + bZ.v)
+    fun add(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int, bZ: Int) = res.to(a.x.v + bX, a.y.v + bY, a.z.v + bZ)
+
+    fun sub(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint, bZ: Uint) = res.to(a.x.v - bX.v, a.y.v - bY.v, a.z.v - bZ.v)
+    fun sub(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int, bZ: Int) = res.to(a.x.v - bX, a.y.v - bY, a.z.v - bZ)
+
+    fun sub(res: Vec3ui, aX: Uint, aY: Uint, aZ: Uint,  b: Vec3ui) = res.to(aX.v - b.x.v, aY.v - b.y.v, aZ.v - b.z.v)
+    fun sub(res: Vec3ui, aX: Int, aY: Int, aZ: Int,  b: Vec3ui) = res.to(aX - b.x.v, aY - b.y.v, aZ - b.z.v)
+
+    fun mul(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint, bZ: Uint) = res.to(a.x.v * bX.v, a.y.v * bY.v, a.z.v * bZ.v)
+    fun mul(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int, bZ: Int) = res.to(a.x.v * bX, a.y.v * bY, a.z.v * bZ)
+
+    fun div(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint, bZ: Uint) = res.to(Integer.divideUnsigned(a.x.v, bX.v), Integer.divideUnsigned(a.y.v, bY.v), Integer.divideUnsigned(a.z.v, bZ.v))
+    fun div(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int, bZ: Int) = res.to(Integer.divideUnsigned(a.x.v, bX), Integer.divideUnsigned(a.y.v, bY), Integer.divideUnsigned(a.z.v, bZ))
+
+    fun div(res: Vec3ui, aX: Uint, aY: Uint, aZ: Uint,  b: Vec3ui) = res.to(Integer.divideUnsigned(aX.v, b.x.v), Integer.divideUnsigned(aY.v, b.y.v), Integer.divideUnsigned(aZ.v, b.z.v))
+    fun div(res: Vec3ui, aX: Int, aY: Int, aZ: Int,  b: Vec3ui) = res.to(Integer.divideUnsigned(aX, b.x.v), Integer.divideUnsigned(aY, b.y.v), Integer.divideUnsigned(aZ, b.z.v))
+
+    fun mod(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint, bZ: Uint) = res.to(Integer.remainderUnsigned(a.x.v, bX.v), Integer.remainderUnsigned(a.y.v, bY.v), Integer.remainderUnsigned(a.z.v, bZ.v))
+    fun mod(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int, bZ: Int) = res.to(Integer.remainderUnsigned(a.x.v, bX), Integer.remainderUnsigned(a.y.v, bY), Integer.remainderUnsigned(a.z.v, bZ))
+
+    fun mod(res: Vec3ui, aX: Uint, aY: Uint, aZ: Uint,  b: Vec3ui) = res.to(Integer.remainderUnsigned(aX.v, b.x.v), Integer.remainderUnsigned(aY.v, b.y.v), Integer.remainderUnsigned(aZ.v, b.z.v))
+    fun mod(res: Vec3ui, aX: Int, aY: Int, aZ: Int,  b: Vec3ui) = res.to(Integer.remainderUnsigned(aX, b.x.v), Integer.remainderUnsigned(aY, b.y.v), Integer.remainderUnsigned(aZ, b.z.v))
+
+    fun and(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint, bZ: Uint) = res.to(a.x.v and bX.v, a.y.v and bY.v, a.z.v and bZ.v)
+    fun and(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int, bZ: Int) = res.to(a.x.v and bX, a.y.v and bY, a.z.v and bZ)
+
+    fun or(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint, bZ: Uint) = res.to(a.x.v or bX.v, a.y.v or bY.v, a.z.v or bZ.v)
+    fun or(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int, bZ: Int) = res.to(a.x.v or bX, a.y.v or bY, a.z.v or bZ)
+
+    fun xor(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint, bZ: Uint) = res.to(a.x.v xor bX.v, a.y.v xor bY.v, a.z.v xor bZ.v)
+    fun xor(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int, bZ: Int) = res.to(a.x.v xor bX, a.y.v xor bY, a.z.v xor bZ)
+
+    fun shl(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint, bZ: Uint) = res.to(a.x.v shl bX.v, a.y.v shl bY.v, a.z.v shl bZ.v)
+    fun shl(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int, bZ: Int) = res.to(a.x.v shl bX, a.y.v shl bY, a.z.v shl bZ)
+
+    fun shr(res: Vec3ui, a: Vec3ui, bX: Uint, bY: Uint, bZ: Uint) = res.to(a.x.v shr bX.v, a.y.v shr bY.v, a.z.v shr bZ.v)
+    fun shr(res: Vec3ui, a: Vec3ui, bX: Int, bY: Int, bZ: Int) = res.to(a.x.v shr bX, a.y.v shr bY, a.z.v shr bZ)
+
+    fun inv(res: Vec3ui, a: Vec3ui) = res.to(a.x.v.inv(), a.y.v.inv(), a.z.v.inv())
+
 //
 //    fun add(res: Vec3ul, a: Vec3ul, bX: Ulong, bY: Ulong) = res.to(a.x.v + bX.v, a.y.v + bY.v)
 //    fun add(res: Vec3ul, a: Vec3ul, bX: Long, bY: Long) = res.to(a.x.v + bX, a.y.v + bY)

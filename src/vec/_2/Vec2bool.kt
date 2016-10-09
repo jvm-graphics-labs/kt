@@ -40,13 +40,15 @@ data class Vec2bool(var x: Boolean = false, var y: Boolean = false) {
 
     // -- Unary arithmetic vecOperators --
 
-    operator fun not(): Vec2bool {
-        x = !x; y = !y; return this
+    operator fun not(): Vec2bool = Vec2bool(x = !x, y = !y)
+
+    fun notAss(): Vec2bool {
+        x = !x
+        y = !y
+        return this
     }
 
     infix inline fun not(res: Vec2bool): Vec2bool {
         res.x = !x; res.y = !y; return this
     }
-
-    fun not_(): Vec2bool = Vec2bool(!x, !y)
 }

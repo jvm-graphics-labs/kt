@@ -57,7 +57,7 @@ data class Vec2b(override var x: Byte = 0, override var y: Byte = 0) : Vec2t<Byt
 
 
     // -- Component accesses --
-    operator fun get(i: Int): Byte = when (i) {0 -> x; else -> y; }
+    operator fun get(i: Int) = when (i) {0 -> x; else -> y; }
 
     operator fun set(i: Int, s: Byte) = when (i) {0 -> x = s; else -> y = s; }
     operator fun set(i: Int, s: Int) = when (i) {0 -> x = s.toByte(); else -> y = s.toByte(); }

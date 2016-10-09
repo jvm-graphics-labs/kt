@@ -56,7 +56,7 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
 
 
     // -- Component accesses --
-    operator fun get(i: Int): Ulong = when (i) {0 -> x; else -> y; }
+    operator fun get(i: Int) = when (i) {0 -> x; else -> y; }
 
     operator fun set(i: Int, s: Ulong) = when (i) {0 -> x.v = s.v; else -> y.v = s.v; }
     operator fun set(i: Int, s: Long) = when (i) {0 -> x.v = s; else -> y.v = s; }
@@ -161,8 +161,8 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
     fun div(bX: Long, bY: Long, res: Vec2ul) = glm.div(res, this, bX, bY)
     fun div(b: Vec2ul, res: Vec2ul) = glm.div(res, this, b.x, b.y)
 
-    operator fun mod(s: Ulong) = glm.mod(Vec2ul(), this, s, s)
-    operator fun mod(s: Long) = glm.mod(Vec2ul(), this, s, s)
+    operator fun mod(b: Ulong) = glm.mod(Vec2ul(), this, b, b)
+    operator fun mod(b: Long) = glm.mod(Vec2ul(), this, b, b)
     operator fun mod(b: Vec2ul) = glm.mod(Vec2ul(), this, b.x, b.y)
 
     fun mod(bX: Ulong, bY: Ulong) = glm.mod(Vec2ul(), this, bX, bY)

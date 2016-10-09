@@ -57,9 +57,10 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
 
 
     // -- Component accesses --
-    operator fun get(i: Int): Short = when (i) {0 -> x; else -> y; }
+    operator fun get(i: Int) = when (i) {0 -> x; else -> y; }
 
     operator fun set(i: Int, s: Short) = when (i) {0 -> x = s; else -> y = s; }
+    operator fun set(i: Int, s: Int) = when (i) {0 -> x = s.toShort(); else -> y = s.toShort(); }
 
 
     // -- Unary arithmetic vecOperators --
@@ -164,8 +165,8 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     fun div(bX: Int, bY: Int, res: Vec2s) = glm.div(res, this, bX, bY)
     fun div(b: Vec2s, res: Vec2s) = glm.div(res, this, b.x, b.y)
 
-    operator fun mod(s: Short) = glm.mod(Vec2s(), this, s, s)
-    operator fun mod(s: Int) = glm.mod(Vec2s(), this, s, s)
+    operator fun mod(b: Short) = glm.mod(Vec2s(), this, b, b)
+    operator fun mod(b: Int) = glm.mod(Vec2s(), this, b, b)
     operator fun mod(b: Vec2s) = glm.mod(Vec2s(), this, b.x, b.y)
 
     fun mod(bX: Short, bY: Short) = glm.mod(Vec2s(), this, bX, bY)

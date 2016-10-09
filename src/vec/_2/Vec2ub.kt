@@ -71,7 +71,7 @@ data class Vec2ub(override var x: Ubyte = Ubyte(0), override var y: Ubyte = Ubyt
 
 
     // -- Component accesses --
-    operator fun get(i: Int): Ubyte = when (i) {0 -> x; else -> y; }
+    operator fun get(i: Int) = when (i) {0 -> x; else -> y; }
 
     operator fun set(i: Int, s: Ubyte) = when (i) {0 -> x.v = s.v; else -> y.v = s.v; }
     operator fun set(i: Int, s: Byte) = when (i) {0 -> x.v = s; else -> y.v = s; }
@@ -177,8 +177,8 @@ data class Vec2ub(override var x: Ubyte = Ubyte(0), override var y: Ubyte = Ubyt
     fun div(bX: Int, bY: Int, res: Vec2ub) = glm.div(res, this, bX, bY)
     fun div(b: Vec2ub, res: Vec2ub) = glm.div(res, this, b.x, b.y)
 
-    operator fun mod(s: Ubyte) = glm.mod(Vec2ub(), this, s, s)
-    operator fun mod(s: Int) = glm.mod(Vec2ub(), this, s, s)
+    operator fun mod(b: Ubyte) = glm.mod(Vec2ub(), this, b, b)
+    operator fun mod(b: Int) = glm.mod(Vec2ub(), this, b, b)
     operator fun mod(b: Vec2ub) = glm.mod(Vec2ub(), this, b.x, b.y)
 
     fun mod(bX: Ubyte, bY: Ubyte) = glm.mod(Vec2ub(), this, bX, bY)

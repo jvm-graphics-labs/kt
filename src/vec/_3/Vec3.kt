@@ -42,7 +42,7 @@ data class Vec3(override var x: Float = 0f, override var y: Float = 0f, override
 
 
     // -- Component accesses --
-    operator fun get(i: Int): Float = when (i) {0 -> x; 1 -> y; else -> z; }
+    operator fun get(i: Int) = when (i) {0 -> x; 1 -> y; else -> z; }
 
     operator fun set(i: Int, s: Float) = when (i) {0 -> x = s; 1 -> y = s; else -> z = s; }
 
@@ -73,86 +73,86 @@ data class Vec3(override var x: Float = 0f, override var y: Float = 0f, override
     operator fun plus(b: Float) = glm.add(Vec3(), this, b, b, b)
     operator fun plus(b: Vec3) = glm.add(Vec3(), this, b.x, b.y, b.z)
 
-    fun add(bX: Float, bY: Float) = glm.add(Vec3(), this, bX, bY, bZ)
+    fun add(bX: Float, bY: Float, bZ: Float) = glm.add(Vec3(), this, bX, bY, bZ)
 
     infix inline fun addAss(b: Float) = glm.add(this, this, b, b, b)
-    fun addAss(bX: Float, bY: Float) = glm.add(this, this, bX, bY, bZ)
+    fun addAss(bX: Float, bY: Float, bZ: Float) = glm.add(this, this, bX, bY, bZ)
     infix inline fun addAss(b: Vec3) = glm.add(this, this, b.x, b.y, b.z)
 
     fun add(b: Float, res: Vec3) = glm.add(res, this, b, b, b)
-    fun add(bX: Float, bY: Float, res: Vec3) = glm.add(res, this, bX, bY, bZ)
+    fun add(bX: Float, bY: Float, bZ: Float, res: Vec3) = glm.add(res, this, bX, bY, bZ)
     fun add(b: Vec3, res: Vec3) = glm.add(res, this, b.x, b.y, b.z)
 
 
     operator fun minus(b: Float) = glm.sub(Vec3(), this, b, b, b)
     operator fun minus(b: Vec3) = glm.sub(Vec3(), this, b.x, b.y, b.z)
 
-    fun sub(bX: Float, bY: Float) = glm.sub(Vec3(), this, bX, bY, bZ)
+    fun sub(bX: Float, bY: Float, bZ: Float) = glm.sub(Vec3(), this, bX, bY, bZ)
 
     infix inline fun subAss(b: Float) = glm.sub(this, this, b, b, b)
-    fun subAss(bX: Float, bY: Float) = glm.sub(this, this, bX, bY, bZ)
+    fun subAss(bX: Float, bY: Float, bZ: Float) = glm.sub(this, this, bX, bY, bZ)
     infix inline fun subAss(b: Vec3) = glm.sub(this, this, b.x, b.y, b.z)
 
     fun sub(b: Float, res: Vec3) = glm.sub(res, this, b, b, b)
-    fun sub(bX: Float, bY: Float, res: Vec3) = glm.sub(res, this, bX, bY, bZ)
+    fun sub(bX: Float, bY: Float, bZ: Float, res: Vec3) = glm.sub(res, this, bX, bY, bZ)
     fun sub(b: Vec3, res: Vec3) = glm.sub(res, this, b.x, b.y, b.z)
 
 
     operator fun times(b: Float) = glm.mul(Vec3(), this, b, b, b)
     operator fun times(b: Vec3) = glm.mul(Vec3(), this, b.x, b.y, b.z)
 
-    fun mul(bX: Float, bY: Float) = glm.mul(Vec3(), this, bX, bY, bZ)
+    fun mul(bX: Float, bY: Float, bZ: Float) = glm.mul(Vec3(), this, bX, bY, bZ)
 
     infix inline fun mulAss(b: Float) = glm.mul(this, this, b, b, b)
-    fun mulAss(bX: Float, bY: Float) = glm.mul(this, this, bX, bY, bZ)
+    fun mulAss(bX: Float, bY: Float, bZ: Float) = glm.mul(this, this, bX, bY, bZ)
     infix inline fun mulAss(b: Vec3) = glm.mul(this, this, b.x, b.y, b.z)
 
     fun mul(b: Float, res: Vec3) = glm.mul(res, this, b, b, b)
-    fun mul(bX: Float, bY: Float, res: Vec3) = glm.mul(res, this, bX, bY, bZ)
+    fun mul(bX: Float, bY: Float, bZ: Float, res: Vec3) = glm.mul(res, this, bX, bY, bZ)
     fun mul(b: Vec3, res: Vec3) = glm.mul(res, this, b.x, b.y, b.z)
 
 
     operator fun div(b: Float) = glm.div(Vec3(), this, b, b, b)
     operator fun div(b: Vec3) = glm.div(Vec3(), this, b.x, b.y, b.z)
 
-    fun div(bX: Float, bY: Float) = glm.div(Vec3(), this, bX, bY, bZ)
+    fun div(bX: Float, bY: Float, bZ: Float) = glm.div(Vec3(), this, bX, bY, bZ)
 
     infix inline fun divAss(b: Float) = glm.div(this, this, b, b, b)
-    fun divAss(bX: Float, bY: Float) = glm.div(this, this, bX, bY, bZ)
+    fun divAss(bX: Float, bY: Float, bZ: Float) = glm.div(this, this, bX, bY, bZ)
     infix inline fun divAss(b: Vec3) = glm.div(this, this, b.x, b.y, b.z)
 
     fun div(b: Float, res: Vec3) = glm.div(res, this, b, b, b)
-    fun div(bX: Float, bY: Float, res: Vec3) = glm.div(res, this, bX, bY, bZ)
+    fun div(bX: Float, bY: Float, bZ: Float, res: Vec3) = glm.div(res, this, bX, bY, bZ)
     fun div(b: Vec3, res: Vec3) = glm.div(res, this, b.x, b.y, b.z)
 
-    operator fun mod(b: Float) = glm.mod(Vec3(), this, b, b)
-    operator fun mod(b: Vec3) = glm.mod(Vec3(), this, b.x, b.y)
+    operator fun mod(b: Float) = glm.mod(Vec3(), this, b, b, b)
+    operator fun mod(b: Vec3) = glm.mod(Vec3(), this, b.x, b.y, b.z)
 
-    fun mod(bX: Float, bY: Float) = glm.mod(Vec3(), this, bX, bY)
+    fun mod(bX: Float, bY: Float, bZ: Float) = glm.mod(Vec3(), this, bX, bY, bZ)
 
-    infix inline fun modAss(b: Float) = glm.mod(this, this, b, b)
-    fun modAss(bX: Float, bY: Float) = glm.mod(this, this, bX, bY)
-    infix inline fun modAss(b: Vec3) = glm.mod(this, this, b.x, b.y)
+    infix inline fun modAss(b: Float) = glm.mod(this, this, b, b, b)
+    fun modAss(bX: Float, bY: Float, bZ: Float) = glm.mod(this, this, bX, bY, bZ)
+    infix inline fun modAss(b: Vec3) = glm.mod(this, this, b.x, b.y, b.z)
 
-    fun mod(b: Float, res: Vec3) = glm.mod(res, this, b, b)
-    fun mod(bX: Float, bY: Float, res: Vec3) = glm.mod(res, this, bX, bY)
-    fun mod(b: Vec3, res: Vec3) = glm.mod(res, this, b.x, b.y)
+    fun mod(b: Float, res: Vec3) = glm.mod(res, this, b, b, b)
+    fun mod(bX: Float, bY: Float, bZ: Float, res: Vec3) = glm.mod(res, this, bX, bY, bZ)
+    fun mod(b: Vec3, res: Vec3) = glm.mod(res, this, b.x, b.y, b.z)
 }
 
 
 // -- Binary arithmetic vecOperators --
 
-operator fun Float.plus(b: Vec3) = glm.add(Vec3(), b, this, this)
-inline infix fun Float.addAss(b: Vec3) = glm.add(b, b, this, this)
+operator fun Float.plus(b: Vec3) = glm.add(Vec3(), b, this, this, this)
+inline infix fun Float.addAss(b: Vec3) = glm.add(b, b, this, this, this)
 
-operator fun Float.minus(b: Vec3) = glm.sub(Vec3(), this, this, b)
-inline infix fun Float.subAss(b: Vec3) = glm.sub(b, this, this, b)
+operator fun Float.minus(b: Vec3) = glm.sub(Vec3(), this, this, this, b)
+inline infix fun Float.subAss(b: Vec3) = glm.sub(b, this, this, this, b)
 
-operator fun Float.times(b: Vec3) = glm.mul(Vec3(), b, this, this)
-inline infix fun Float.mulAss(b: Vec3) = glm.mul(b, b, this, this)
+operator fun Float.times(b: Vec3) = glm.mul(Vec3(), b, this, this, this)
+inline infix fun Float.mulAss(b: Vec3) = glm.mul(b, b, this, this, this)
 
-operator fun Float.div(b: Vec3) = glm.div(Vec3(), this, this, b)
-inline infix fun Float.divAss(b: Vec3) = glm.div(b, this, this, b)
+operator fun Float.div(b: Vec3) = glm.div(Vec3(), this, this, this, b)
+inline infix fun Float.divAss(b: Vec3) = glm.div(b, this, this, this, b)
 
-operator fun Float.mod(b: Vec3) = glm.mod(Vec3(), this, this, b)
-inline infix fun Float.modAss(b: Vec3) = glm.mod(b, this, this, b)
+operator fun Float.mod(b: Vec3) = glm.mod(Vec3(), this, this, this, b)
+inline infix fun Float.modAss(b: Vec3) = glm.mod(b, this, this, this, b)

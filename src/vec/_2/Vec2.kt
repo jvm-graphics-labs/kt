@@ -42,7 +42,7 @@ data class Vec2(override var x: Float = 0f, override var y: Float = 0f) : Vec2t<
 
 
     // -- Component accesses --
-    operator fun get(i: Int): Float = when (i) {0 -> x; else -> y; }
+    operator fun get(i: Int) = when (i) {0 -> x; else -> y; }
 
     operator fun set(i: Int, s: Float) = when (i) {0 -> x = s; else -> y = s; }
 

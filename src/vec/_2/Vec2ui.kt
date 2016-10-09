@@ -56,7 +56,7 @@ data class Vec2ui(override var x: Uint = Uint(0), override var y: Uint = Uint(0)
 
 
     // -- Component accesses --
-    operator fun get(i: Int): Uint = when (i) {0 -> x; else -> y; }
+    operator fun get(i: Int) = when (i) {0 -> x; else -> y; }
 
     operator fun set(i: Int, s: Uint) = when (i) {0 -> x.v = s.v; else -> y.v = s.v; }
     operator fun set(i: Int, s: Int) = when (i) {0 -> x.v = s; else -> y.v = s; }
@@ -161,8 +161,8 @@ data class Vec2ui(override var x: Uint = Uint(0), override var y: Uint = Uint(0)
     fun div(bX: Int, bY: Int, res: Vec2ui) = glm.div(res, this, bX, bY)
     fun div(b: Vec2ui, res: Vec2ui) = glm.div(res, this, b.x, b.y)
 
-    operator fun mod(s: Uint) = glm.mod(Vec2ui(), this, s, s)
-    operator fun mod(s: Int) = glm.mod(Vec2ui(), this, s, s)
+    operator fun mod(b: Uint) = glm.mod(Vec2ui(), this, b, b)
+    operator fun mod(b: Int) = glm.mod(Vec2ui(), this, b, b)
     operator fun mod(b: Vec2ui) = glm.mod(Vec2ui(), this, b.x, b.y)
 
     fun mod(bX: Uint, bY: Uint) = glm.mod(Vec2ui(), this, bX, bY)
