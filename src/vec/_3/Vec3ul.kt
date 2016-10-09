@@ -26,7 +26,7 @@ data class Vec3ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
     }
 
     fun to(s: Ulong): Vec3ul {
-        x.v = s.v; y.v = s.v; return this
+        x.v = s.v; y.v = s.v; z.v = s.v; return this
     }
 
     fun to(s: Long): Vec3ul {
@@ -59,7 +59,7 @@ data class Vec3ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
     operator fun get(i: Int) = when (i) {0 -> x; 1 -> y; else -> z; }
 
     operator fun set(i: Int, s: Ulong) = when (i) {0 -> x.v = s.v; 1 -> y.v = s.v; else -> z.v = s.v; }
-    operator fun set(i: Int, s: Long) = when (i) {0 -> x.v = s; 1 -> x.v = s; else -> z.v = s; }
+    operator fun set(i: Int, s: Long) = when (i) {0 -> x.v = s; 1 -> y.v = s; else -> z.v = s; }
 
 
     // -- Unary arithmetic vecOperators --

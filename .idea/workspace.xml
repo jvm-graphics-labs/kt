@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338facb5-8d0e-4ee7-87f1-b470436b1dbf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_4/Vec4i.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_4/Vec4l.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_4/Vec4s.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_4/Vec4ub.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_4/Vec4ui.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_4/Vec4ul.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vec/_4/Vec4us.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/glm.kt" afterPath="$PROJECT_DIR$/src/glm.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3l.kt" afterPath="$PROJECT_DIR$/src/vec/_3/Vec3l.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4d.kt" afterPath="$PROJECT_DIR$/src/vec/_4/Vec4d.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3ub.kt" afterPath="$PROJECT_DIR$/src/vec/_3/Vec3ub.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3ul.kt" afterPath="$PROJECT_DIR$/src/vec/_3/Vec3ul.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_3/Vec3us.kt" afterPath="$PROJECT_DIR$/src/vec/_3/Vec3us.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vec/_4/Vec4s.kt" afterPath="$PROJECT_DIR$/src/vec/_4/Vec4s.kt" />
     </list>
     <ignored path="kt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +35,8 @@
       <file leaf-file-name="glm.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/glm.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="1294" column="85" selection-start-line="1294" selection-start-column="85" selection-end-line="1294" selection-end-column="85" />
+            <state relative-caret-position="1245">
+              <caret line="1493" column="23" selection-start-line="1493" selection-start-column="23" selection-end-line="1493" selection-end-column="23" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
                 <element signature="n#!!doc;n#glm#0" expanded="false" />
@@ -43,16 +46,6 @@
                 <element signature="n#!!block;n#ushort_operators#0" expanded="false" />
                 <element signature="n#!!block;n#vec2_operators#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vec4s.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vec/_4/Vec4s.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -79,10 +72,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/shaders/hello-triangle.frag" />
-        <option value="$PROJECT_DIR$/src/glm/vec/_2/Vec3t.kt" />
-        <option value="$PROJECT_DIR$/src/glm/vec/_4/Vec4t.kt" />
-        <option value="$PROJECT_DIR$/src/glm/vec/_2/Vec2t.kt" />
         <option value="$PROJECT_DIR$/src/glm/vec/Vec2.kt" />
         <option value="$PROJECT_DIR$/src/glm/vec/generic.kt" />
         <option value="$PROJECT_DIR$/src/glm/vec/_2/Vec2_Test.java" />
@@ -114,9 +103,6 @@
         <option value="$PROJECT_DIR$/src/vec/_2/Vec2s.kt" />
         <option value="$PROJECT_DIR$/src/vec/_3/Vec3s.kt" />
         <option value="$PROJECT_DIR$/src/vec/_3/Vec3ui.kt" />
-        <option value="$PROJECT_DIR$/src/vec/_3/Vec3ub.kt" />
-        <option value="$PROJECT_DIR$/src/vec/_3/Vec3ul.kt" />
-        <option value="$PROJECT_DIR$/src/vec/_3/Vec3us.kt" />
         <option value="$PROJECT_DIR$/src/vec/generic.kt" />
         <option value="$PROJECT_DIR$/src/vec/_3/Vec3.kt" />
         <option value="$PROJECT_DIR$/src/vec/_4/Vec4.kt" />
@@ -128,8 +114,15 @@
         <option value="$PROJECT_DIR$/src/vec/_4/Vec4i.kt" />
         <option value="$PROJECT_DIR$/src/vec/_3/Vec3l.kt" />
         <option value="$PROJECT_DIR$/src/vec/_4/Vec4l.kt" />
-        <option value="$PROJECT_DIR$/src/glm.kt" />
         <option value="$PROJECT_DIR$/src/vec/_4/Vec4s.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_3/Vec3ub.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_4/Vec4ub.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_4/Vec4ui.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_3/Vec3ul.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_4/Vec4ul.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_3/Vec3us.kt" />
+        <option value="$PROJECT_DIR$/src/vec/_4/Vec4us.kt" />
+        <option value="$PROJECT_DIR$/src/glm.kt" />
       </list>
     </option>
   </component>
@@ -214,90 +207,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -733,7 +642,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476010075358</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="upd">
+      <created>1476011773776</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1476011773776</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -813,9 +729,9 @@
     <MESSAGE value="small fix" />
     <MESSAGE value="fixed .BYTES" />
     <MESSAGE value="err" />
-    <MESSAGE value="upd" />
     <MESSAGE value="vec4d begin" />
-    <option name="LAST_COMMIT_MESSAGE" value="vec4d begin" />
+    <MESSAGE value="upd" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -828,16 +744,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3t.kt" />
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4t.kt" />
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Arrays.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="156" column="47" selection-start-line="156" selection-start-column="47" selection-end-line="156" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_2/Vec2_Test.kt" />
     <entry file="file://$PROJECT_DIR$/src/hello.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1042,16 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2ui.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="318" column="66" selection-start-line="9" selection-start-column="0" selection-end-line="318" selection-end-column="66" />
-          <folding>
-            <element signature="e#16#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2ul.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="813">
@@ -1072,51 +968,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_3/Vec3ub.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_3/Vec3ui.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#15#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_3/Vec3ul.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="58" column="69" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
-          <folding>
-            <element signature="e#16#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vec/generic.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="100" selection-start-line="13" selection-start-column="100" selection-end-line="13" selection-end-column="100" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_3/Vec3us.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#46#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1224,18 +1080,108 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_3/Vec3ub.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
+          <folding>
+            <element signature="e#16#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/vec/_4/Vec4s.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+        <state relative-caret-position="813">
+          <caret line="322" column="77" selection-start-line="322" selection-start-column="77" selection-end-line="322" selection-end-column="77" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_4/Vec4ub.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/Vec2ui.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <element signature="e#16#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_3/Vec3ui.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="813">
+          <caret line="317" column="72" selection-start-line="8" selection-start-column="0" selection-end-line="317" selection-end-column="72" />
+          <folding>
+            <element signature="e#15#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_4/Vec4ui.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="285" column="0" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_3/Vec3ul.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_4/Vec4ul.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="255" column="49" selection-start-line="255" selection-start-column="49" selection-end-line="255" selection-end-column="49" />
+          <folding>
+            <element signature="e#16#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_3/Vec3us.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="77" column="106" selection-start-line="77" selection-start-column="106" selection-end-line="77" selection-end-column="106" />
+          <folding>
+            <element signature="e#16#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_4/Vec4us.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/glm.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="1294" column="85" selection-start-line="1294" selection-start-column="85" selection-end-line="1294" selection-end-column="85" />
+        <state relative-caret-position="1245">
+          <caret line="1493" column="23" selection-start-line="1493" selection-start-column="23" selection-end-line="1493" selection-end-column="23" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
             <element signature="n#!!doc;n#glm#0" expanded="false" />

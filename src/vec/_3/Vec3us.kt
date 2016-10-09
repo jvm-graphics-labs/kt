@@ -75,7 +75,7 @@ data class Vec3us(override var x: Ushort = Ushort(0), override var y: Ushort = U
 
     operator fun set(i: Int, s: Ushort) = when (i) {0 -> x.v = s.v; 1 -> y.v = s.v; else -> z.v = s.v; }
     operator fun set(i: Int, s: Short) = when (i) {0 -> x.v = s; 1 -> y.v = s; else -> z.v = s; }
-    operator fun set(i: Int, s: Int) = when (i) {0 -> x.v = s.toShort(); else -> y.v = s.toShort(); }
+    operator fun set(i: Int, s: Int) = when (i) {0 -> x.v = s.toShort(); 1 -> y.v = s.toShort(); else -> z.v = s.toShort(); }
 
 
     // -- Unary arithmetic vecOperators --

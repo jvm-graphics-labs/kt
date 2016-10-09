@@ -35,7 +35,7 @@ data class Vec4s(override var x: Short = 0, override var y: Short = 0, override 
         this.x = x; this.y = y; this.z = z; this.w = w; return this
     }
 
-    fun to(x: Int, y: Int, z: Int): Vec4s {
+    fun to(x: Int, y: Int, z: Int, w: Int): Vec4s {
         this.x = x.toShort(); this.y = y.toShort(); this.z = z.toShort(); this.w = w.toShort(); return this
     }
 

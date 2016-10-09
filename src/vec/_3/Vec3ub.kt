@@ -54,7 +54,7 @@ data class Vec3ub(override var x: Ubyte = Ubyte(0), override var y: Ubyte = Ubyt
     }
 
     fun to(ia: IntArray): Vec3ub {
-        x.v = ia[0].toByte(); y.v = ia[1].toByte(); z.v = ia[3].toByte(); return this
+        x.v = ia[0].toByte(); y.v = ia[1].toByte(); z.v = ia[2].toByte(); return this
     }
 
     fun to(ba: Array<Ubyte>): Vec3ub {
