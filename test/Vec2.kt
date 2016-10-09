@@ -4,8 +4,8 @@
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
-import vec._2.*
-import vec._2.Vec2
+import glm.vec._2.*
+import glm.vec._2.Vec2
 import org.junit.Test as test
 
 class Vec2 {
