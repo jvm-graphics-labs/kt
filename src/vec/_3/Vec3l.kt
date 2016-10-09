@@ -32,7 +32,7 @@ data class Vec3l(override var x: Long = 0, override var y: Long = 0, override va
     }
 
     fun to(ba: LongArray): Vec3l {
-        x = ba[0]; y = ba[1];  z = ba[2]; return this
+        x = ba[0]; y = ba[1]; z = ba[2]; return this
     }
 
     fun to(ba: Array<Long>): Vec3l {
