@@ -21,15 +21,15 @@ data class Vec3(override var x: Float = 0f, override var y: Float = 0f, override
 
 
     fun to(v: Vec3t<Number>): Vec3 {
-        x = v.x.toFloat(); y = v.y.toFloat();z = v.z.toFloat(); return this
+        x = v.x.toFloat(); y = v.y.toFloat(); z = v.z.toFloat(); return this
     }
 
     fun to(s: Float): Vec3 {
-        x = s; y = s;z = s; return this
+        x = s; y = s; z = s; return this
     }
 
-    fun to(x: Float, y: Float): Vec3 {
-        this.x = x; this.y = y;this.z = z; return this
+    fun to(x: Float, y: Float, z: Float): Vec3 {
+        this.x = x; this.y = y; this.z = z; return this
     }
 
     fun to(fa: FloatArray): Vec3 {
@@ -37,7 +37,7 @@ data class Vec3(override var x: Float = 0f, override var y: Float = 0f, override
     }
 
     fun to(fa: Array<Float>): Vec3 {
-        x = fa[0]; y = fa[1];z = fa[2]; return this
+        x = fa[0]; y = fa[1]; z = fa[2]; return this
     }
 
 

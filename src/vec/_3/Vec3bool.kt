@@ -40,15 +40,16 @@ data class Vec3bool(var x: Boolean = false, var y: Boolean = false, var z: Boole
 
     // -- Unary arithmetic vecOperators --
 
-    operator fun not(): Vec3bool = Vec3bool(x = !x, y = !y)
+    operator fun not(): Vec3bool = Vec3bool(x = !x, y = !y, z = !z)
 
     fun notAss(): Vec3bool {
         x = !x
         y = !y
+        z = !z
         return this
     }
 
     infix inline fun not(res: Vec3bool): Vec3bool {
-        res.x = !x; res.y = !y; return this
+        res.x = !x; res.y = !y; res.z = !z; return this
     }
 }

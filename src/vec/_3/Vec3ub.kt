@@ -73,8 +73,8 @@ data class Vec3ub(override var x: Ubyte = Ubyte(0), override var y: Ubyte = Ubyt
     // -- Component accesses --
     operator fun get(i: Int) = when (i) {0 -> x; 1 -> y; else -> z; }
 
-    operator fun set(i: Int, s: Ubyte) = when (i) {0 -> x.v = s.v; 1 -> y.v; else -> z.v = s.v; }
-    operator fun set(i: Int, s: Byte) = when (i) {0 -> x.v = s; 1 -> y.v; else -> z.v = s; }
+    operator fun set(i: Int, s: Ubyte) = when (i) {0 -> x.v = s.v; 1 -> y.v = s.v; else -> z.v = s.v; }
+    operator fun set(i: Int, s: Byte) = when (i) {0 -> x.v = s; 1 -> y.v = s; else -> z.v = s; }
     operator fun set(i: Int, s: Int) = when (i) {0 -> x.v = s.toByte(); 1 -> y.v = s.toByte(); else -> z.v = s.toByte(); }
 
 
