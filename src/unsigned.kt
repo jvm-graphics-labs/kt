@@ -33,6 +33,9 @@ data class Ubyte(var v: Byte = 0) : Number() {
     override fun toShort() = toInt().toShort()
     override fun toByte() = v
 
+    fun toUlong() = Ulong(toInt())
+    fun toUint() = Uint(toInt())
+    fun toUshort() = Ushort(toInt())
 
     operator fun plus(b: Ubyte) = Ubyte(v + b.v)
     operator fun plus(b: Byte) = Ubyte(v + b)
@@ -130,6 +133,9 @@ data class Uint(var v: Int = 0) : Number() {
     override fun toShort() = v.toShort()
     override fun toByte() = v.toByte()
 
+    fun toUlong() = Ulong(toInt())
+    fun toUshort() = Ushort(toInt())
+    fun toUbyte() = Ubyte(toInt())
 
     operator fun plus(b: Uint) = Uint(v + b.v)
     operator fun plus(b: Int) = Uint(v + b)
@@ -203,6 +209,9 @@ data class Ulong(var v: Long = 0) : Number() {
     override fun toShort() = v.toShort()
     override fun toByte() = v.toByte()
 
+    fun toUint() = Uint(toInt())
+    fun toUshort() = Ushort(toInt())
+    fun toUbyte() = Ubyte(toInt())
 
     operator fun plus(b: Ulong) = Ulong(v + b.v)
     operator fun plus(b: Long) = Ulong(v + b)
@@ -274,6 +283,9 @@ data class Ushort(var v: Short = 0) : Number() {
     override fun toShort() = v
     override fun toByte() = v.toByte()
 
+    fun toUlong() = Ulong(toInt())
+    fun toUint() = Uint(toInt())
+    fun toUbyte() = Ubyte(toInt())
 
     operator fun plus(b: Ushort) = Ushort(v + b.v)
     operator fun plus(b: Short) = Ushort(v + b)

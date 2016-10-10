@@ -16,6 +16,7 @@ data class Vec3ub(override var x: Ubyte = Ubyte(0), override var y: Ubyte = Ubyt
 
     constructor(s: Ubyte) : this(s.copy(), s.copy(), s.copy())
     constructor(s: Number) : this(Ubyte(s), Ubyte(s), Ubyte(s))
+    constructor(x: Int, y: Int, z: Int) : this(Ubyte(x), Ubyte(y), Ubyte(z))
 
     constructor(ba: ByteArray) : this(Ubyte(ba[0]), Ubyte(ba[1]), Ubyte(ba[2]))
 
