@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="338facb5-8d0e-4ee7-87f1-b470436b1dbf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gli/dx.kt" afterPath="$PROJECT_DIR$/src/gli/dx.kt" />
     </list>
     <ignored path="kt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,8 +43,8 @@
       <file leaf-file-name="dx.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gli/dx.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="453" column="22" selection-start-line="453" selection-start-column="22" selection-end-line="453" selection-end-column="22" />
+            <state relative-caret-position="882">
+              <caret line="462" column="0" selection-start-line="462" selection-start-column="0" selection-end-line="462" selection-end-column="0" />
               <folding>
                 <element signature="e#13#113#0" expanded="true" />
                 <element signature="n#!!block;n#d3dfmt#0;n#!!block;n#dx#0" expanded="false" />
@@ -742,7 +741,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476043323101</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="upd">
+      <created>1476044275544</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1476044275544</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1258,8 +1264,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gli/dx.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="453" column="22" selection-start-line="453" selection-start-column="22" selection-end-line="453" selection-end-column="22" />
+        <state relative-caret-position="882">
+          <caret line="462" column="0" selection-start-line="462" selection-start-column="0" selection-end-line="462" selection-end-column="0" />
           <folding>
             <element signature="e#13#113#0" expanded="true" />
             <element signature="n#!!block;n#d3dfmt#0;n#!!block;n#dx#0" expanded="false" />
