@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338facb5-8d0e-4ee7-87f1-b470436b1dbf" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gli/gl.kt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/glm/vec/_2/Vec2bool.kt" afterPath="$PROJECT_DIR$/src/glm/vec/bool/Vec2bool.kt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/glm/vec/_3/Vec3bool.kt" afterPath="$PROJECT_DIR$/src/glm/vec/bool/Vec3bool.kt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/glm/vec/_4/Vec4bool.kt" afterPath="$PROJECT_DIR$/src/glm/vec/bool/Vec4bool.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gli/dx.kt" afterPath="$PROJECT_DIR$/src/gli/dx.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gli/gli.kt" afterPath="$PROJECT_DIR$/src/gli/gli.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/glm/vec/_2/Vec2.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/unsigned.kt" afterPath="$PROJECT_DIR$/src/unsigned.kt" />
     </list>
     <ignored path="kt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +34,7 @@
       <file leaf-file-name="glm.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/glm/glm.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
+            <state relative-caret-position="714">
               <caret line="466" column="0" selection-start-line="466" selection-start-column="0" selection-end-line="466" selection-end-column="0" />
               <folding>
                 <element signature="e#13#125#0" expanded="true" />
@@ -46,8 +51,8 @@
       <file leaf-file-name="dx.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gli/dx.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="453" column="0" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="294" column="30" selection-start-line="294" selection-start-column="15" selection-end-line="294" selection-end-column="30" />
               <folding>
                 <element signature="e#13#191#0" expanded="true" />
                 <element signature="n#!!block;n#d3dfmt#0;n#!!block;n#dx#0" expanded="false" />
@@ -62,8 +67,8 @@
       <file leaf-file-name="gli.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gli/gli.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1034">
-              <caret line="658" column="67" selection-start-line="658" selection-start-column="67" selection-end-line="658" selection-end-column="67" />
+            <state relative-caret-position="1309">
+              <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
               <folding>
                 <element signature="e#13#273#0" expanded="true" />
                 <element signature="n#!!doc;n#gli#0" expanded="false" />
@@ -74,51 +79,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="gl.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gli/gl.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="340" column="102" selection-start-line="340" selection-start-column="102" selection-end-line="340" selection-end-column="102" />
+              <folding>
+                <element signature="n#!!block;n#internalFormat#0" expanded="false" />
+                <element signature="n#!!block;n#externalFormat#0" expanded="false" />
+                <element signature="n#!!block;n#typeFormat#0" expanded="false" />
+                <element signature="n#!!block;n#target#0" expanded="false" />
+                <element signature="n#!!block;n#Swizzle#0" expanded="false" />
+                <element signature="n#!!block;n#profile#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Primitives.kt" pinned="false" current-in-tab="false">
         <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Primitives.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
+            <state relative-caret-position="7514">
               <caret line="456" column="21" selection-start-line="456" selection-start-column="21" selection-end-line="456" selection-end-column="21" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ddpf.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gli/ddpf.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="2" selection-end-line="22" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unsigned.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/unsigned.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
-              <caret line="309" column="21" selection-start-line="309" selection-start-column="21" selection-end-line="309" selection-end-column="21" />
-              <folding>
-                <element signature="n#!!doc;n#Ubyte#0" expanded="false" />
-                <element signature="n#!!block;n#Ubyte#0" expanded="false" />
-                <element signature="n#!!doc;n#MIN_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ubyte#0" expanded="false" />
-                <element signature="n#!!doc;n#MAX_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ubyte#0" expanded="false" />
-                <element signature="n#!!block;n#Uint#0" expanded="false" />
-                <element signature="n#!!block;n#Ulong#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vec4ui.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4ui.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="123" selection-start-line="18" selection-start-column="123" selection-end-line="18" selection-end-column="123" />
-              <folding>
-                <element signature="e#20#67#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -145,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/vec/_4/Vec4b.kt" />
         <option value="$PROJECT_DIR$/src/vec/_3/Vec3bool.kt" />
         <option value="$PROJECT_DIR$/src/vec/_4/Vec4bool.kt" />
         <option value="$PROJECT_DIR$/src/vec/_4/Vec4d.kt" />
@@ -162,7 +144,6 @@
         <option value="$PROJECT_DIR$/src/vec/_4/Vec4us.kt" />
         <option value="$PROJECT_DIR$/src/glm.kt" />
         <option value="$PROJECT_DIR$/src/glm/glm.kt" />
-        <option value="$PROJECT_DIR$/src/glm/vec/_2/Vec2.kt" />
         <option value="$PROJECT_DIR$/src/glm/vec/_2/Vec2b.kt" />
         <option value="$PROJECT_DIR$/src/glm/vec/_2/Vec2d.kt" />
         <option value="$PROJECT_DIR$/src/glm/vec/_2/Vec2i.kt" />
@@ -192,9 +173,11 @@
         <option value="$PROJECT_DIR$/src/glm/vec/_4/Vec4d.kt" />
         <option value="$PROJECT_DIR$/src/glm/vec/_4/Vec4ui.kt" />
         <option value="$PROJECT_DIR$/src/gli/ddpf.kt" />
-        <option value="$PROJECT_DIR$/src/gli/dx.kt" />
-        <option value="$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt" />
         <option value="$PROJECT_DIR$/src/unsigned.kt" />
+        <option value="$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt" />
+        <option value="$PROJECT_DIR$/src/glm/vec/_2/Vec2.kt" />
+        <option value="$PROJECT_DIR$/src/gli/dx.kt" />
+        <option value="$PROJECT_DIR$/src/gli/gl.kt" />
         <option value="$PROJECT_DIR$/src/gli/gli.kt" />
       </list>
     </option>
@@ -207,9 +190,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
-    <option name="width" value="1080" />
-    <option name="height" value="1896" />
+    <option name="x" value="-1088" />
+    <option name="y" value="-554" />
+    <option name="width" value="1096" />
+    <option name="height" value="1936" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -236,6 +220,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -296,14 +282,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="glm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="gli" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -312,7 +314,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/NetBeansProjects/java-unofficial-opengl-SDK/javaUnofficialOpenglSDK/dist/javaUnofficialOpenglSDK.jar!/" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Kotlin" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -322,6 +324,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="glm.vec.bool" />
       <recent name="vec._2" />
       <recent name="glm.vec._3" />
     </key>
@@ -331,12 +334,6 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/glm" />
-      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\vec" />
-      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec\_2" />
-      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec._2" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="glm.vec" />
     </key>
@@ -345,6 +342,12 @@
       <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec\_2\bool" />
       <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec\_4" />
       <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\shaders" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/glm" />
+      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\vec" />
+      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec\_2" />
+      <recent name="C:\Users\GBarbieri\IdeaProjects\kt\src\glm\vec._2" />
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.gli.GliKt">
@@ -811,12 +814,11 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1080" height="1896" extended-state="6" />
+    <frame x="-1088" y="-554" width="1096" height="1936" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894015" sideWeight="0.45833334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894015" sideWeight="0.5416667" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -824,18 +826,19 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6298633" sideWeight="0.47685185" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.18981482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="1884" y="975" width="373" height="894" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2495356" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.18981482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="297" y="135" width="314" height="845" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894015" sideWeight="0.45833334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2495356" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -862,7 +865,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -871,77 +874,32 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/vec/op.kt" />
     <entry file="file://$PROJECT_DIR$/src/operators.kt" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/math/BigInteger.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/lang/Number.java" />
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/math/BigInteger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-753">
-          <caret line="604" column="11" selection-start-line="604" selection-start-column="11" selection-end-line="604" selection-end-column="11" />
-          <folding>
-            <element signature="e#22896#22897#0" expanded="false" />
-            <element signature="e#22925#22926#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/math/BigInteger.java" />
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Number.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vec/_2/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/umath.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vec/_2/main.java" />
+    <entry file="file://$PROJECT_DIR$/src/umath.kt" />
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/util/Tuples.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Long.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="1289" column="37" selection-start-line="1289" selection-start-column="23" selection-end-line="1289" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
-          <folding>
-            <element signature="e#48444#48445#0" expanded="false" />
-            <element signature="e#48491#48492#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_2/Vec2bool.kt">
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Long.java" />
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Integer.java" />
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/bool/Vec2bool.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="813">
           <caret line="52" column="5" selection-start-line="42" selection-start-column="4" selection-end-line="52" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,33 +907,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="100" selection-start-line="13" selection-start-column="100" selection-end-line="13" selection-end-column="100" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3bool.kt">
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/bool/Vec3bool.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4bool.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_2/Vec2.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="14" />
-          <folding>
-            <element signature="e#20#55#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -983,10 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="77" column="32" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
-          <folding>
-            <element signature="e#20#55#0" expanded="true" />
-            <element signature="n#!!doc;n#Vec2b#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -994,9 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!doc;n#Vec2d#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1004,7 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1012,9 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!doc;n#Vec2l#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1022,7 +949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,10 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#68#0" expanded="true" />
-            <element signature="n#!!doc;n#Vec2ub#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1041,7 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,7 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1057,7 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1065,13 +984,159 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3b.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3l.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3s.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3d.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3us.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3ul.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3ui.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4b.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4us.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4ul.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4ub.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4s.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4l.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4i.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4d.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4ui.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="123" selection-start-line="18" selection-start-column="123" selection-end-line="18" selection-end-column="123" />
+          <folding>
+            <element signature="e#20#67#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gli/ddpf.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="2" selection-end-line="22" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_2/Vec2.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="67" column="60" selection-start-line="67" selection-start-column="60" selection-end-line="67" selection-end-column="60" />
+          <folding>
+            <element signature="e#20#55#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="85" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/glm/glm.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
+        <state relative-caret-position="714">
           <caret line="466" column="0" selection-start-line="466" selection-start-column="0" selection-end-line="466" selection-end-column="0" />
           <folding>
             <element signature="e#13#125#0" expanded="true" />
@@ -1084,176 +1149,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3b.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="14" />
-          <folding>
-            <element signature="e#20#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3i.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3l.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3s.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3d.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3us.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3ul.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-          <folding>
-            <element signature="e#20#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3ui.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4b.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4us.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4ul.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4ub.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4s.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4l.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4i.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4d.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_4/Vec4ui.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="123" selection-start-line="18" selection-start-column="123" selection-end-line="18" selection-end-column="123" />
-          <folding>
-            <element signature="e#20#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
-          <folding>
-            <element signature="e#20#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gli/dx.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="453" column="0" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
+        <state relative-caret-position="459">
+          <caret line="294" column="30" selection-start-line="294" selection-start-column="15" selection-end-line="294" selection-end-column="30" />
           <folding>
             <element signature="e#13#191#0" expanded="true" />
             <element signature="n#!!block;n#d3dfmt#0;n#!!block;n#dx#0" expanded="false" />
@@ -1264,13 +1163,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/bool/Vec4bool.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/unsigned.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="309" column="21" selection-start-line="309" selection-start-column="21" selection-end-line="309" selection-end-column="21" />
+        <state relative-caret-position="408">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
           <folding>
             <element signature="n#!!doc;n#Ubyte#0" expanded="false" />
-            <element signature="n#!!block;n#Ubyte#0" expanded="false" />
             <element signature="n#!!doc;n#MIN_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ubyte#0" expanded="false" />
             <element signature="n#!!doc;n#MAX_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ubyte#0" expanded="false" />
             <element signature="n#!!block;n#Uint#0" expanded="false" />
@@ -1279,26 +1184,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gli/ddpf.kt">
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3i.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="2" selection-end-line="22" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Primitives.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
+        <state relative-caret-position="7514">
           <caret line="456" column="21" selection-start-line="456" selection-start-column="21" selection-end-line="456" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/gli/gl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="340" column="102" selection-start-line="340" selection-start-column="102" selection-end-line="340" selection-end-column="102" />
+          <folding>
+            <element signature="n#!!block;n#internalFormat#0" expanded="false" />
+            <element signature="n#!!block;n#externalFormat#0" expanded="false" />
+            <element signature="n#!!block;n#typeFormat#0" expanded="false" />
+            <element signature="n#!!block;n#target#0" expanded="false" />
+            <element signature="n#!!block;n#Swizzle#0" expanded="false" />
+            <element signature="n#!!block;n#profile#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gli/gli.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="658" column="67" selection-start-line="658" selection-start-column="67" selection-end-line="658" selection-end-column="67" />
+        <state relative-caret-position="1309">
+          <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
           <folding>
             <element signature="e#13#273#0" expanded="true" />
             <element signature="n#!!doc;n#gli#0" expanded="false" />

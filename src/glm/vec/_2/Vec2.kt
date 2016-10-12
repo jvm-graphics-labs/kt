@@ -14,6 +14,8 @@ data class Vec2(override var x: Float = 0f, override var y: Float = 0f) : Vec2t<
     constructor(v: Vec2t<Number>) : this(v.x.toFloat(), v.y.toFloat())
 
     constructor(s: Float) : this(s, s)
+    constructor(s: Number) : this(s.toFloat(), s.toFloat())
+    constructor(x: Number, y: Number) : this(x.toFloat(), y.toFloat())
 
     constructor(fa: FloatArray) : this(fa[0], fa[1])
 

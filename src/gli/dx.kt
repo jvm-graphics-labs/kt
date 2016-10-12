@@ -16,7 +16,6 @@ import glm.vec._4.Vec4ui
 
 fun GLI_MAKEFOURCC(ch0: Char, ch1: Char, ch2: Char, ch3: Char) = ch0.toInt() or (ch1.toInt() shl 8) or (ch2.toInt() shl 16) or (ch3.toInt() shl 24)
 
-private var counter: Int = 1;
 
 class dx {
 
@@ -295,8 +294,6 @@ class dx {
 
     enum class dxgi_format_gli(val i: Int = counter++) {
 
-        DXGI_FORMAT_UNKNOWN(0),
-
         DXGI_FORMAT_R64_UINT_GLI(),
         DXGI_FORMAT_R64_SINT_GLI(),
         DXGI_FORMAT_R64_FLOAT_GLI(),
@@ -451,6 +448,8 @@ class dx {
     }
 
     companion object {
+
+        private var counter: Int = 1;
 
         init {
             // TODO

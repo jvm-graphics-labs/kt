@@ -398,7 +398,15 @@ class gli() {
     }
 
 
+    companion object {
+
+        init {
+            assert(table.size == FORMAT_COUNT, { System.err.println("GLI error: format descriptor list doesn't match number of supported formats") })
+        }
+    }
+
     inline infix fun Ushort.and(other: Cap) = toInt() and other.i
+    inline infix fun Int.and(other: Cap) = this and other.i
     inline infix fun Int.or(other: Cap) = this or other.i
 
     val table: Array<FormatInfo> = arrayOf(
@@ -636,13 +644,10 @@ class gli() {
             FormatInfo(1, Vec3ub(1, 1, 1), 3, Swizzles(SWIZZLE_RED, SWIZZLE_GREEN, SWIZZLE_BLUE, SWIZZLE_ONE), CAP_PACKED8_BIT or CAP_NORMALIZED_BIT or CAP_UNSIGNED_BIT or CAP_DDS_GLI_EXT_BIT)                                        //FORMAT_RG3B2_UNORM_PACK8,
     )
 
-    init {
-        assert(table.size == FORMAT_COUNT, { System.err.println("GLI error: format descriptor list doesn't match number of supported formats") })
-    }
 
     fun Format.getFormatInfo(): FormatInfo {
         assert(this != FORMAT_INVALID)
-        return table.get(this - FORMAT_FIRST)
+        return table[this - FORMAT_FIRST]
     }
 
     fun Format.bitsPerPixel(): Uint {
@@ -655,6 +660,25 @@ class gli() {
     fun Format.isSrgb() = (getFormatInfo().flags and CAP_COLORSPACE_SRGB_BIT) != 0
 
     fun Format.blockSize() = getFormatInfo().blockSize
+    fun Format.blockExtent() = Vec3i(getFormatInfo().blockExtent)
+    fun Format.componentCount() = getFormatInfo().component
 
-    fun Format.blockExtent() = Vec3i(getFormatInfo().blockExtent.x)
+    fun Format.isUnsigned() = (getFormatInfo().flags and CAP_UNSIGNED_BIT) != 0
+    fun Format.isSigned() = (getFormatInfo().flags and CAP_SIGNED_BIT) != 0
+
+    fun Format.isInteger() = (getFormatInfo().flags and CAP_INTEGER_BIT) != 0
+    fun Format.isSignedInteger() = isInteger() && isUnsigned()
+    fun Format.isUnsignedInteger() = isInteger() && isUnsigned()
+
+    fun Format.isFloat() = (getFormatInfo().flags and CAP_FLOAT_BIT) != 0
+
+    fun Format.isNormalized() = (getFormatInfo().flags and CAP_NORMALIZED_BIT) != 0
+
+    fun Format.isUnorm() = isNormalized() && isUnsigned()
+    fun Format.isSnorm() = isNormalized() && isSigned()
+
+    fun Format.isPacked(): Boolean {
+        val flags = getFormatInfo().flags.toInt()
+        return (flags and CAP_PACKED8_BIT) != 0 || (flags and CAP_PACKED16_BIT) != 0 || (flags and CAP_PACKED32_BIT) != 0;
+    }
 }

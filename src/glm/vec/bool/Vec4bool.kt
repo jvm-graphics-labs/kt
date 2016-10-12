@@ -1,4 +1,4 @@
-package glm.vec._4
+package glm.vec.bool
 
 /**
  * Created by elect on 09/10/16.
