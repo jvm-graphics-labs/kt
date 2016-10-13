@@ -16,7 +16,7 @@ import Ushort
 abstract class glm {
 
     companion object : ubyte_operators, uint_operators, ulong_operators, ushort_operators,
-            vec2_operators, vec3_operators, vec4_operators
+            vec2_operators, vec3_operators, vec4_operators, gli
 }
 
 interface ubyte_operators {
@@ -1531,4 +1531,11 @@ interface vec4_operators {
     fun shr(res: Vec4us, a: Vec4us, bX: Int, bY: Int, bZ: Int, bW: Int) = res.to((a.x.toInt() shr bX).toShort(), (a.y.toInt() shr bY).toShort(), (a.z.toInt() shr bZ).toShort(), (a.w.toInt() shr bW).toShort())
 
     fun inv(res: Vec4us, a: Vec4us) = res.to(a.x.toInt().inv().toShort(), a.y.toInt().inv().toShort(), a.z.toInt().inv().toShort(), a.z.toInt().inv().toShort())
+}
+
+interface gli {
+
+//    fun <T : Number> T.ceilMultiple(a: T, b: T) = a + if (a > 0) -(a % b) else (-a) % b
+//    fun <T : Number> ceilMultiple(a: T, b: T): T = a + if (a > 0) -(a % b) else (-a) % b
+    fun ceilMultiple(a: Int, b: Int) = a + if (a > 0) -(a % b) else (-a) % b
 }

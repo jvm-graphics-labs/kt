@@ -2,6 +2,7 @@ package glm.vec._3
 
 import glm.glm
 import glm.vec.Vec3t
+import glm.vec.bool.Vec3bool
 
 /**
  * Created by elect on 08/10/16.
@@ -11,7 +12,7 @@ data class Vec3i(override var x: Int = 0, override var y: Int = 0, override var 
 
     // -- Explicit basic, conversion b and conversion vector constructors --
 
-    constructor(v: Vec3t<Number>) : this(v.x.toInt(), v.y.toInt(), v.z.toInt())
+    constructor(v: Vec3t<out Number>) : this(v.x.toInt(), v.y.toInt(), v.z.toInt())
 
     constructor(s: Int) : this(s, s, s)
 
@@ -210,6 +211,13 @@ data class Vec3i(override var x: Int = 0, override var y: Int = 0, override var 
     fun invAss() = glm.inv(this, this)
 
     fun inv(res: Vec3i) = glm.inv(res, this)
+
+
+    // TODO
+    fun ceilMultiple(b: Vec3i) = ceilMultiple(b.x, b.y, b.z)
+    fun ceilMultiple(bX: Int, bY: Int, bZ: Int) = Vec3i(glm.ceilMultiple(x, bX), glm.ceilMultiple(y, bY), glm.ceilMultiple(z, bZ))
+
+    fun greaterThan(b: Int) = Vec3bool(x > b, y > b, z > b)
 }
 
 

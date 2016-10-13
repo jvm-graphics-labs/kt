@@ -16,7 +16,7 @@ data class Vec4ui(override var x: Uint = Uint(0), override var y: Uint = Uint(0)
 
     constructor(s: Uint) : this(s.copy(), s.copy(), s.copy(), s.copy())
     constructor(s: Number) : this(Uint(s), Uint(s), Uint(s), Uint(s))
-    constructor(x: Number, y: Number, z: Number, w: Number) : this(Uint(x), Uint(y), Uint(z), Uint(w)) // TODO other constr
+    constructor(x: Number, y: Number, z: Number, w: Number) : this(Uint(x), Uint(y), Uint(z), Uint(w)) // TODO cap constr
 
     constructor(a: ByteArray) : this(Uint(a[0]), Uint(a[1]), Uint(a[2]), Uint(a[3]))
     constructor(a: IntArray) : this(Uint(a[0]), Uint(a[1]), Uint(a[2]), Uint(a[3]))

@@ -52,4 +52,6 @@ data class Vec3bool(var x: Boolean = false, var y: Boolean = false, var z: Boole
     infix inline fun not(res: Vec3bool): Vec3bool {
         res.x = !x; res.y = !y; res.z = !z; return this
     }
+
+    fun all() = x && y && z
 }

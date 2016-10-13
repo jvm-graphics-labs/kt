@@ -1,3 +1,4 @@
+import gli.gli
 import java.math.BigInteger
 
 /**
@@ -78,6 +79,11 @@ data class Ubyte(var v: Byte = 0) : Number() {
     inline infix fun shr(b: Int) = Ubyte(v.toInt() ushr b)
 
     fun inv() = Ubyte(v.toInt().inv())
+
+
+    operator fun compareTo(b: Ubyte) = v.compareTo(b.v)
+    operator fun compareTo(b: Byte) = v.compareTo(b)
+    operator fun compareTo(b: Int) = v.compareTo(b)
 
 
     operator fun Byte.plus(b: Ubyte) = (toInt() + b.toInt()).toByte()
@@ -170,6 +176,10 @@ data class Uint(var v: Int = 0) : Number() {
     fun inv() = Uint(v.inv())
 
 
+    operator fun compareTo(b: Uint) = v.compareTo(b.v)
+    operator fun compareTo(b: Int) = v.compareTo(b)
+
+
     operator fun Int.plus(b: Uint) = (this + b.toInt()).toByte()
     operator fun Int.minus(b: Uint) = (this - b.toInt()).toByte()
     operator fun Int.times(b: Uint) = (this * b.toInt()).toByte()
@@ -243,6 +253,12 @@ data class Ulong(var v: Long = 0) : Number() {
 
     fun inv() = Ulong(v.inv())
 
+
+    operator fun compareTo(b: Ulong) = v.compareTo(b.v)
+    operator fun compareTo(b: Long) = v.compareTo(b)
+    operator fun compareTo(b: Int) = v.compareTo(b)
+
+
     operator fun Long.plus(b: Ulong) = (this + b.toLong()).toByte()
     operator fun Long.minus(b: Ulong) = (this - b.toLong()).toByte()
     operator fun Long.times(b: Ulong) = (this * b.toLong()).toByte()
@@ -251,7 +267,14 @@ data class Ulong(var v: Long = 0) : Number() {
     inline infix fun Long.and(b: Ulong) = (this and b.toLong()).toByte()
     inline infix fun Long.or(b: Ulong) = (this or b.toLong()).toByte()
     inline infix fun Long.xor(b: Ulong) = (this xor b.toLong()).toByte()
-    // no shl, shr, they require int
+
+    inline infix fun Long.and(b: Uint) = (this and b.toLong()).toByte()
+    inline infix fun Long.or(b: Uint) = (this or b.toLong()).toByte()
+    inline infix fun Long.xor(b: Uint) = (this xor b.toLong()).toByte()
+    inline infix fun Long.shl(b: Uint) = (this shl b.toInt()).toByte()
+    inline infix fun Long.shr(b: Uint) = (this shr b.toInt()).toByte()
+
+
 }
 
 data class Ushort(var v: Short = 0) : Number() {
@@ -328,6 +351,9 @@ data class Ushort(var v: Short = 0) : Number() {
     inline infix fun shr(b: Int) = Ushort(v.toInt() ushr b)
 
     fun inv() = Ushort(v.toInt().inv())
+
+
+    operator fun compareTo(b: Ushort) = v.compareTo(b.v)
 
 
     operator fun Short.plus(b: Ushort) = (toInt() + b.toInt()).toShort()
