@@ -251,7 +251,7 @@ class Hello : GLEventListener, KeyListener {
             glBindVertexArray(vertexArrayName.get(0))
 
             glBindBufferBase(
-                    GL_UNIFORM_BUFFER, // target
+                    GL_UNIFORM_BUFFER, // Target
                     Semantic.Uniform.TRANSFORM0, // index
                     bufferName.get(Buffer.TRANSFORM)) // buffer
 

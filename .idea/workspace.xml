@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338facb5-8d0e-4ee7-87f1-b470436b1dbf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gli/gl.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/glm/vec/_2/Vec2bool.kt" afterPath="$PROJECT_DIR$/src/glm/vec/bool/Vec2bool.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/glm/vec/_3/Vec3bool.kt" afterPath="$PROJECT_DIR$/src/glm/vec/bool/Vec3bool.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/glm/vec/_4/Vec4bool.kt" afterPath="$PROJECT_DIR$/src/glm/vec/bool/Vec4bool.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gli/load.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gli/texture.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gli/dx.kt" afterPath="$PROJECT_DIR$/src/gli/dx.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gli/gl.kt" afterPath="$PROJECT_DIR$/src/gli/gl.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gli/gli.kt" afterPath="$PROJECT_DIR$/src/gli/gli.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/glm/vec/_2/Vec2.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_2/Vec2.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt" afterPath="$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hello.kt" afterPath="$PROJECT_DIR$/src/hello.kt" />
     </list>
     <ignored path="kt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,41 +64,37 @@
       <file leaf-file-name="gli.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gli/gli.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#13#273#0" expanded="true" />
                 <element signature="n#!!doc;n#gli#0" expanded="false" />
                 <element signature="n#!!block;n#Format#0;n#!!block;n#gli#0" expanded="false" />
-                <element signature="n#!!block;n#Swizzle#0;n#!!block;n#gli#0" expanded="false" />
+                <element signature="n#!!block;n#Target#0;n#!!block;n#gli#0" expanded="false" />
+                <element signature="n#!!block;n#Cap#0;n#!!block;n#gli#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gl.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gli/gl.kt">
+      <file leaf-file-name="load.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gli/load.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="340" column="102" selection-start-line="340" selection-start-column="102" selection-end-line="340" selection-end-column="102" />
-              <folding>
-                <element signature="n#!!block;n#internalFormat#0" expanded="false" />
-                <element signature="n#!!block;n#externalFormat#0" expanded="false" />
-                <element signature="n#!!block;n#typeFormat#0" expanded="false" />
-                <element signature="n#!!block;n#target#0" expanded="false" />
-                <element signature="n#!!block;n#Swizzle#0" expanded="false" />
-                <element signature="n#!!block;n#profile#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Primitives.kt" pinned="false" current-in-tab="false">
-        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Primitives.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7514">
-              <caret line="456" column="21" selection-start-line="456" selection-start-column="21" selection-end-line="456" selection-end-column="21" />
+            <state relative-caret-position="102">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="texture.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gli/texture.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="8" column="80" selection-start-line="8" selection-start-column="80" selection-end-line="8" selection-end-column="80" />
+              <folding>
+                <element signature="n#!!doc;n#Texture#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,8 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/vec/_3/Vec3bool.kt" />
-        <option value="$PROJECT_DIR$/src/vec/_4/Vec4bool.kt" />
         <option value="$PROJECT_DIR$/src/vec/_4/Vec4d.kt" />
         <option value="$PROJECT_DIR$/src/vec/_4/Vec4i.kt" />
         <option value="$PROJECT_DIR$/src/vec/_3/Vec3l.kt" />
@@ -177,7 +168,9 @@
         <option value="$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt" />
         <option value="$PROJECT_DIR$/src/glm/vec/_2/Vec2.kt" />
         <option value="$PROJECT_DIR$/src/gli/dx.kt" />
+        <option value="$PROJECT_DIR$/src/gli/load.kt" />
         <option value="$PROJECT_DIR$/src/gli/gl.kt" />
+        <option value="$PROJECT_DIR$/src/gli/texture.kt" />
         <option value="$PROJECT_DIR$/src/gli/gli.kt" />
       </list>
     </option>
@@ -283,6 +276,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="glm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vec" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -778,7 +793,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476082061161</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="upd">
+      <created>1476289278979</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1476289278979</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -814,7 +836,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1088" y="-554" width="1096" height="1936" extended-state="7" />
+    <frame x="-1088" y="-554" width="1096" height="1936" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -826,7 +848,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6298633" sideWeight="0.47685185" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.18981482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="297" y="135" width="314" height="845" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.18981482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="1555" y="144" width="314" height="845" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32895458" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -838,7 +861,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2495356" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -874,9 +896,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/operators.kt" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/math/BigInteger.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/lang/Number.java" />
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/math/BigInteger.java" />
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Number.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -900,13 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="813">
           <caret line="52" column="5" selection-start-line="42" selection-start-column="4" selection-end-line="52" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/generic.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="100" selection-start-line="13" selection-start-column="100" selection-end-line="13" selection-end-column="100" />
         </state>
       </provider>
     </entry>
@@ -1127,13 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/glm/glm.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1170,10 +1175,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/gli/load.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3i.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/generic.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="74" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/unsigned.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+        <state relative-caret-position="68">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
           <folding>
             <element signature="n#!!doc;n#Ubyte#0" expanded="false" />
             <element signature="n#!!doc;n#MIN_VALUE#0;n#!!block;n#Companion#0;n#!!block;n#Ubyte#0" expanded="false" />
@@ -1184,45 +1213,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3i.kt">
+    <entry file="file://$PROJECT_DIR$/src/glm/vec/_3/Vec3ub.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Primitives.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7514">
-          <caret line="456" column="21" selection-start-line="456" selection-start-column="21" selection-end-line="456" selection-end-column="21" />
+        <state relative-caret-position="136">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gli/gl.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="340" column="102" selection-start-line="340" selection-start-column="102" selection-end-line="340" selection-end-column="102" />
+        <state relative-caret-position="578">
+          <caret line="326" column="41" selection-start-line="326" selection-start-column="41" selection-end-line="326" selection-end-column="41" />
           <folding>
-            <element signature="n#!!block;n#internalFormat#0" expanded="false" />
-            <element signature="n#!!block;n#externalFormat#0" expanded="false" />
-            <element signature="n#!!block;n#typeFormat#0" expanded="false" />
-            <element signature="n#!!block;n#target#0" expanded="false" />
-            <element signature="n#!!block;n#Swizzle#0" expanded="false" />
-            <element signature="n#!!block;n#profile#0" expanded="false" />
+            <element signature="n#!!block;n#InternalFormat#0;n#!!block;n#gl#0" expanded="false" />
+            <element signature="n#!!block;n#ExternalFormat#0;n#!!block;n#gl#0" expanded="false" />
+            <element signature="n#!!block;n#TypeFormat#0;n#!!block;n#gl#0" expanded="false" />
+            <element signature="n#!!block;n#Profile#0;n#!!block;n#gl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Enum.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-runtime-sources.jar!/kotlin/Primitives.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="371" column="24" selection-start-line="371" selection-start-column="24" selection-end-line="371" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gli/texture.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="80" selection-start-line="8" selection-start-column="80" selection-end-line="8" selection-end-column="80" />
+          <folding>
+            <element signature="n#!!doc;n#Texture#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gli/gli.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="e#13#273#0" expanded="true" />
             <element signature="n#!!doc;n#gli#0" expanded="false" />
             <element signature="n#!!block;n#Format#0;n#!!block;n#gli#0" expanded="false" />
-            <element signature="n#!!block;n#Swizzle#0;n#!!block;n#gli#0" expanded="false" />
+            <element signature="n#!!block;n#Target#0;n#!!block;n#gli#0" expanded="false" />
+            <element signature="n#!!block;n#Cap#0;n#!!block;n#gli#0" expanded="false" />
           </folding>
         </state>
       </provider>

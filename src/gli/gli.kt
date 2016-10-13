@@ -1,27 +1,23 @@
 package gli
 
-import glm.vec._3.Vec3ub
 import Ubyte
-import Ushort
 import Uint
-import gli.gli.Swizzle.*
+import Ushort
 import gli.gli.Cap.*
 import gli.gli.Format.Companion.FORMAT_COUNT
 import gli.gli.Format.Companion.FORMAT_FIRST
 import gli.gli.Format.FORMAT_INVALID
+import gli.gli.Swizzle.*
 import glm.vec._3.Vec3i
+import glm.vec._3.Vec3ub
 
 /**
  * Created by elect on 09/10/16.
  */
 
-
 class gli() {
 
-
     enum class Format {
-
-        FORMAT_INVALID(-1),
 
         FORMAT_UNDEFINED,
 
@@ -266,42 +262,50 @@ class gli() {
 
         FORMAT_RG3B2_UNORM_PACK8;
 
-        constructor() {
-            i = Counter.i++
-        }
+        val i = ordinal
 
-        constructor(format: Format) {
-            i = format.i
-        }
-
-        constructor(i: Int) {
-            this.i = i
-        }
-
-        val i: Int
-
-        private object Counter {
-            var i = 0
-        }
+        operator fun plus(other: Format) = i + other.i
+        operator fun minus(other: Format) = i + other.i
 
         companion object {
             val FORMAT_FIRST = FORMAT_RG4_UNORM_PACK8
             val FORMAT_LAST = FORMAT_RG3B2_UNORM_PACK8
+            val FORMAT_INVALID = -1
             val FORMAT_COUNT = FORMAT_LAST - FORMAT_FIRST + 1
         }
+    }
 
-        operator fun plus(other: Format) = i + other.i
-        operator fun plus(other: Int) = i + other
-        operator fun minus(other: Format) = i - other.i
-        operator fun minus(other: Int) = i - other
-        operator fun times(other: Format) = i * other.i
-        operator fun times(other: Int) = i * other
-        operator fun div(other: Format) = i / other.i
-        operator fun div(other: Int) = i / other
-        operator fun mod(other: Format) = i % other.i
-        operator fun mod(other: Int) = i % other
+    enum class Target {
 
-        fun isValid() = this >= FORMAT_FIRST && this <= FORMAT_LAST
+        TARGET_1D,
+        TARGET_1D_ARRAY,
+        TARGET_2D,
+        TARGET_2D_ARRAY,
+        TARGET_3D,
+        TARGET_RECT,
+        TARGET_RECT_ARRAY,
+        TARGET_CUBE,
+        TARGET_CUBE_ARRAY;
+
+        val i = ordinal
+
+        operator fun plus(other: Target) = i + other.i
+        operator fun minus(other: Target) = i - other.i
+
+        companion object {
+            val TARGET_FIRST = TARGET_1D
+            val TARGET_LAST = TARGET_CUBE_ARRAY
+            val TARGET_COUNT = TARGET_LAST - TARGET_FIRST + 1
+            val TARGET_INVALID = -1
+        }
+
+        fun isTarget1d() = this == TARGET_1D || this == TARGET_1D_ARRAY
+
+        fun isTargetArray() = this == TARGET_1D || this == TARGET_2D || this == TARGET_3D
+
+        fun isTargetCube() = this == TARGET_CUBE || this == TARGET_CUBE_ARRAY
+
+        fun isTargetRect() = this == TARGET_RECT || this == TARGET_RECT_ARRAY
     }
 
     enum class Swizzle {
@@ -311,47 +315,19 @@ class gli() {
         SWIZZLE_BLUE,
         SWIZZLE_ALPHA,
         SWIZZLE_ZERO,
-        SWIZZLE_ONE,
+        SWIZZLE_ONE;
 
-        SWIZZLE_COUNT(SWIZZLE_LAST - SWIZZLE_FIRST + 1);
-
-        constructor() {
-            i = Counter.i++
-        }
-
-        constructor(swizzle: Swizzle) {
-            i = swizzle.i
-        }
-
-        constructor(i: Int) {
-            this.i = i
-        }
-
-        val i: Int
-
-        private object Counter {
-            var i = 0
-        }
+        val i = ordinal
 
         companion object {
             val SWIZZLE_FIRST = SWIZZLE_RED
             val SWIZZLE_CHANNEL_FIRST = SWIZZLE_RED
             val SWIZZLE_CHANNEL_LAST = SWIZZLE_ALPHA
             val SWIZZLE_LAST = SWIZZLE_ONE
+            val SWIZZLE_COUNT = SWIZZLE_LAST - SWIZZLE_FIRST + 1
         }
 
-        operator fun plus(other: Swizzle) = i + other.i
-        operator fun plus(other: Int) = i + other
-        operator fun minus(other: Swizzle) = i - other.i
-        operator fun minus(other: Int) = i - other
-        operator fun times(other: Swizzle) = i * other.i
-        operator fun times(other: Int) = i * other
-        operator fun div(other: Swizzle) = i / other.i
-        operator fun div(other: Int) = i / other
-        operator fun mod(other: Swizzle) = i % other.i
-        operator fun mod(other: Int) = i % other
-
-        fun Swizzle.isChannel() = this >= SWIZZLE_CHANNEL_FIRST && this <= SWIZZLE_CHANNEL_LAST
+        fun isChannel() = this >= SWIZZLE_CHANNEL_FIRST && this <= SWIZZLE_CHANNEL_LAST
     }
 
     enum class Cap(val i: Int) {
