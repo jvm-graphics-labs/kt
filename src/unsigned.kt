@@ -5,6 +5,17 @@ import java.math.BigInteger
  * Created by GBarbieri on 06.10.2016.
  */
 
+class Umath {
+
+    companion object {
+
+        operator fun Byte.div(b: Byte) = (((toInt() + Ubyte.MAX_VALUE) % Ubyte.MAX_VALUE) + b.toInt()).toByte()
+        operator fun Short.div(b: Short) = (((toInt() + Ushort.MAX_VALUE) % Ushort.MAX_VALUE) + b.toInt()).toByte()
+        operator fun Int.div(b: Short) = (((toInt() + Ushort.MAX_VALUE) % Ushort.MAX_VALUE) + b.toInt()).toByte()
+
+    }
+}
+
 data class Ubyte(var v: Byte = 0) : Number() {
 
     companion object {
@@ -50,12 +61,12 @@ data class Ubyte(var v: Byte = 0) : Number() {
     operator fun times(b: Byte) = Ubyte(v * b)
     operator fun times(b: Int) = Ubyte(v * b)
 
-    operator fun div(b: Ubyte) = Ubyte(Integer.divideUnsigned(v.toInt(), b.toInt()))
-    operator fun div(b: Byte) = Ubyte(Integer.divideUnsigned(v.toInt(), b.toInt()))
-    operator fun div(b: Int) = Ubyte(Integer.divideUnsigned(v.toInt(), b))
+    operator fun div(b: Ubyte) = Ubyte(toInt() / b.toInt())
+    operator fun div(b: Byte) = Ubyte(toInt() / b.toInt())
+    operator fun div(b: Int) = Ubyte(Integer.divideUnsigned(toInt(), b))
 
-    operator fun mod(b: Ubyte) = Ubyte(Integer.remainderUnsigned(v.toInt(), b.toInt()))
-    operator fun mod(b: Byte) = Ubyte(Integer.remainderUnsigned(v.toInt(), b.toInt()))
+    operator fun mod(b: Ubyte) = Ubyte(toInt() / b.toInt())
+    operator fun mod(b: Byte) = Ubyte(toInt() / b.toInt())
     operator fun mod(b: Int) = Ubyte(Integer.remainderUnsigned(v.toInt(), b))
 
     inline infix fun and(b: Ubyte) = Ubyte(v.toInt() and b.toInt())
@@ -192,7 +203,7 @@ data class Uint(var v: Int = 0) : Number() {
     inline infix fun Int.shr(b: Uint) = (this shr b.toInt()).toByte()
 }
 
-data class Ulong(var v: Long = 0) : Number() {
+data class Ulong(var v: Long = 0) : Number(), Comparable<Ulong> {
 
     companion object {
         /**
@@ -222,6 +233,9 @@ data class Ulong(var v: Long = 0) : Number() {
     fun toUint() = Uint(toInt())
     fun toUshort() = Ushort(toInt())
     fun toUbyte() = Ubyte(toInt())
+
+    operator fun inc() = Ulong(v + 1)
+    operator fun dec() = Ulong(v - 1)
 
     operator fun plus(b: Ulong) = Ulong(v + b.v)
     operator fun plus(b: Long) = Ulong(v + b)
@@ -254,7 +268,7 @@ data class Ulong(var v: Long = 0) : Number() {
     fun inv() = Ulong(v.inv())
 
 
-    operator fun compareTo(b: Ulong) = v.compareTo(b.v)
+    override operator fun compareTo(b: Ulong) = v.compareTo(b.v)
     operator fun compareTo(b: Long) = v.compareTo(b)
     operator fun compareTo(b: Int) = v.compareTo(b)
 
@@ -274,7 +288,24 @@ data class Ulong(var v: Long = 0) : Number() {
     inline infix fun Long.shl(b: Uint) = (this shl b.toInt()).toByte()
     inline infix fun Long.shr(b: Uint) = (this shr b.toInt()).toByte()
 
+    operator fun rangeTo(b: Ulong) = UlongRange(this, b)
 
+    class UlongRange(override val start: Ulong, override val endInclusive: Ulong): ClosedRange<Ulong>, Iterable<Ulong> {
+
+        override fun iterator(): Iterator<Ulong> = UlongIterator(this)
+
+        override fun contains(value: Ulong) = start <= value && value <= endInclusive
+    }
+
+    class UlongIterator(val ulongRange: UlongRange): Iterator<Ulong> {
+        var current = ulongRange.start
+        override fun next(): Ulong {
+            val result = current
+            current++
+            return result
+        }
+        override fun hasNext() = current <= ulongRange.endInclusive
+    }
 }
 
 data class Ushort(var v: Short = 0) : Number() {
