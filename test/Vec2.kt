@@ -6,11 +6,11 @@ import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import glm.vec._2.*
 import glm.vec._2.Vec2
-import org.junit.Test as test
+import org.junit.Test
 
 class Vec2 {
 
-    @test fun operators() {
+    @Test fun operators() {
 
         run {
             var a = Vec2(1f)
