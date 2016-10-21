@@ -2,7 +2,7 @@ package glm.vec._2
 
 import glm.glm
 import glm.vec.Vec2t
-import Ulong
+import main.Ulong
 
 /**
  * Created by elect on 08/10/16.
@@ -90,11 +90,11 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
     fun add(bX: Ulong, bY: Ulong) = glm.add(Vec2ul(), this, bX, bY)
     fun add(bX: Long, bY: Long) = glm.add(Vec2ul(), this, bX, bY)
 
-    infix inline fun addAss(b: Ulong) = glm.add(this, this, b, b)
-    infix inline fun addAss(b: Long) = glm.add(this, this, b, b)
+    infix fun addAss(b: Ulong) = glm.add(this, this, b, b)
+    infix fun addAss(b: Long) = glm.add(this, this, b, b)
     fun addAss(bX: Ulong, bY: Ulong) = glm.add(this, this, bX, bY)
     fun addAss(bX: Long, bY: Long) = glm.add(this, this, bX, bY)
-    infix inline fun addAss(b: Vec2ul) = glm.add(this, this, b.x, b.y)
+    infix fun addAss(b: Vec2ul) = glm.add(this, this, b.x, b.y)
 
     fun add(b: Ulong, res: Vec2ul) = glm.add(res, this, b, b)
     fun add(b: Long, res: Vec2ul) = glm.add(res, this, b, b)
@@ -110,11 +110,11 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
     fun sub(bX: Ulong, bY: Ulong) = glm.sub(Vec2ul(), this, bX, bY)
     fun sub(bX: Long, bY: Long) = glm.sub(Vec2ul(), this, bX, bY)
 
-    infix inline fun subAss(b: Ulong) = glm.sub(this, this, b, b)
-    infix inline fun subAss(b: Long) = glm.sub(this, this, b, b)
+    infix fun subAss(b: Ulong) = glm.sub(this, this, b, b)
+    infix fun subAss(b: Long) = glm.sub(this, this, b, b)
     fun subAss(bX: Ulong, bY: Ulong) = glm.sub(this, this, bX, bY)
     fun subAss(bX: Long, bY: Long) = glm.sub(this, this, bX, bY)
-    infix inline fun subAss(b: Vec2ul) = glm.sub(this, this, b.x, b.y)
+    infix fun subAss(b: Vec2ul) = glm.sub(this, this, b.x, b.y)
 
     fun sub(b: Ulong, res: Vec2ul) = glm.sub(res, this, b, b)
     fun sub(b: Long, res: Vec2ul) = glm.sub(res, this, b, b)
@@ -130,11 +130,11 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
     fun mul(bX: Ulong, bY: Ulong) = glm.mul(Vec2ul(), this, bX, bY)
     fun mul(bX: Long, bY: Long) = glm.mul(Vec2ul(), this, bX, bY)
 
-    infix inline fun mulAss(b: Ulong) = glm.mul(this, this, b, b)
-    infix inline fun mulAss(b: Long) = glm.mul(this, this, b, b)
+    infix fun mulAss(b: Ulong) = glm.mul(this, this, b, b)
+    infix fun mulAss(b: Long) = glm.mul(this, this, b, b)
     fun mulAss(bX: Ulong, bY: Ulong) = glm.mul(this, this, bX, bY)
     fun mulAss(bX: Long, bY: Long) = glm.mul(this, this, bX, bY)
-    infix inline fun mulAss(b: Vec2ul) = glm.mul(this, this, b.x, b.y)
+    infix fun mulAss(b: Vec2ul) = glm.mul(this, this, b.x, b.y)
 
     fun mul(b: Ulong, res: Vec2ul) = glm.mul(res, this, b, b)
     fun mul(b: Long, res: Vec2ul) = glm.mul(res, this, b, b)
@@ -150,11 +150,11 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
     fun div(bX: Ulong, bY: Ulong) = glm.div(Vec2ul(), this, bX, bY)
     fun div(bX: Long, bY: Long) = glm.div(Vec2ul(), this, bX, bY)
 
-    infix inline fun divAss(b: Ulong) = glm.div(this, this, b, b)
-    infix inline fun divAss(b: Long) = glm.div(this, this, b, b)
+    infix fun divAss(b: Ulong) = glm.div(this, this, b, b)
+    infix fun divAss(b: Long) = glm.div(this, this, b, b)
     fun divAss(bX: Ulong, bY: Ulong) = glm.div(this, this, bX, bY)
     fun divAss(bX: Long, bY: Long) = glm.div(this, this, bX, bY)
-    infix inline fun divAss(b: Vec2ul) = glm.div(this, this, b.x, b.y)
+    infix fun divAss(b: Vec2ul) = glm.div(this, this, b.x, b.y)
 
     fun div(b: Ulong, res: Vec2ul) = glm.div(res, this, b, b)
     fun div(b: Long, res: Vec2ul) = glm.div(res, this, b, b)
@@ -169,11 +169,11 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
     fun mod(bX: Ulong, bY: Ulong) = glm.mod(Vec2ul(), this, bX, bY)
     fun mod(bX: Long, bY: Long) = glm.mod(Vec2ul(), this, bX, bY)
 
-    infix inline fun modAss(b: Ulong) = glm.mod(this, this, b, b)
-    infix inline fun modAss(b: Long) = glm.mod(this, this, b, b)
+    infix fun modAss(b: Ulong) = glm.mod(this, this, b, b)
+    infix fun modAss(b: Long) = glm.mod(this, this, b, b)
     fun modAss(bX: Ulong, bY: Ulong) = glm.mod(this, this, bX, bY)
     fun modAss(bX: Long, bY: Long) = glm.mod(this, this, bX, bY)
-    infix inline fun modAss(b: Vec2ul) = glm.mod(this, this, b.x, b.y)
+    infix fun modAss(b: Vec2ul) = glm.mod(this, this, b.x, b.y)
 
     fun mod(b: Ulong, res: Vec2ul) = glm.mod(res, this, b, b)
     fun mod(b: Long, res: Vec2ul) = glm.mod(res, this, b, b)
@@ -183,17 +183,17 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
 
     // -- Unary bit vecOperators --
 
-    inline infix fun and(b: Ulong) = glm.and(Vec2ul(), this, b, b)
-    inline infix fun and(b: Long) = glm.and(Vec2ul(), this, b, b)
+    infix fun and(b: Ulong) = glm.and(Vec2ul(), this, b, b)
+    infix fun and(b: Long) = glm.and(Vec2ul(), this, b, b)
     fun and(bX: Ulong, bY: Ulong) = glm.and(Vec2ul(), this, bX, bY)
     fun and(bX: Long, bY: Long) = glm.and(Vec2ul(), this, bX, bY)
     fun and(b: Vec2ul) = glm.and(Vec2ul(), this, b.x, b.y)
 
-    infix inline fun andAss(b: Ulong) = glm.and(this, this, b, b)
-    infix inline fun andAss(b: Long) = glm.and(this, this, b, b)
+    infix fun andAss(b: Ulong) = glm.and(this, this, b, b)
+    infix fun andAss(b: Long) = glm.and(this, this, b, b)
     fun andAss(bX: Ulong, bY: Ulong) = glm.and(this, this, bX, bY)
     fun andAss(bX: Long, bY: Long) = glm.and(this, this, bX, bY)
-    infix inline fun andAss(b: Vec2ul) = glm.and(this, this, b.x, b.y)
+    infix fun andAss(b: Vec2ul) = glm.and(this, this, b.x, b.y)
 
     fun and(b: Ulong, res: Vec2ul) = glm.and(res, this, b, b)
     fun and(b: Long, res: Vec2ul) = glm.and(res, this, b, b)
@@ -202,17 +202,17 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
     fun and(b: Vec2ul, res: Vec2ul) = glm.and(res, this, b.x, b.y)
 
 
-    inline infix fun or(b: Ulong) = glm.or(Vec2ul(), this, b, b)
-    inline infix fun or(b: Long) = glm.or(Vec2ul(), this, b, b)
+    infix fun or(b: Ulong) = glm.or(Vec2ul(), this, b, b)
+    infix fun or(b: Long) = glm.or(Vec2ul(), this, b, b)
     fun or(bX: Ulong, bY: Ulong) = glm.or(Vec2ul(), this, bX, bY)
     fun or(bX: Long, bY: Long) = glm.or(Vec2ul(), this, bX, bY)
     fun or(b: Vec2ul) = glm.or(Vec2ul(), this, b.x, b.y)
 
-    infix inline fun orAss(b: Ulong) = glm.or(this, this, b, b)
-    infix inline fun orAss(b: Long) = glm.or(this, this, b, b)
+    infix fun orAss(b: Ulong) = glm.or(this, this, b, b)
+    infix fun orAss(b: Long) = glm.or(this, this, b, b)
     fun orAss(bX: Ulong, bY: Ulong) = glm.or(this, this, bX, bY)
     fun orAss(bX: Long, bY: Long) = glm.or(this, this, bX, bY)
-    infix inline fun orAss(b: Vec2ul) = glm.or(this, this, b.x, b.y)
+    infix fun orAss(b: Vec2ul) = glm.or(this, this, b.x, b.y)
 
     fun or(b: Ulong, res: Vec2ul) = glm.or(res, this, b, b)
     fun or(b: Long, res: Vec2ul) = glm.or(res, this, b, b)
@@ -221,17 +221,17 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
     fun or(b: Vec2ul, res: Vec2ul) = glm.or(res, this, b.x, b.y)
 
 
-    inline infix fun xor(b: Ulong) = glm.xor(Vec2ul(), this, b, b)
-    inline infix fun xor(b: Long) = glm.xor(Vec2ul(), this, b, b)
+    infix fun xor(b: Ulong) = glm.xor(Vec2ul(), this, b, b)
+    infix fun xor(b: Long) = glm.xor(Vec2ul(), this, b, b)
     fun xor(bX: Ulong, bY: Ulong) = glm.xor(Vec2ul(), this, bX, bY)
     fun xor(bX: Long, bY: Long) = glm.xor(Vec2ul(), this, bX, bY)
     fun xor(b: Vec2ul) = glm.xor(Vec2ul(), this, b.x, b.y)
 
-    infix inline fun xorAss(b: Ulong) = glm.xor(this, this, b, b)
-    infix inline fun xorAss(b: Long) = glm.xor(this, this, b, b)
+    infix fun xorAss(b: Ulong) = glm.xor(this, this, b, b)
+    infix fun xorAss(b: Long) = glm.xor(this, this, b, b)
     fun xorAss(bX: Ulong, bY: Ulong) = glm.xor(this, this, bX, bY)
     fun xorAss(bX: Long, bY: Long) = glm.xor(this, this, bX, bY)
-    infix inline fun xorAss(b: Vec2ul) = glm.xor(this, this, b.x, b.y)
+    infix fun xorAss(b: Vec2ul) = glm.xor(this, this, b.x, b.y)
 
     fun xor(b: Ulong, res: Vec2ul) = glm.xor(res, this, b, b)
     fun xor(b: Long, res: Vec2ul) = glm.xor(res, this, b, b)
@@ -240,20 +240,20 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
     fun xor(b: Vec2ul, res: Vec2ul) = glm.xor(res, this, b.x, b.y)
 
 
-    inline infix fun shl(b: Int) = glm.shl(Vec2ul(), this, b, b)
+    infix fun shl(b: Int) = glm.shl(Vec2ul(), this, b, b)
     fun shl(bX: Int, bY: Int) = glm.shl(Vec2ul(), this, bX, bY)
 
-    infix inline fun shlAss(b: Int) = glm.shl(this, this, b, b)
+    infix fun shlAss(b: Int) = glm.shl(this, this, b, b)
     fun shlAss(bX: Int, bY: Int) = glm.shl(this, this, bX, bY)
 
     fun shl(b: Int, res: Vec2ul) = glm.shl(res, this, b, b)
     fun shl(bX: Int, bY: Int, res: Vec2ul) = glm.shl(res, this, bX, bY)
 
 
-    inline infix fun shr(b: Int) = glm.shr(Vec2ul(), this, b, b)
+    infix fun shr(b: Int) = glm.shr(Vec2ul(), this, b, b)
     fun shr(bX: Int, bY: Int) = glm.shr(Vec2ul(), this, bX, bY)
 
-    infix inline fun shrAss(b: Int) = glm.shr(this, this, b, b)
+    infix fun shrAss(b: Int) = glm.shr(this, this, b, b)
     fun shrAss(bX: Int, bY: Int) = glm.shr(this, this, bX, bY)
 
     fun shr(b: Int, res: Vec2ul) = glm.shr(res, this, b, b)
@@ -271,32 +271,32 @@ data class Vec2ul(override var x: Ulong = Ulong(0), override var y: Ulong = Ulon
 // -- Binary arithmetic vecOperators --
 
 operator fun Ulong.plus(b: Vec2ul) = glm.add(Vec2ul(), b, this, this)
-inline infix fun Ulong.addAss(b: Vec2ul) = glm.add(b, b, this, this)
+infix fun Ulong.addAss(b: Vec2ul) = glm.add(b, b, this, this)
 
 operator fun Ulong.minus(b: Vec2ul) = glm.sub(Vec2ul(), this, this, b)
-inline infix fun Ulong.subAss(b: Vec2ul) = glm.sub(b, this, this, b)
+infix fun Ulong.subAss(b: Vec2ul) = glm.sub(b, this, this, b)
 
 operator fun Ulong.times(b: Vec2ul) = glm.mul(Vec2ul(), b, this, this)
-inline infix fun Ulong.mulAss(b: Vec2ul) = glm.mul(b, b, this, this)
+infix fun Ulong.mulAss(b: Vec2ul) = glm.mul(b, b, this, this)
 
 operator fun Ulong.div(b: Vec2ul) = glm.div(Vec2ul(), this, this, b)
-inline infix fun Ulong.divAss(b: Vec2ul) = glm.div(b, this, this, b)
+infix fun Ulong.divAss(b: Vec2ul) = glm.div(b, this, this, b)
 
 operator fun Ulong.mod(b: Vec2ul) = glm.mod(Vec2ul(), this, this, b)
-inline infix fun Ulong.modAss(b: Vec2ul) = glm.mod(b, this, this, b)
+infix fun Ulong.modAss(b: Vec2ul) = glm.mod(b, this, this, b)
 
 
 operator fun Long.plus(b: Vec2ul) = glm.add(Vec2ul(), b, this, this)
-inline infix fun Long.addAss(b: Vec2ul) = glm.add(b, b, this, this)
+infix fun Long.addAss(b: Vec2ul) = glm.add(b, b, this, this)
 
 operator fun Long.minus(b: Vec2ul) = glm.sub(Vec2ul(), this, this, b)
-inline infix fun Long.subAss(b: Vec2ul) = glm.sub(b, this, this, b)
+infix fun Long.subAss(b: Vec2ul) = glm.sub(b, this, this, b)
 
 operator fun Long.times(b: Vec2ul) = glm.mul(Vec2ul(), b, this, this)
-inline infix fun Long.mulAss(b: Vec2ul) = glm.mul(b, b, this, this)
+infix fun Long.mulAss(b: Vec2ul) = glm.mul(b, b, this, this)
 
 operator fun Long.div(b: Vec2ul) = glm.div(Vec2ul(), this, this, b)
-inline infix fun Long.divAss(b: Vec2ul) = glm.div(b, this, this, b)
+infix fun Long.divAss(b: Vec2ul) = glm.div(b, this, this, b)
 
 operator fun Long.mod(b: Vec2ul) = glm.mod(Vec2ul(), this, this, b)
-inline infix fun Long.modAss(b: Vec2ul) = glm.mod(b, this, this, b)
+infix fun Long.modAss(b: Vec2ul) = glm.mod(b, this, this, b)

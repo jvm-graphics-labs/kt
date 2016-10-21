@@ -3,11 +3,10 @@ package glm
 import glm.vec._2.*
 import glm.vec._3.*
 import glm.vec._4.*
-
-import Ubyte
-import Uint
-import Ulong
-import Ushort
+import main.Ubyte
+import main.Uint
+import main.Ulong
+import main.Ushort
 
 /**
  * Created bY GBarbieri on 06.10.2016.
@@ -1535,7 +1534,7 @@ interface vec4_operators {
 
 interface gli {
 
-//    fun <T : Number> T.ceilMultiple(a: T, b: T) = a + if (a > 0) -(a % b) else (-a) % b
+    //    fun <T : Number> T.ceilMultiple(a: T, b: T) = a + if (a > 0) -(a % b) else (-a) % b
 //    fun <T : Number> ceilMultiple(a: T, b: T): T = a + if (a > 0) -(a % b) else (-a) % b
     fun ceilMultiple(a: Int, b: Int) = a + if (a > 0) -(a % b) else (-a) % b
 }

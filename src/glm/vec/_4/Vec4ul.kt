@@ -1,8 +1,8 @@
 package glm.vec._4
 
 import glm.glm
-import Ulong
 import glm.vec.Vec4t
+import main.Ulong
 
 /**
  * Created by elect on 09/10/16.

@@ -1,9 +1,9 @@
 package gli
 
 import gli.dx.Format
-import gli.dx.dxgiFormat
-import gli.dx.ddpf.*
 import gli.dx.d3dfmt.*
+import gli.dx.ddpf.*
+import gli.dx.dxgiFormat
 import gli.dx.dxgi_format_dds.*
 import gli.dx.dxgi_format_gli.*
 import glm.vec._4.Vec4ui

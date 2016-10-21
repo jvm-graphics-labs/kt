@@ -1,17 +1,13 @@
 package gli
 
-import Ubyte
-import Uint
-import Ushort
 import gli.gli.Cap.*
 import gli.gli.Format.Companion.FORMAT_COUNT
-import gli.gli.Format.Companion.FORMAT_FIRST
-import gli.gli.Format.Companion.FORMAT_INVALID
-import gli.gli.Format.Companion.FORMAT_LAST
 import gli.gli.Swizzle.*
 import glm.vec._3.Vec3i
 import glm.vec._3.Vec3ub
-import gli.table
+import main.Ubyte
+import main.Uint
+import main.Ushort
 
 /**
  * Created by elect on 09/10/16.

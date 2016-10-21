@@ -2,10 +2,10 @@
  * Created by GBarbieri on 05.10.2016.
  */
 
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
 import glm.vec._2.*
 import glm.vec._2.Vec2
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class Vec2 {

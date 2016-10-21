@@ -75,9 +75,9 @@ data class Vec3d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 
     fun add(bX: Double, bY: Double, bZ: Double) = glm.add(Vec3d(), this, bX, bY, bZ)
 
-    infix inline fun addAss(b: Double) = glm.add(this, this, b, b, b)
+    infix fun addAss(b: Double) = glm.add(this, this, b, b, b)
     fun addAss(bX: Double, bY: Double, bZ: Double) = glm.add(this, this, bX, bY, bZ)
-    infix inline fun addAss(b: Vec3d) = glm.add(this, this, b.x, b.y, b.z)
+    infix fun addAss(b: Vec3d) = glm.add(this, this, b.x, b.y, b.z)
 
     fun add(b: Double, res: Vec3d) = glm.add(res, this, b, b, b)
     fun add(bX: Double, bY: Double, bZ: Double, res: Vec3d) = glm.add(res, this, bX, bY, bZ)
@@ -89,9 +89,9 @@ data class Vec3d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 
     fun sub(bX: Double, bY: Double, bZ: Double) = glm.sub(Vec3d(), this, bX, bY, bZ)
 
-    infix inline fun subAss(b: Double) = glm.sub(this, this, b, b, b)
+    infix fun subAss(b: Double) = glm.sub(this, this, b, b, b)
     fun subAss(bX: Double, bY: Double, bZ: Double) = glm.sub(this, this, bX, bY, bZ)
-    infix inline fun subAss(b: Vec3d) = glm.sub(this, this, b.x, b.y, b.z)
+    infix fun subAss(b: Vec3d) = glm.sub(this, this, b.x, b.y, b.z)
 
     fun sub(b: Double, res: Vec3d) = glm.sub(res, this, b, b, b)
     fun sub(bX: Double, bY: Double, bZ: Double, res: Vec3d) = glm.sub(res, this, bX, bY, bZ)
@@ -103,9 +103,9 @@ data class Vec3d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 
     fun mul(bX: Double, bY: Double, bZ: Double) = glm.mul(Vec3d(), this, bX, bY, bZ)
 
-    infix inline fun mulAss(b: Double) = glm.mul(this, this, b, b, b)
+    infix fun mulAss(b: Double) = glm.mul(this, this, b, b, b)
     fun mulAss(bX: Double, bY: Double, bZ: Double) = glm.mul(this, this, bX, bY, bZ)
-    infix inline fun mulAss(b: Vec3d) = glm.mul(this, this, b.x, b.y, b.z)
+    infix fun mulAss(b: Vec3d) = glm.mul(this, this, b.x, b.y, b.z)
 
     fun mul(b: Double, res: Vec3d) = glm.mul(res, this, b, b, b)
     fun mul(bX: Double, bY: Double, bZ: Double, res: Vec3d) = glm.mul(res, this, bX, bY, bZ)
@@ -117,9 +117,9 @@ data class Vec3d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 
     fun div(bX: Double, bY: Double, bZ: Double) = glm.div(Vec3d(), this, bX, bY, bZ)
 
-    infix inline fun divAss(b: Double) = glm.div(this, this, b, b, b)
+    infix fun divAss(b: Double) = glm.div(this, this, b, b, b)
     fun divAss(bX: Double, bY: Double, bZ: Double) = glm.div(this, this, bX, bY, bZ)
-    infix inline fun divAss(b: Vec3d) = glm.div(this, this, b.x, b.y, b.z)
+    infix fun divAss(b: Vec3d) = glm.div(this, this, b.x, b.y, b.z)
 
     fun div(b: Double, res: Vec3d) = glm.div(res, this, b, b, b)
     fun div(bX: Double, bY: Double, bZ: Double, res: Vec3d) = glm.div(res, this, bX, bY, bZ)
@@ -130,9 +130,9 @@ data class Vec3d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 
     fun mod(bX: Double, bY: Double, bZ: Double) = glm.mod(Vec3d(), this, bX, bY, bZ)
 
-    infix inline fun modAss(b: Double) = glm.mod(this, this, b, b, b)
+    infix fun modAss(b: Double) = glm.mod(this, this, b, b, b)
     fun modAss(bX: Double, bY: Double, bZ: Double) = glm.mod(this, this, bX, bY, bZ)
-    infix inline fun modAss(b: Vec3d) = glm.mod(this, this, b.x, b.y, b.z)
+    infix fun modAss(b: Vec3d) = glm.mod(this, this, b.x, b.y, b.z)
 
     fun mod(b: Double, res: Vec3d) = glm.mod(res, this, b, b, b)
     fun mod(bX: Double, bY: Double, bZ: Double, res: Vec3d) = glm.mod(res, this, bX, bY, bZ)
@@ -143,16 +143,16 @@ data class Vec3d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 // -- Binary arithmetic vecOperators --
 
 operator fun Double.plus(b: Vec3d) = glm.add(Vec3d(), b, this, this, this)
-inline infix fun Double.addAss(b: Vec3d) = glm.add(b, b, this, this, this)
+infix fun Double.addAss(b: Vec3d) = glm.add(b, b, this, this, this)
 
 operator fun Double.minus(b: Vec3d) = glm.sub(Vec3d(), this, this, this, b)
-inline infix fun Double.subAss(b: Vec3d) = glm.sub(b, b, this, this, this)
+infix fun Double.subAss(b: Vec3d) = glm.sub(b, b, this, this, this)
 
 operator fun Double.times(b: Vec3d) = glm.mul(Vec3d(), b, this, this, this)
-inline infix fun Double.mulAss(b: Vec3d) = glm.mul(b, b, this, this, this)
+infix fun Double.mulAss(b: Vec3d) = glm.mul(b, b, this, this, this)
 
 operator fun Double.div(b: Vec3d) = glm.div(Vec3d(), this, this, this, b)
-inline infix fun Double.divAss(b: Vec3d) = glm.div(b, this, this, this, b)
+infix fun Double.divAss(b: Vec3d) = glm.div(b, this, this, this, b)
 
 operator fun Double.mod(b: Vec3d) = glm.mod(Vec3d(), this, this, this, b)
-inline infix fun Double.modAss(b: Vec3d) = glm.mod(b, this, this, this, b)
+infix fun Double.modAss(b: Vec3d) = glm.mod(b, this, this, this, b)

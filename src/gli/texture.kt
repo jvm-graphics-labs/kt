@@ -1,8 +1,7 @@
 package gli
 
-import Ulong
 import glm.vec._3.Vec3i
-import Ubyte
+import main.Ulong
 import java.nio.ByteBuffer
 
 /**
