@@ -9,7 +9,7 @@ import glm.vec.Vec4t
 
 data class Vec4d(override var x: Double = 0.0, override var y: Double = 0.0, override var z: Double = 0.0, override var w: Double = 0.0) : Vec4t<Double>(x, y, z, w) {
 
-    // -- Explicit basic, conversion b and conversion vector constructors --
+    // -- Explicit basic, conversion other and conversion vector constructors --
 
     constructor(v: Vec4t<Number>) : this(v.x.toDouble(), v.y.toDouble(), v.z.toDouble(), v.w.toDouble())
 
@@ -75,9 +75,9 @@ data class Vec4d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 
     fun add(bX: Double, bY: Double, bZ: Double, bW: Double) = glm.add(Vec4d(), this, bX, bY, bZ, bW)
 
-    infix inline fun addAss(b: Double) = glm.add(this, this, b, b, b, b)
+    infix fun addAss(b: Double) = glm.add(this, this, b, b, b, b)
     fun addAss(bX: Double, bY: Double, bZ: Double, bW: Double) = glm.add(this, this, bX, bY, bZ, bW)
-    infix inline fun addAss(b: Vec4d) = glm.add(this, this, b.x, b.y, b.z, b.w)
+    infix fun addAss(b: Vec4d) = glm.add(this, this, b.x, b.y, b.z, b.w)
 
     fun add(b: Double, res: Vec4d) = glm.add(res, this, b, b, b, b)
     fun add(bX: Double, bY: Double, bZ: Double, bW: Double, res: Vec4d) = glm.add(res, this, bX, bY, bZ, bW)
@@ -89,9 +89,9 @@ data class Vec4d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 
     fun sub(bX: Double, bY: Double, bZ: Double, bW: Double) = glm.sub(Vec4d(), this, bX, bY, bZ, bW)
 
-    infix inline fun subAss(b: Double) = glm.sub(this, this, b, b, b, b)
+    infix fun subAss(b: Double) = glm.sub(this, this, b, b, b, b)
     fun subAss(bX: Double, bY: Double, bZ: Double, bW: Double) = glm.sub(this, this, bX, bY, bZ, bW)
-    infix inline fun subAss(b: Vec4d) = glm.sub(this, this, b.x, b.y, b.z, b.w)
+    infix fun subAss(b: Vec4d) = glm.sub(this, this, b.x, b.y, b.z, b.w)
 
     fun sub(b: Double, res: Vec4d) = glm.sub(res, this, b, b, b, b)
     fun sub(bX: Double, bY: Double, bZ: Double, bW: Double, res: Vec4d) = glm.sub(res, this, bX, bY, bZ, bW)
@@ -103,9 +103,9 @@ data class Vec4d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 
     fun mul(bX: Double, bY: Double, bZ: Double, bW: Double) = glm.mul(Vec4d(), this, bX, bY, bZ, bW)
 
-    infix inline fun mulAss(b: Double) = glm.mul(this, this, b, b, b, b)
+    infix fun mulAss(b: Double) = glm.mul(this, this, b, b, b, b)
     fun mulAss(bX: Double, bY: Double, bZ: Double, bW: Double) = glm.mul(this, this, bX, bY, bZ, bW)
-    infix inline fun mulAss(b: Vec4d) = glm.mul(this, this, b.x, b.y, b.z, b.w)
+    infix fun mulAss(b: Vec4d) = glm.mul(this, this, b.x, b.y, b.z, b.w)
 
     fun mul(b: Double, res: Vec4d) = glm.mul(res, this, b, b, b, b)
     fun mul(bX: Double, bY: Double, bZ: Double, bW: Double, res: Vec4d) = glm.mul(res, this, bX, bY, bZ, bW)
@@ -117,9 +117,9 @@ data class Vec4d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 
     fun div(bX: Double, bY: Double, bZ: Double, bW: Double) = glm.div(Vec4d(), this, bX, bY, bZ, bW)
 
-    infix inline fun divAss(b: Double) = glm.div(this, this, b, b, b, b)
+    infix fun divAss(b: Double) = glm.div(this, this, b, b, b, b)
     fun divAss(bX: Double, bY: Double, bZ: Double, bW: Double) = glm.div(this, this, bX, bY, bZ, bW)
-    infix inline fun divAss(b: Vec4d) = glm.div(this, this, b.x, b.y, b.z, b.w)
+    infix fun divAss(b: Vec4d) = glm.div(this, this, b.x, b.y, b.z, b.w)
 
     fun div(b: Double, res: Vec4d) = glm.div(res, this, b, b, b, b)
     fun div(bX: Double, bY: Double, bZ: Double, bW: Double, res: Vec4d) = glm.div(res, this, bX, bY, bZ, bW)
@@ -130,9 +130,9 @@ data class Vec4d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 
     fun mod(bX: Double, bY: Double, bZ: Double, bW: Double) = glm.mod(Vec4d(), this, bX, bY, bZ, bW)
 
-    infix inline fun modAss(b: Double) = glm.mod(this, this, b, b, b, b)
+    infix fun modAss(b: Double) = glm.mod(this, this, b, b, b, b)
     fun modAss(bX: Double, bY: Double, bZ: Double, bW: Double) = glm.mod(this, this, bX, bY, bZ, bW)
-    infix inline fun modAss(b: Vec4d) = glm.mod(this, this, b.x, b.y, b.z, b.w)
+    infix fun modAss(b: Vec4d) = glm.mod(this, this, b.x, b.y, b.z, b.w)
 
     fun mod(b: Double, res: Vec4d) = glm.mod(res, this, b, b, b, b)
     fun mod(bX: Double, bY: Double, bZ: Double, bW: Double, res: Vec4d) = glm.mod(res, this, bX, bY, bZ, bW)
@@ -143,16 +143,16 @@ data class Vec4d(override var x: Double = 0.0, override var y: Double = 0.0, ove
 // -- Binary arithmetic vecOperators --
 
 operator fun Double.plus(b: Vec4d) = glm.add(Vec4d(), b, this, this, this, this)
-inline infix fun Double.addAss(b: Vec4d) = glm.add(b, b, this, this, this, this)
+infix fun Double.addAss(b: Vec4d) = glm.add(b, b, this, this, this, this)
 
 operator fun Double.minus(b: Vec4d) = glm.sub(Vec4d(), this, this, this, this, b)
-inline infix fun Double.subAss(b: Vec4d) = glm.sub(b, b, this, this, this, this)
+infix fun Double.subAss(b: Vec4d) = glm.sub(b, b, this, this, this, this)
 
 operator fun Double.times(b: Vec4d) = glm.mul(Vec4d(), b, this, this, this, this)
-inline infix fun Double.mulAss(b: Vec4d) = glm.mul(b, b, this, this, this, this)
+infix fun Double.mulAss(b: Vec4d) = glm.mul(b, b, this, this, this, this)
 
 operator fun Double.div(b: Vec4d) = glm.div(Vec4d(), this, this, this, this, b)
-inline infix fun Double.divAss(b: Vec4d) = glm.div(b, this, this, this, this, b)
+infix fun Double.divAss(b: Vec4d) = glm.div(b, this, this, this, this, b)
 
 operator fun Double.mod(b: Vec4d) = glm.mod(Vec4d(), this, this, this, this, b)
-inline infix fun Double.modAss(b: Vec4d) = glm.mod(b, this, this, this, this, b)
+infix fun Double.modAss(b: Vec4d) = glm.mod(b, this, this, this, this, b)

@@ -1,23 +1,8 @@
-import gli.gli
 import java.math.BigInteger
 
 /**
  * Created by GBarbieri on 06.10.2016.
  */
-
-object umath {
-
-    infix operator fun Byte.div(b: Byte) = (toUint() / b.toUint()).toByte()
-    infix operator fun Short.div(b: Short) = toUint() / b.toUint()
-    infix operator fun Int.div(b: Int) = Integer.divideUnsigned(this, b)
-    infix operator fun Long.div(b: Long) = java.lang.Long.divideUnsigned(this, b)
-}
-
-
-fun Byte.toUint() = if (this < 0) toInt() + Ubyte.MAX_VALUE + 1; else toInt()
-fun Short.toUint() = if (this < 0) toInt() + Ushort.MAX_VALUE + 1; else toInt()
-fun Int.toUlong() = if (this < 0) toLong() + Uint.MAX_VALUE + 1; else toLong()
-fun Long.toUbigDec() = if (this < 0) BigInteger.valueOf(this) + Ulong.MAX_VALUE + BigInteger.ONE else BigInteger.valueOf(this)
 
 
 data class Ubyte(var v: Byte = 0) : Number() {
@@ -89,9 +74,9 @@ data class Ubyte(var v: Byte = 0) : Number() {
     infix fun shl(b: Byte) = Ubyte(toInt() shl b.toUint())
     infix fun shl(b: Int) = Ubyte(toInt() shl b)
 
-    infix fun shr(b: Ubyte) = Ubyte(toInt() ushr b.toInt())
-    infix fun shr(b: Byte) = Ubyte(toInt() ushr b.toUint())
-    infix fun shr(b: Int) = Ubyte(toInt() ushr b)
+    infix fun shr(b: Ubyte) = Ubyte(toInt() shr b.toInt())
+    infix fun shr(b: Byte) = Ubyte(toInt() shr b.toUint())
+    infix fun shr(b: Int) = Ubyte(toInt() shr b)
 
     fun inv() = Ubyte(toInt().inv())
 
@@ -234,7 +219,7 @@ data class Ulong(var v: Long = 0) : Number(), Comparable<Ulong> {
 
     fun inv() = Ulong(v.inv())
 
-    override operator fun compareTo(b: Ulong) = java.lang.Long.compareUnsigned(v, b.toLong())
+    override operator fun compareTo(other: Ulong) = java.lang.Long.compareUnsigned(v, other.toLong())
     operator fun compareTo(b: Long) = java.lang.Long.compareUnsigned(v, b)
 
 
@@ -338,6 +323,33 @@ data class Ushort(var v: Short = 0) : Number() {
     operator fun compareTo(b: Short) = Integer.compareUnsigned(toInt(), b.toUint())
     operator fun compareTo(b: Int) = Integer.compareUnsigned(toInt(), b)
 }
+
+
+fun Byte.toUint() = if (this < 0) toInt() + Ubyte.MAX_VALUE + 1 else toInt()
+fun Short.toUint() = if (this < 0) toInt() + Ushort.MAX_VALUE + 1 else toInt()
+fun Int.toUlong() = if (this < 0) toLong() + Uint.MAX_VALUE + 1 else toLong()
+fun Long.toUbigDec() = if (this < 0) BigInteger.valueOf(this) + Ulong.MAX_VALUE + BigInteger.ONE else BigInteger.valueOf(this)
+
+
+infix fun Byte.udiv(b: Byte) = (toUint() / b.toUint()).toByte()
+infix fun Byte.umod(b: Byte) = (toUint() % b.toUint()).toByte()
+infix fun Byte.ushr(b: Byte) = (toUint() shr b.toUint()).toByte()
+infix fun Byte.ucmp(b: Byte) = Integer.compareUnsigned(toUint(), b.toUint())
+
+infix fun Short.udiv(b: Short) = (toUint() / b.toUint()).toShort()
+infix fun Short.umod(b: Short) = (toUint() % b.toUint()).toShort()
+infix fun Short.ushr(b: Short) = (toUint() shr b.toUint()).toShort()
+infix fun Short.ucmp(b: Short) = Integer.compareUnsigned(toUint(), b.toUint())
+
+infix fun Int.udiv(b: Int) = Integer.divideUnsigned(this, b)
+infix fun Int.umod(b: Int) = Integer.remainderUnsigned(this, b)
+// ushr is present
+infix fun Int.ucmp(b: Int) = Integer.compareUnsigned(this, b)
+
+infix fun Long.udiv(b: Long) = java.lang.Long.divideUnsigned(this, b)
+infix fun Long.umod(b: Long) = java.lang.Long.remainderUnsigned(this, b)
+// ushr is present
+infix fun Long.ucmp(b: Long) = java.lang.Long.compareUnsigned(this, b)
 
 
 operator fun Byte.plus(b: Ubyte): Byte = (toUint() + b.toInt()).toByte()

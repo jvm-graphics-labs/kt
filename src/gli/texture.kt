@@ -46,45 +46,45 @@ class StorageLinear(
 
         assert(layers > 0 && faces > 0 && levels > 0 && extent.greaterThan(0).all())
 
-//        data = ByteBuffer.allocateDirect()
+        data = ByteBuffer.allocateDirect()
     }
 
-//    fun layerSize(baseFace: Ulong, maxFace: Ulong, baseLevel: Ulong, maxLevel: Ulong) {
-//
-//        assert(baseFace >= 0 && maxFace < faces && baseFace < faces && maxLevel >= 0 && maxLevel < levels && baseLevel < levels)
-//
-//        // The size of a layer is the sum of the size of each face. All the faces have the same size.
-//        return faceSize(ba)
-//    }
-//
-//    fun faceSize(baseLevel: Ulong, maxLevel: Ulong) {
-//
-//        assert(maxLevel >= 0 && maxLevel < levels && baseLevel >= 0 && baseLevel < levels && baseLevel <= maxLevel)
-//
-//        var faceSize_ = Ulong(0)
-//
-//        // The size of a face is the sum of the size of each level.
-//        for (level in baseLevel..maxLevel) faceSize_ +=
-//    }
-//
-//    fun levelSize(level: Ulong) {
-//
-//        assert(level >= 0 && level < levels)
-//
-//        return blockSize * le
-//    }
-//
-//    fun blockCount(level: Ulong) {
-//
-//        assert(level >= 0 && level < levels)
-//
-//
-//    }
-//
-//    fun extent(level: Ulong) {
-//
-//        assert(level >= 0 && level < levels)
-//
-//
-//    }
+    fun layerSize(baseFace: Ulong, maxFace: Ulong, baseLevel: Ulong, maxLevel: Ulong) {
+
+        assert(baseFace >= 0 && maxFace < faces && baseFace < faces && maxLevel >= 0 && maxLevel < levels && baseLevel < levels)
+
+        // The size of a layer is the sum of the size of each face. All the faces have the same size.
+        return faceSize(ba)
+    }
+
+    fun faceSize(baseLevel: Ulong, maxLevel: Ulong) {
+
+        assert(maxLevel >= 0 && maxLevel < levels && baseLevel >= 0 && baseLevel < levels && baseLevel <= maxLevel)
+
+        var faceSize_ = Ulong(0)
+
+        // The size of a face is the sum of the size of each level.
+        for (level in baseLevel..maxLevel) faceSize_ +=
+    }
+
+    fun levelSize(level: Ulong) {
+
+        assert(level >= 0 && level < levels)
+
+        return blockSize * le
+    }
+
+    fun blockCount(level: Ulong) {
+
+        assert(level >= 0 && level < levels)
+
+
+    }
+
+    fun extent(level: Ulong) {
+
+        assert(level >= 0 && level < levels)
+
+
+    }
 }

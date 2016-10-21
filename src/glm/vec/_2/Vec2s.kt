@@ -9,7 +9,7 @@ import glm.vec.Vec2t
 
 data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<Short>(x, y) {
 
-    // -- Explicit basic, conversion b and conversion vector constructors --
+    // -- Explicit basic, conversion other and conversion vector constructors --
 
     constructor(v: Vec2t<Number>) : this(v.x.toShort(), v.y.toShort())
 
@@ -94,11 +94,11 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     fun add(bX: Short, bY: Short) = glm.add(Vec2s(), this, bX, bY)
     fun add(bX: Int, bY: Int) = glm.add(Vec2s(), this, bX, bY)
 
-    infix inline fun addAss(b: Short) = glm.add(this, this, b, b)
-    infix inline fun addAss(b: Int) = glm.add(this, this, b, b)
+    infix fun addAss(b: Short) = glm.add(this, this, b, b)
+    infix fun addAss(b: Int) = glm.add(this, this, b, b)
     fun addAss(bX: Short, bY: Short) = glm.add(this, this, bX, bY)
     fun addAss(bX: Int, bY: Int) = glm.add(this, this, bX, bY)
-    infix inline fun addAss(b: Vec2s) = glm.add(this, this, b.x, b.y)
+    infix fun addAss(b: Vec2s) = glm.add(this, this, b.x, b.y)
 
     fun add(b: Short, res: Vec2s) = glm.add(res, this, b, b)
     fun add(b: Int, res: Vec2s) = glm.add(res, this, b, b)
@@ -114,11 +114,11 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     fun sub(bX: Short, bY: Short) = glm.sub(Vec2s(), this, bX, bY)
     fun sub(bX: Int, bY: Int) = glm.sub(Vec2s(), this, bX, bY)
 
-    infix inline fun subAss(b: Short) = glm.sub(this, this, b, b)
-    infix inline fun subAss(b: Int) = glm.sub(this, this, b, b)
+    infix fun subAss(b: Short) = glm.sub(this, this, b, b)
+    infix fun subAss(b: Int) = glm.sub(this, this, b, b)
     fun subAss(bX: Short, bY: Short) = glm.sub(this, this, bX, bY)
     fun subAss(bX: Int, bY: Int) = glm.sub(this, this, bX, bY)
-    infix inline fun subAss(b: Vec2s) = glm.sub(this, this, b.x, b.y)
+    infix fun subAss(b: Vec2s) = glm.sub(this, this, b.x, b.y)
 
     fun sub(b: Short, res: Vec2s) = glm.sub(res, this, b, b)
     fun sub(b: Int, res: Vec2s) = glm.sub(res, this, b, b)
@@ -134,11 +134,11 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     fun mul(bX: Short, bY: Short) = glm.mul(Vec2s(), this, bX, bY)
     fun mul(bX: Int, bY: Int) = glm.mul(Vec2s(), this, bX, bY)
 
-    infix inline fun mulAss(b: Short) = glm.mul(this, this, b, b)
-    infix inline fun mulAss(b: Int) = glm.mul(this, this, b, b)
+    infix fun mulAss(b: Short) = glm.mul(this, this, b, b)
+    infix fun mulAss(b: Int) = glm.mul(this, this, b, b)
     fun mulAss(bX: Short, bY: Short) = glm.mul(this, this, bX, bY)
     fun mulAss(bX: Int, bY: Int) = glm.mul(this, this, bX, bY)
-    infix inline fun mulAss(b: Vec2s) = glm.mul(this, this, b.x, b.y)
+    infix fun mulAss(b: Vec2s) = glm.mul(this, this, b.x, b.y)
 
     fun mul(b: Short, res: Vec2s) = glm.mul(res, this, b, b)
     fun mul(b: Int, res: Vec2s) = glm.mul(res, this, b, b)
@@ -154,11 +154,11 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     fun div(bX: Short, bY: Short) = glm.div(Vec2s(), this, bX, bY)
     fun div(bX: Int, bY: Int) = glm.div(Vec2s(), this, bX, bY)
 
-    infix inline fun divAss(b: Short) = glm.div(this, this, b, b)
-    infix inline fun divAss(b: Int) = glm.div(this, this, b, b)
+    infix fun divAss(b: Short) = glm.div(this, this, b, b)
+    infix fun divAss(b: Int) = glm.div(this, this, b, b)
     fun divAss(bX: Short, bY: Short) = glm.div(this, this, bX, bY)
     fun divAss(bX: Int, bY: Int) = glm.div(this, this, bX, bY)
-    infix inline fun divAss(b: Vec2s) = glm.div(this, this, b.x, b.y)
+    infix fun divAss(b: Vec2s) = glm.div(this, this, b.x, b.y)
 
     fun div(b: Short, res: Vec2s) = glm.div(res, this, b, b)
     fun div(b: Int, res: Vec2s) = glm.div(res, this, b, b)
@@ -173,11 +173,11 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     fun mod(bX: Short, bY: Short) = glm.mod(Vec2s(), this, bX, bY)
     fun mod(bX: Int, bY: Int) = glm.mod(Vec2s(), this, bX, bY)
 
-    infix inline fun modAss(b: Short) = glm.mod(this, this, b, b)
-    infix inline fun modAss(b: Int) = glm.mod(this, this, b, b)
+    infix fun modAss(b: Short) = glm.mod(this, this, b, b)
+    infix fun modAss(b: Int) = glm.mod(this, this, b, b)
     fun modAss(bX: Short, bY: Short) = glm.mod(this, this, bX, bY)
     fun modAss(bX: Int, bY: Int) = glm.mod(this, this, bX, bY)
-    infix inline fun modAss(b: Vec2s) = glm.mod(this, this, b.x, b.y)
+    infix fun modAss(b: Vec2s) = glm.mod(this, this, b.x, b.y)
 
     fun mod(b: Short, res: Vec2s) = glm.mod(res, this, b, b)
     fun mod(b: Int, res: Vec2s) = glm.mod(res, this, b, b)
@@ -187,17 +187,17 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
 
     // -- Unary bit vecOperators --
 
-    inline infix fun and(b: Short) = glm.and(Vec2s(), this, b, b)
-    inline infix fun and(b: Int) = glm.and(Vec2s(), this, b, b)
+    infix fun and(b: Short) = glm.and(Vec2s(), this, b, b)
+    infix fun and(b: Int) = glm.and(Vec2s(), this, b, b)
     fun and(bX: Short, bY: Short) = glm.and(Vec2s(), this, bX, bY)
     fun and(bX: Int, bY: Int) = glm.and(Vec2s(), this, bX, bY)
     fun and(b: Vec2s) = glm.and(Vec2s(), this, b.x, b.y)
 
-    infix inline fun andAss(b: Short) = glm.and(this, this, b, b)
-    infix inline fun andAss(b: Int) = glm.and(this, this, b, b)
+    infix fun andAss(b: Short) = glm.and(this, this, b, b)
+    infix fun andAss(b: Int) = glm.and(this, this, b, b)
     fun andAss(bX: Short, bY: Short) = glm.and(this, this, bX, bY)
     fun andAss(bX: Int, bY: Int) = glm.and(this, this, bX, bY)
-    infix inline fun andAss(b: Vec2s) = glm.and(this, this, b.x, b.y)
+    infix fun andAss(b: Vec2s) = glm.and(this, this, b.x, b.y)
 
     fun and(b: Short, res: Vec2s) = glm.and(res, this, b, b)
     fun and(b: Int, res: Vec2s) = glm.and(res, this, b, b)
@@ -206,17 +206,17 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     fun and(b: Vec2s, res: Vec2s) = glm.and(res, this, b.x, b.y)
 
 
-    inline infix fun or(b: Short) = glm.or(Vec2s(), this, b, b)
-    inline infix fun or(b: Int) = glm.or(Vec2s(), this, b, b)
+    infix fun or(b: Short) = glm.or(Vec2s(), this, b, b)
+    infix fun or(b: Int) = glm.or(Vec2s(), this, b, b)
     fun or(bX: Short, bY: Short) = glm.or(Vec2s(), this, bX, bY)
     fun or(bX: Int, bY: Int) = glm.or(Vec2s(), this, bX, bY)
     fun or(b: Vec2s) = glm.or(Vec2s(), this, b.x, b.y)
 
-    infix inline fun orAss(b: Short) = glm.or(this, this, b, b)
-    infix inline fun orAss(b: Int) = glm.or(this, this, b, b)
+    infix fun orAss(b: Short) = glm.or(this, this, b, b)
+    infix fun orAss(b: Int) = glm.or(this, this, b, b)
     fun orAss(bX: Short, bY: Short) = glm.or(this, this, bX, bY)
     fun orAss(bX: Int, bY: Int) = glm.or(this, this, bX, bY)
-    infix inline fun orAss(b: Vec2s) = glm.or(this, this, b.x, b.y)
+    infix fun orAss(b: Vec2s) = glm.or(this, this, b.x, b.y)
 
     fun or(b: Short, res: Vec2s) = glm.or(res, this, b, b)
     fun or(b: Int, res: Vec2s) = glm.or(res, this, b, b)
@@ -225,17 +225,17 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     fun or(b: Vec2s, res: Vec2s) = glm.or(res, this, b.x, b.y)
 
 
-    inline infix fun xor(b: Short) = glm.xor(Vec2s(), this, b, b)
-    inline infix fun xor(b: Int) = glm.xor(Vec2s(), this, b, b)
+    infix fun xor(b: Short) = glm.xor(Vec2s(), this, b, b)
+    infix fun xor(b: Int) = glm.xor(Vec2s(), this, b, b)
     fun xor(bX: Short, bY: Short) = glm.xor(Vec2s(), this, bX, bY)
     fun xor(bX: Int, bY: Int) = glm.xor(Vec2s(), this, bX, bY)
     fun xor(b: Vec2s) = glm.xor(Vec2s(), this, b.x, b.y)
 
-    infix inline fun xorAss(b: Short) = glm.xor(this, this, b, b)
-    infix inline fun xorAss(b: Int) = glm.xor(this, this, b, b)
+    infix fun xorAss(b: Short) = glm.xor(this, this, b, b)
+    infix fun xorAss(b: Int) = glm.xor(this, this, b, b)
     fun xorAss(bX: Short, bY: Short) = glm.xor(this, this, bX, bY)
     fun xorAss(bX: Int, bY: Int) = glm.xor(this, this, bX, bY)
-    infix inline fun xorAss(b: Vec2s) = glm.xor(this, this, b.x, b.y)
+    infix fun xorAss(b: Vec2s) = glm.xor(this, this, b.x, b.y)
 
     fun xor(b: Short, res: Vec2s) = glm.xor(res, this, b, b)
     fun xor(b: Int, res: Vec2s) = glm.xor(res, this, b, b)
@@ -244,17 +244,17 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     fun xor(b: Vec2s, res: Vec2s) = glm.xor(res, this, b.x, b.y)
 
 
-    inline infix fun shl(b: Short) = glm.shl(Vec2s(), this, b, b)
-    inline infix fun shl(b: Int) = glm.shl(Vec2s(), this, b, b)
+    infix fun shl(b: Short) = glm.shl(Vec2s(), this, b, b)
+    infix fun shl(b: Int) = glm.shl(Vec2s(), this, b, b)
     fun shl(bX: Short, bY: Short) = glm.shl(Vec2s(), this, bX, bY)
     fun shl(bX: Int, bY: Int) = glm.shl(Vec2s(), this, bX, bY)
     fun shl(b: Vec2s) = glm.shl(Vec2s(), this, b.x, b.y)
 
-    infix inline fun shlAss(b: Short) = glm.shl(this, this, b, b)
-    infix inline fun shlAss(b: Int) = glm.shl(this, this, b, b)
+    infix fun shlAss(b: Short) = glm.shl(this, this, b, b)
+    infix fun shlAss(b: Int) = glm.shl(this, this, b, b)
     fun shlAss(bX: Short, bY: Short) = glm.shl(this, this, bX, bY)
     fun shlAss(bX: Int, bY: Int) = glm.shl(this, this, bX, bY)
-    infix inline fun shlAss(b: Vec2s) = glm.shl(this, this, b.x, b.y)
+    infix fun shlAss(b: Vec2s) = glm.shl(this, this, b.x, b.y)
 
     fun shl(b: Short, res: Vec2s) = glm.shl(res, this, b, b)
     fun shl(b: Int, res: Vec2s) = glm.shl(res, this, b, b)
@@ -263,17 +263,17 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
     fun shl(b: Vec2s, res: Vec2s) = glm.shl(res, this, b.x, b.y)
 
 
-    inline infix fun shr(b: Short) = glm.shr(Vec2s(), this, b, b)
-    inline infix fun shr(b: Int) = glm.shr(Vec2s(), this, b, b)
+    infix fun shr(b: Short) = glm.shr(Vec2s(), this, b, b)
+    infix fun shr(b: Int) = glm.shr(Vec2s(), this, b, b)
     fun shr(bX: Short, bY: Short) = glm.shr(Vec2s(), this, bX, bY)
     fun shr(bX: Int, bY: Int) = glm.shr(Vec2s(), this, bX, bY)
     fun shr(b: Vec2s) = glm.shr(Vec2s(), this, b.x, b.y)
 
-    infix inline fun shrAss(b: Short) = glm.shr(this, this, b, b)
-    infix inline fun shrAss(b: Int) = glm.shr(this, this, b, b)
+    infix fun shrAss(b: Short) = glm.shr(this, this, b, b)
+    infix fun shrAss(b: Int) = glm.shr(this, this, b, b)
     fun shrAss(bX: Short, bY: Short) = glm.shr(this, this, bX, bY)
     fun shrAss(bX: Int, bY: Int) = glm.shr(this, this, bX, bY)
-    infix inline fun shrAss(b: Vec2s) = glm.shr(this, this, b.x, b.y)
+    infix fun shrAss(b: Vec2s) = glm.shr(this, this, b.x, b.y)
 
     fun shr(b: Short, res: Vec2s) = glm.shr(res, this, b, b)
     fun shr(b: Int, res: Vec2s) = glm.shr(res, this, b, b)
@@ -293,32 +293,32 @@ data class Vec2s(override var x: Short = 0, override var y: Short = 0) : Vec2t<S
 // -- Binary arithmetic vecOperators --
 
 operator fun Short.plus(b: Vec2s) = glm.add(Vec2s(), b, this, this)
-inline infix fun Short.addAss(b: Vec2s) = glm.add(b, b, this, this)
+infix fun Short.addAss(b: Vec2s) = glm.add(b, b, this, this)
 
 operator fun Short.minus(b: Vec2s) = glm.sub(Vec2s(), this, this, b)
-inline infix fun Short.subAss(b: Vec2s) = glm.sub(b, this, this, b)
+infix fun Short.subAss(b: Vec2s) = glm.sub(b, this, this, b)
 
 operator fun Short.times(b: Vec2s) = glm.mul(Vec2s(), b, this, this)
-inline infix fun Short.mulAss(b: Vec2s) = glm.mul(b, b, this, this)
+infix fun Short.mulAss(b: Vec2s) = glm.mul(b, b, this, this)
 
 operator fun Short.div(b: Vec2s) = glm.div(Vec2s(), this, this, b)
-inline infix fun Short.divAss(b: Vec2s) = glm.div(b, this, this, b)
+infix fun Short.divAss(b: Vec2s) = glm.div(b, this, this, b)
 
 operator fun Short.mod(b: Vec2s) = glm.mod(Vec2s(), this, this, b)
-inline infix fun Short.modAss(b: Vec2s) = glm.mod(b, this, this, b)
+infix fun Short.modAss(b: Vec2s) = glm.mod(b, this, this, b)
 
 
 operator fun Int.plus(b: Vec2s) = glm.add(Vec2s(), b, this, this)
-inline infix fun Int.addAss(b: Vec2s) = glm.add(b, b, this, this)
+infix fun Int.addAss(b: Vec2s) = glm.add(b, b, this, this)
 
 operator fun Int.minus(b: Vec2s) = glm.sub(Vec2s(), this, this, b)
-inline infix fun Int.subAss(b: Vec2s) = glm.sub(b, this, this, b)
+infix fun Int.subAss(b: Vec2s) = glm.sub(b, this, this, b)
 
 operator fun Int.times(b: Vec2s) = glm.mul(Vec2s(), b, this, this)
-inline infix fun Int.mulAss(b: Vec2s) = glm.mul(b, b, this, this)
+infix fun Int.mulAss(b: Vec2s) = glm.mul(b, b, this, this)
 
 operator fun Int.div(b: Vec2s) = glm.div(Vec2s(), this, this, b)
-inline infix fun Int.divAss(b: Vec2s) = glm.div(b, this, this, b)
+infix fun Int.divAss(b: Vec2s) = glm.div(b, this, this, b)
 
 operator fun Int.mod(b: Vec2s) = glm.mod(Vec2s(), this, this, b)
-inline infix fun Int.modAss(b: Vec2s) = glm.mod(b, this, this, b)
+infix fun Int.modAss(b: Vec2s) = glm.mod(b, this, this, b)

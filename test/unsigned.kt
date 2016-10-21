@@ -7,24 +7,39 @@ import java.math.BigInteger
 
 class unsigned {
 
-    object u {
-
-        infix operator fun Byte.div(b: Byte) = (toUint() / b.toUint()).toByte()
-        infix operator fun Short.div(b: Short) = toUint() / b.toUint()
-        infix operator fun Int.div(b: Int) = Integer.divideUnsigned(this, b)
-        infix operator fun Long.div(b: Long) = java.lang.Long.divideUnsigned(this, b)
-    }
-
+    fun Int.b() = toByte()
+    fun Int.s() = toShort()
+    fun Long.i() = toInt()
+    fun String.hl() = java.lang.Long.parseUnsignedLong(this, 16)
+    fun String.l() = java.lang.Long.parseUnsignedLong(this)
+    fun String.bl() = java.lang.Long.parseUnsignedLong(this, 2)
 
     @Test fun math() {
 
+        assert(250.b() udiv 50.b() == 5.b())
+        assert(240.b() umod 50.b() == 40.b())
+        assert(0b01001101.b() ushr 4.b() == 0b00000100.b())
+        assert(0b01001101.b() ucmp 0b01001100.b() > 0)
+        assert(0b01001101.b() ucmp 0b01001101.b() == 0)
 
+        assert(65500.s() udiv 500.s() == 131.s())
+        assert(65500.s() umod 5000.s() == 500.s())
+        assert(0b0100110001110000.s() ushr 8.s() == 0b0000000001001100.s())
+        assert(0b0100110001110000.s() ucmp 0b0100110001110001.s() < 0)
+        assert(0b0100110001110000.s() ucmp 0b0100110001110000.s() == 0)
 
-        with(u) {
+        assert(4000000000.i() udiv 2 == 2000000000)
+        assert(4000000001.i() umod 2 == 1)
+        assert(0b01001100011100001111000001111101 ushr 16 == 0b00000000000000000100110001110000)
+        assert(0b01001100011100001111000001111101 ucmp 0b01001100011100001111000001111100 > 0)
+        assert(0b01001100011100001111000001111101 ucmp 0b01001100011100001111000001111101 == 0)
 
-            assert(250.toByte() / 50.toByte() == 4)
-
-        }
+        assert("18000000000000000000".l() udiv 2L == "9000000000000000000".l())
+        assert("17000000000000000000".l() umod "9000000000000000000".l() == "8000000000000000000".l())
+        val l = "0100110001110000111100000111110000001111110000000111111100000000".bl()
+        assert(l ushr 32 == "0000000000000000000000000000000001001100011100001111000001111100".bl())
+        assert(l ucmp "0100110001110000111100000111110000001111110000000111111100000001".bl() < 0)
+        assert(l ucmp "0100110001110000111100000111110000001111110000000111111100000000".bl() == 0)
     }
 
     @Test fun ubyte() {
@@ -195,8 +210,6 @@ class unsigned {
 
         // TODO underscore https://youtrack.jetbrains.com/issue/KT-2964
 
-        fun Long.i() = toInt()
-
         a = Uint(2000000000)
         b = Uint(2)
         c = Uint(4000000000)
@@ -286,11 +299,6 @@ class unsigned {
          * https://youtrack.jetbrains.com/issue/KT-4749
          */
 
-        fun String.hl() = java.lang.Long.parseUnsignedLong(this, 16)
-
-        fun String.dl() = java.lang.Long.parseUnsignedLong(this, 10)
-        fun String.bl() = java.lang.Long.parseUnsignedLong(this, 2)
-
         val max = "ffffffffffffffff".hl()
 
         assert(Ulong(Ulong.MAX_VALUE).v == max)
@@ -338,7 +346,7 @@ class unsigned {
         c = Ulong("8000000000000000000")
 
         assert(b % a == c)
-        assert(b % "9000000000000000000".dl() == c)
+        assert(b % "9000000000000000000".l() == c)
 
         a = Ulong("1010101010101010101010101010101010101010101010101010101010101010", 2)
         b = Ulong("0000111100001111000011110000111100001111000011110000111100001111", 2)
@@ -379,15 +387,15 @@ class unsigned {
         a = Ulong("18000000000000000000")
 
         assert(a > Ulong("17999999999999999999"))
-        assert(a > "17999999999999999999".dl())
+        assert(a > "17999999999999999999".l())
         assert(a >= a)
-        assert(a >= "18000000000000000000".dl())
+        assert(a >= "18000000000000000000".l())
 
         assert("ffffffffffffffff".hl() + Ulong(1) == 0L)
         assert("ffffffffffffffff".hl() - Ulong(1) == "fffffffffffffffe".hl())
-        assert("9000000000000000000".dl() * Ulong(2) == "18000000000000000000".dl())
-        assert("18000000000000000000".dl() / Ulong(2) == "9000000000000000000".dl())
-        assert("17000000000000000000".dl() % Ulong("9000000000000000000") == "8000000000000000000".dl())
+        assert("9000000000000000000".l() * Ulong(2) == "18000000000000000000".l())
+        assert("18000000000000000000".l() / Ulong(2) == "9000000000000000000".l())
+        assert("17000000000000000000".l() % Ulong("9000000000000000000") == "8000000000000000000".l())
 
         var d = "1010101010101010101010101010101010101010101010101010101010101010".bl()
         var e = "0000111100001111000011110000111100001111000011110000111100001111".bl()
@@ -403,8 +411,6 @@ class unsigned {
     }
 
     @Test fun ushort() {
-
-        fun Int.s() = toShort()
 
         assert(Ushort(0xffff).v == 0xffff.toShort())
         assert(Ushort(0b1111111111111111.s()).v == 0xffff.toShort())

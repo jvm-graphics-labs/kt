@@ -6,7 +6,7 @@ package gli
 //
 //class test {
 //    companion object {
-//        enum class ddpf(val i: Int) {
+//        enum class Ddpf(val i: Int) {
 //            DDPF_ALPHAPIXELS(0x1),
 //            DDPF_ALPHA(0x2),
 //            DDPF_FOURCC(0x4),

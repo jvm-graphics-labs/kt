@@ -5,13 +5,9 @@ import Uint
 import Ushort
 import gli.gli.Cap.*
 import gli.gli.Format.Companion.FORMAT_COUNT
-import gli.gli.Format.Companion.FORMAT_FIRST
-import gli.gli.Format.Companion.FORMAT_INVALID
-import gli.gli.Format.Companion.FORMAT_LAST
 import gli.gli.Swizzle.*
 import glm.vec._3.Vec3i
 import glm.vec._3.Vec3ub
-import gli.table
 
 /**
  * Created by elect on 09/10/16.
@@ -24,9 +20,11 @@ class gli() {
 
     enum class Format {
 
-        FORMAT_UNDEFINED,
+        FORMAT_INVALID(-1),
 
-        FORMAT_RG4_UNORM_PACK8,
+        FORMAT_UNDEFINED(0),
+
+        FORMAT_RG4_UNORM_PACK8, FORMAT_FIRST(FORMAT_RG4_UNORM_PACK8),
         FORMAT_RGBA4_UNORM_PACK16,
         FORMAT_BGRA4_UNORM_PACK16,
         FORMAT_R5G6B5_UNORM_PACK16,
@@ -265,17 +263,26 @@ class gli() {
         FORMAT_BGR8_UNORM_PACK32,
         FORMAT_BGR8_SRGB_PACK32,
 
-        FORMAT_RG3B2_UNORM_PACK8;
+        FORMAT_RG3B2_UNORM_PACK8, FORMAT_LAST(FORMAT_RG3B2_UNORM_PACK8);
 
-        val i = ordinal
+        val i: Int
+
+        constructor() {
+            i = ordinal
+        }
+
+        constructor(i: Int) {
+            this.i = i
+        }
+
+        constructor(format: Format) {
+            i = format.i
+        }
 
         operator fun plus(other: Format) = i + other.i
         operator fun minus(other: Format) = i + other.i
 
         companion object {
-            val FORMAT_FIRST = FORMAT_RG4_UNORM_PACK8
-            val FORMAT_LAST = FORMAT_RG3B2_UNORM_PACK8
-            val FORMAT_INVALID = -1
             val FORMAT_COUNT = FORMAT_LAST - FORMAT_FIRST + 1
         }
 
@@ -324,6 +331,7 @@ class gli() {
 
     enum class Target {
 
+        TARGET_INVALID(-1),
         TARGET_1D,
         TARGET_1D_ARRAY,
         TARGET_2D,
@@ -334,7 +342,15 @@ class gli() {
         TARGET_CUBE,
         TARGET_CUBE_ARRAY;
 
-        val i = ordinal
+        val i: Int
+
+        constructor() {
+            i = ordinal
+        }
+
+        constructor(i: Int) {
+            this.i = i
+        }
 
         operator fun plus(other: Target) = i + other.i
         operator fun minus(other: Target) = i - other.i
@@ -343,7 +359,6 @@ class gli() {
             val TARGET_FIRST = TARGET_1D
             val TARGET_LAST = TARGET_CUBE_ARRAY
             val TARGET_COUNT = TARGET_LAST - TARGET_FIRST + 1
-            val TARGET_INVALID = -1
         }
 
         fun isTarget1d() = this == TARGET_1D || this == TARGET_1D_ARRAY
@@ -660,8 +675,7 @@ class gli() {
         )
 
         init {
-            assert(table.size == FORMAT_COUNT,
-                    { System.err.println("GLI error: format descriptor list doesn't match number of supported formats") })
+            assert(table.size == FORMAT_COUNT, { System.err.println("GLI error: format descriptor list doesn't match number of supported formats") })
         }
 
     }

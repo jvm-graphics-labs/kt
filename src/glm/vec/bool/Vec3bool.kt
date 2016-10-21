@@ -6,7 +6,7 @@ package glm.vec.bool
 
 data class Vec3bool(var x: Boolean = false, var y: Boolean = false, var z: Boolean = false) {
 
-    // -- Explicit basic, conversion b and conversion vector constructors --
+    // -- Explicit basic, conversion other and conversion vector constructors --
 
     constructor(b: Boolean) : this(b, b, b)
 
@@ -49,7 +49,7 @@ data class Vec3bool(var x: Boolean = false, var y: Boolean = false, var z: Boole
         return this
     }
 
-    infix inline fun not(res: Vec3bool): Vec3bool {
+    infix fun not(res: Vec3bool): Vec3bool {
         res.x = !x; res.y = !y; res.z = !z; return this
     }
 

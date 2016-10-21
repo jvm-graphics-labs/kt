@@ -1535,7 +1535,7 @@ interface vec4_operators {
 
 interface gli {
 
-//    fun <T : Number> T.ceilMultiple(a: T, b: T) = a + if (a > 0) -(a % b) else (-a) % b
-//    fun <T : Number> ceilMultiple(a: T, b: T): T = a + if (a > 0) -(a % b) else (-a) % b
+//    fun <T : Number> T.ceilMultiple(a: T, other: T) = a + if (a > 0) -(a % other) else (-a) % other
+//    fun <T : Number> ceilMultiple(a: T, other: T): T = a + if (a > 0) -(a % other) else (-a) % other
     fun ceilMultiple(a: Int, b: Int) = a + if (a > 0) -(a % b) else (-a) % b
 }

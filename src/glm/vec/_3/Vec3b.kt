@@ -9,7 +9,7 @@ import glm.vec.Vec3t
 
 data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override var z: Byte = 0) : Vec3t<Byte>(x, y, z) {
 
-    // -- Explicit basic, conversion b and conversion vector constructors --
+    // -- Explicit basic, conversion other and conversion vector constructors --
 
     constructor(v: Vec3t<Number>) : this(v.x.toByte(), v.y.toByte(), v.z.toByte())
 
@@ -94,11 +94,11 @@ data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override va
     fun add(bX: Byte, bY: Byte, bZ: Byte) = glm.add(Vec3b(), this, bX, bY, bZ)
     fun add(bX: Int, bY: Int, bZ: Int) = glm.add(Vec3b(), this, bX, bY, bZ)
 
-    infix inline fun addAss(b: Byte) = glm.add(this, this, b, b, b)
-    infix inline fun addAss(b: Int) = glm.add(this, this, b, b, b)
+    infix fun addAss(b: Byte) = glm.add(this, this, b, b, b)
+    infix fun addAss(b: Int) = glm.add(this, this, b, b, b)
     fun addAss(bX: Byte, bY: Byte, bZ: Byte) = glm.add(this, this, bX, bY, bZ)
     fun addAss(bX: Int, bY: Int, bZ: Int) = glm.add(this, this, bX, bY, bZ)
-    infix inline fun addAss(b: Vec3b) = glm.add(this, this, b.x, b.y, b.z)
+    infix fun addAss(b: Vec3b) = glm.add(this, this, b.x, b.y, b.z)
 
     fun add(b: Byte, res: Vec3b) = glm.add(res, this, b, b, b)
     fun add(b: Int, res: Vec3b) = glm.add(res, this, b, b, b)
@@ -114,11 +114,11 @@ data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override va
     fun sub(bX: Byte, bY: Byte, bZ: Byte) = glm.sub(Vec3b(), this, bX, bY, bZ)
     fun sub(bX: Int, bY: Int, bZ: Int) = glm.sub(Vec3b(), this, bX, bY, bZ)
 
-    infix inline fun subAss(b: Byte) = glm.sub(this, this, b, b, b)
-    infix inline fun subAss(b: Int) = glm.sub(this, this, b, b, b)
+    infix fun subAss(b: Byte) = glm.sub(this, this, b, b, b)
+    infix fun subAss(b: Int) = glm.sub(this, this, b, b, b)
     fun subAss(bX: Byte, bY: Byte, bZ: Byte) = glm.sub(this, this, bX, bY, bZ)
     fun subAss(bX: Int, bY: Int, bZ: Int) = glm.sub(this, this, bX, bY, bZ)
-    infix inline fun subAss(b: Vec3b) = glm.sub(this, this, b.x, b.y, b.z)
+    infix fun subAss(b: Vec3b) = glm.sub(this, this, b.x, b.y, b.z)
 
     fun sub(b: Byte, res: Vec3b) = glm.sub(res, this, b, b, b)
     fun sub(b: Int, res: Vec3b) = glm.sub(res, this, b, b, b)
@@ -134,11 +134,11 @@ data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override va
     fun mul(bX: Byte, bY: Byte, bZ: Byte) = glm.mul(Vec3b(), this, bX, bY, bZ)
     fun mul(bX: Int, bY: Int, bZ: Int) = glm.mul(Vec3b(), this, bX, bY, bZ)
 
-    infix inline fun mulAss(b: Byte) = glm.mul(this, this, b, b, b)
-    infix inline fun mulAss(b: Int) = glm.mul(this, this, b, b, b)
+    infix fun mulAss(b: Byte) = glm.mul(this, this, b, b, b)
+    infix fun mulAss(b: Int) = glm.mul(this, this, b, b, b)
     fun mulAss(bX: Byte, bY: Byte, bZ: Byte) = glm.mul(this, this, bX, bY, bZ)
     fun mulAss(bX: Int, bY: Int, bZ: Int) = glm.mul(this, this, bX, bY, bZ)
-    infix inline fun mulAss(b: Vec3b) = glm.mul(this, this, b.x, b.y, b.z)
+    infix fun mulAss(b: Vec3b) = glm.mul(this, this, b.x, b.y, b.z)
 
     fun mul(b: Byte, res: Vec3b) = glm.mul(res, this, b, b, b)
     fun mul(b: Int, res: Vec3b) = glm.mul(res, this, b, b, b)
@@ -154,11 +154,11 @@ data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override va
     fun div(bX: Byte, bY: Byte, bZ: Byte) = glm.div(Vec3b(), this, bX, bY, bZ)
     fun div(bX: Int, bY: Int, bZ: Int) = glm.div(Vec3b(), this, bX, bY, bZ)
 
-    infix inline fun divAss(b: Byte) = glm.div(this, this, b, b, b)
-    infix inline fun divAss(b: Int) = glm.div(this, this, b, b, b)
+    infix fun divAss(b: Byte) = glm.div(this, this, b, b, b)
+    infix fun divAss(b: Int) = glm.div(this, this, b, b, b)
     fun divAss(bX: Byte, bY: Byte, bZ: Byte) = glm.div(this, this, bX, bY, bZ)
     fun divAss(bX: Int, bY: Int, bZ: Int) = glm.div(this, this, bX, bY, bZ)
-    infix inline fun divAss(b: Vec3b) = glm.div(this, this, b.x, b.y, b.z)
+    infix fun divAss(b: Vec3b) = glm.div(this, this, b.x, b.y, b.z)
 
     fun div(b: Byte, res: Vec3b) = glm.div(res, this, b, b, b)
     fun div(b: Int, res: Vec3b) = glm.div(res, this, b, b, b)
@@ -173,11 +173,11 @@ data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override va
     fun mod(bX: Byte, bY: Byte, bZ: Byte) = glm.mod(Vec3b(), this, bX, bY, bZ)
     fun mod(bX: Int, bY: Int, bZ: Int) = glm.mod(Vec3b(), this, bX, bY, bZ)
 
-    infix inline fun modAss(b: Byte) = glm.mod(this, this, b, b, b)
-    infix inline fun modAss(b: Int) = glm.mod(this, this, b, b, b)
+    infix fun modAss(b: Byte) = glm.mod(this, this, b, b, b)
+    infix fun modAss(b: Int) = glm.mod(this, this, b, b, b)
     fun modAss(bX: Byte, bY: Byte, bZ: Byte) = glm.mod(this, this, bX, bY, bZ)
     fun modAss(bX: Int, bY: Int, bZ: Int) = glm.mod(this, this, bX, bY, bZ)
-    infix inline fun modAss(b: Vec3b) = glm.mod(this, this, b.x, b.y, b.z)
+    infix fun modAss(b: Vec3b) = glm.mod(this, this, b.x, b.y, b.z)
 
     fun mod(b: Byte, res: Vec3b) = glm.mod(res, this, b, b, b)
     fun mod(b: Int, res: Vec3b) = glm.mod(res, this, b, b, b)
@@ -187,17 +187,17 @@ data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override va
 
     // -- Unary bit vecOperators --
 
-    inline infix fun and(b: Byte) = glm.and(Vec3b(), this, b, b, b)
-    inline infix fun and(b: Int) = glm.and(Vec3b(), this, b, b, b)
+    infix fun and(b: Byte) = glm.and(Vec3b(), this, b, b, b)
+    infix fun and(b: Int) = glm.and(Vec3b(), this, b, b, b)
     fun and(bX: Byte, bY: Byte, bZ: Byte) = glm.and(Vec3b(), this, bX, bY, bZ)
     fun and(bX: Int, bY: Int, bZ: Int) = glm.and(Vec3b(), this, bX, bY, bZ)
     fun and(b: Vec3b) = glm.and(Vec3b(), this, b.x, b.y, b.z)
 
-    infix inline fun andAss(b: Byte) = glm.and(this, this, b, b, b)
-    infix inline fun andAss(b: Int) = glm.and(this, this, b, b, b)
+    infix fun andAss(b: Byte) = glm.and(this, this, b, b, b)
+    infix fun andAss(b: Int) = glm.and(this, this, b, b, b)
     fun andAss(bX: Byte, bY: Byte, bZ: Byte) = glm.and(this, this, bX, bY, bZ)
     fun andAss(bX: Int, bY: Int, bZ: Int) = glm.and(this, this, bX, bY, bZ)
-    infix inline fun andAss(b: Vec3b) = glm.and(this, this, b.x, b.y, b.z)
+    infix fun andAss(b: Vec3b) = glm.and(this, this, b.x, b.y, b.z)
 
     fun and(b: Byte, res: Vec3b) = glm.and(res, this, b, b, b)
     fun and(b: Int, res: Vec3b) = glm.and(res, this, b, b, b)
@@ -206,17 +206,17 @@ data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override va
     fun and(b: Vec3b, res: Vec3b) = glm.and(res, this, b.x, b.y, b.z)
 
 
-    inline infix fun or(b: Byte) = glm.or(Vec3b(), this, b, b, b)
-    inline infix fun or(b: Int) = glm.or(Vec3b(), this, b, b, b)
+    infix fun or(b: Byte) = glm.or(Vec3b(), this, b, b, b)
+    infix fun or(b: Int) = glm.or(Vec3b(), this, b, b, b)
     fun or(bX: Byte, bY: Byte, bZ: Byte) = glm.or(Vec3b(), this, bX, bY, bZ)
     fun or(bX: Int, bY: Int, bZ: Int) = glm.or(Vec3b(), this, bX, bY, bZ)
     fun or(b: Vec3b) = glm.or(Vec3b(), this, b.x, b.y, b.z)
 
-    infix inline fun orAss(b: Byte) = glm.or(this, this, b, b, b)
-    infix inline fun orAss(b: Int) = glm.or(this, this, b, b, b)
+    infix fun orAss(b: Byte) = glm.or(this, this, b, b, b)
+    infix fun orAss(b: Int) = glm.or(this, this, b, b, b)
     fun orAss(bX: Byte, bY: Byte, bZ: Byte) = glm.or(this, this, bX, bY, bZ)
     fun orAss(bX: Int, bY: Int, bZ: Int) = glm.or(this, this, bX, bY, bZ)
-    infix inline fun orAss(b: Vec3b) = glm.or(this, this, b.x, b.y, b.z)
+    infix fun orAss(b: Vec3b) = glm.or(this, this, b.x, b.y, b.z)
 
     fun or(b: Byte, res: Vec3b) = glm.or(res, this, b, b, b)
     fun or(b: Int, res: Vec3b) = glm.or(res, this, b, b, b)
@@ -225,17 +225,17 @@ data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override va
     fun or(b: Vec3b, res: Vec3b) = glm.or(res, this, b.x, b.y, b.z)
 
 
-    inline infix fun xor(b: Byte) = glm.xor(Vec3b(), this, b, b, b)
-    inline infix fun xor(b: Int) = glm.xor(Vec3b(), this, b, b, b)
+    infix fun xor(b: Byte) = glm.xor(Vec3b(), this, b, b, b)
+    infix fun xor(b: Int) = glm.xor(Vec3b(), this, b, b, b)
     fun xor(bX: Byte, bY: Byte, bZ: Byte) = glm.xor(Vec3b(), this, bX, bY, bZ)
     fun xor(bX: Int, bY: Int, bZ: Int) = glm.xor(Vec3b(), this, bX, bY, bZ)
     fun xor(b: Vec3b) = glm.xor(Vec3b(), this, b.x, b.y, b.z)
 
-    infix inline fun xorAss(b: Byte) = glm.xor(this, this, b, b, b)
-    infix inline fun xorAss(b: Int) = glm.xor(this, this, b, b, b)
+    infix fun xorAss(b: Byte) = glm.xor(this, this, b, b, b)
+    infix fun xorAss(b: Int) = glm.xor(this, this, b, b, b)
     fun xorAss(bX: Byte, bY: Byte, bZ: Byte) = glm.xor(this, this, bX, bY, bZ)
     fun xorAss(bX: Int, bY: Int, bZ: Int) = glm.xor(this, this, bX, bY, bZ)
-    infix inline fun xorAss(b: Vec3b) = glm.xor(this, this, b.x, b.y, b.z)
+    infix fun xorAss(b: Vec3b) = glm.xor(this, this, b.x, b.y, b.z)
 
     fun xor(b: Byte, res: Vec3b) = glm.xor(res, this, b, b, b)
     fun xor(b: Int, res: Vec3b) = glm.xor(res, this, b, b, b)
@@ -244,17 +244,17 @@ data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override va
     fun xor(b: Vec3b, res: Vec3b) = glm.xor(res, this, b.x, b.y, b.z)
 
 
-    inline infix fun shl(b: Byte) = glm.shl(Vec3b(), this, b, b, b)
-    inline infix fun shl(b: Int) = glm.shl(Vec3b(), this, b, b, b)
+    infix fun shl(b: Byte) = glm.shl(Vec3b(), this, b, b, b)
+    infix fun shl(b: Int) = glm.shl(Vec3b(), this, b, b, b)
     fun shl(bX: Byte, bY: Byte, bZ: Byte) = glm.shl(Vec3b(), this, bX, bY, bZ)
     fun shl(bX: Int, bY: Int, bZ: Int) = glm.shl(Vec3b(), this, bX, bY, bZ)
     fun shl(b: Vec3b) = glm.shl(Vec3b(), this, b.x, b.y, b.z)
 
-    infix inline fun shlAss(b: Byte) = glm.shl(this, this, b, b, b)
-    infix inline fun shlAss(b: Int) = glm.shl(this, this, b, b, b)
+    infix fun shlAss(b: Byte) = glm.shl(this, this, b, b, b)
+    infix fun shlAss(b: Int) = glm.shl(this, this, b, b, b)
     fun shlAss(bX: Byte, bY: Byte, bZ: Byte) = glm.shl(this, this, bX, bY, bZ)
     fun shlAss(bX: Int, bY: Int, bZ: Int) = glm.shl(this, this, bX, bY, bZ)
-    infix inline fun shlAss(b: Vec3b) = glm.shl(this, this, b.x, b.y, b.z)
+    infix fun shlAss(b: Vec3b) = glm.shl(this, this, b.x, b.y, b.z)
 
     fun shl(b: Byte, res: Vec3b) = glm.shl(res, this, b, b, b)
     fun shl(b: Int, res: Vec3b) = glm.shl(res, this, b, b, b)
@@ -263,17 +263,17 @@ data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override va
     fun shl(b: Vec3b, res: Vec3b) = glm.shl(res, this, b.x, b.y, b.z)
 
 
-    inline infix fun shr(b: Byte) = glm.shr(Vec3b(), this, b, b, b)
-    inline infix fun shr(b: Int) = glm.shr(Vec3b(), this, b, b, b)
+    infix fun shr(b: Byte) = glm.shr(Vec3b(), this, b, b, b)
+    infix fun shr(b: Int) = glm.shr(Vec3b(), this, b, b, b)
     fun shr(bX: Byte, bY: Byte, bZ: Byte) = glm.shr(Vec3b(), this, bX, bY, bZ)
     fun shr(bX: Int, bY: Int, bZ: Int) = glm.shr(Vec3b(), this, bX, bY, bZ)
     fun shr(b: Vec3b) = glm.shr(Vec3b(), this, b.x, b.y, b.z)
 
-    infix inline fun shrAss(b: Byte) = glm.shr(this, this, b, b, b)
-    infix inline fun shrAss(b: Int) = glm.shr(this, this, b, b, b)
+    infix fun shrAss(b: Byte) = glm.shr(this, this, b, b, b)
+    infix fun shrAss(b: Int) = glm.shr(this, this, b, b, b)
     fun shrAss(bX: Byte, bY: Byte, bZ: Byte) = glm.shr(this, this, bX, bY, bZ)
     fun shrAss(bX: Int, bY: Int, bZ: Int) = glm.shr(this, this, bX, bY, bZ)
-    infix inline fun shrAss(b: Vec3b) = glm.shr(this, this, b.x, b.y, b.z)
+    infix fun shrAss(b: Vec3b) = glm.shr(this, this, b.x, b.y, b.z)
 
     fun shr(b: Byte, res: Vec3b) = glm.shr(res, this, b, b, b)
     fun shr(b: Int, res: Vec3b) = glm.shr(res, this, b, b, b)
@@ -293,32 +293,32 @@ data class Vec3b(override var x: Byte = 0, override var y: Byte = 0, override va
 // -- Binary arithmetic vecOperators --
 
 operator fun Byte.plus(b: Vec3b) = glm.add(Vec3b(), b, this, this, this)
-inline infix fun Byte.addAss(b: Vec3b) = glm.add(b, b, this, this, this)
+infix fun Byte.addAss(b: Vec3b) = glm.add(b, b, this, this, this)
 
 operator fun Byte.minus(b: Vec3b) = glm.sub(Vec3b(), this, this, this, b)
-inline infix fun Byte.subAss(b: Vec3b) = glm.sub(b, this, this, this, b)
+infix fun Byte.subAss(b: Vec3b) = glm.sub(b, this, this, this, b)
 
 operator fun Byte.times(b: Vec3b) = glm.mul(Vec3b(), b, this, this, this)
-inline infix fun Byte.mulAss(b: Vec3b) = glm.mul(b, b, this, this, this)
+infix fun Byte.mulAss(b: Vec3b) = glm.mul(b, b, this, this, this)
 
 operator fun Byte.div(b: Vec3b) = glm.div(Vec3b(), this, this, this, b)
-inline infix fun Byte.divAss(b: Vec3b) = glm.div(b, this, this, this, b)
+infix fun Byte.divAss(b: Vec3b) = glm.div(b, this, this, this, b)
 
 operator fun Byte.mod(b: Vec3b) = glm.mod(Vec3b(), this, this, this, b)
-inline infix fun Byte.modAss(b: Vec3b) = glm.mod(b, this, this, this, b)
+infix fun Byte.modAss(b: Vec3b) = glm.mod(b, this, this, this, b)
 
 
 operator fun Int.plus(b: Vec3b) = glm.add(Vec3b(), b, this, this, this)
-inline infix fun Int.addAss(b: Vec3b) = glm.add(b, b, this, this, this)
+infix fun Int.addAss(b: Vec3b) = glm.add(b, b, this, this, this)
 
 operator fun Int.minus(b: Vec3b) = glm.sub(Vec3b(), this, this, this, b)
-inline infix fun Int.subAss(b: Vec3b) = glm.sub(b, this, this, this, b)
+infix fun Int.subAss(b: Vec3b) = glm.sub(b, this, this, this, b)
 
 operator fun Int.times(b: Vec3b) = glm.mul(Vec3b(), b, this, this, this)
-inline infix fun Int.mulAss(b: Vec3b) = glm.mul(b, b, this, this, this)
+infix fun Int.mulAss(b: Vec3b) = glm.mul(b, b, this, this, this)
 
 operator fun Int.div(b: Vec3b) = glm.div(Vec3b(), this, this, this, b)
-inline infix fun Int.divAss(b: Vec3b) = glm.div(b, this, this, this, b)
+infix fun Int.divAss(b: Vec3b) = glm.div(b, this, this, this, b)
 
 operator fun Int.mod(b: Vec3b) = glm.mod(Vec3b(), this, this, this, b)
-inline infix fun Int.modAss(b: Vec3b) = glm.mod(b, this, this, this, b)
+infix fun Int.modAss(b: Vec3b) = glm.mod(b, this, this, this, b)
