@@ -8,38 +8,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/jogamp-all-platforms/jar/gluegen-rt.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/jogamp-all-platforms/jar/jogl-all.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/NetBeansProjects/java-unofficial-opengl-SDK/javaUnofficialOpenglSDK/dist/javaUnofficialOpenglSDK.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/NetBeansProjects/java-unofficial-opengl-SDK/javaUnofficialOpenglSDK/dist/javaUnofficialOpenglSDK.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="jogl" level="application" />
     <orderEntry type="library" name="javaUnofficialOpenglSDK" level="application" />
     <orderEntry type="library" name="junit:junit:4.12" level="project" />
     <orderEntry type="library" name="kotlin" level="project" />
+    <orderEntry type="library" name="jogamp-all-platforms" level="application" />
+    <orderEntry type="module" module-name="kotlin-unsigned" exported="" />
   </component>
 </module>
