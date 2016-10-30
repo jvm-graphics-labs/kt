@@ -14,17 +14,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../kotlin-unsigned/LICENSE" afterPath="$PROJECT_DIR$/../kotlin-unsigned/LICENSE" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../kotlin-unsigned/kotlin-unsigned.iml" afterPath="$PROJECT_DIR$/../kotlin-unsigned/kotlin-unsigned.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../kotlin-unsigned/src/main/unsigned.kt" afterPath="$PROJECT_DIR$/../kotlin-unsigned/src/main/unsigned.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kt.iml" afterPath="$PROJECT_DIR$/kt.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gli/dx.kt" afterPath="$PROJECT_DIR$/src/gli/dx.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gli/gl.kt" afterPath="$PROJECT_DIR$/src/gli/gl.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gli/gli.kt" afterPath="$PROJECT_DIR$/src/gli/gli.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gli/texture.kt" afterPath="$PROJECT_DIR$/src/gli/texture.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/core.kt" afterPath="$PROJECT_DIR$/test/core.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/coreAddressing.kt" afterPath="$PROJECT_DIR$/test/coreAddressing.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/coreClear.kt" afterPath="$PROJECT_DIR$/test/coreClear.kt" />
     </list>
     <ignored path="kt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,8 +78,8 @@
       <file leaf-file-name="texture.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gli/texture.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+            <state relative-caret-position="724">
+              <caret line="355" column="22" selection-start-line="355" selection-start-column="22" selection-end-line="355" selection-end-column="22" />
               <folding>
                 <element signature="e#13#188#0" expanded="true" />
                 <element signature="n#!!doc;n#Texture#0" expanded="false" />
@@ -105,7 +96,6 @@
                 <element signature="n#!!block;n#data#1;n#!!block;n#Texture#0" expanded="false" />
                 <element signature="n#!!block;n#extent#0;n#!!block;n#Texture#0" expanded="false" />
                 <element signature="n#!!block;n#extent#1;n#!!block;n#Texture#0" expanded="false" />
-                <element signature="n#!!block;n#clear#0;n#!!block;n#Texture#0" expanded="false" />
                 <element signature="n#!!block;n#clear#1;n#!!block;n#Texture#0" expanded="false" />
                 <element signature="n#!!block;n#clear#2;n#!!block;n#Texture#0" expanded="false" />
                 <element signature="n#!!block;n#clear#3;n#!!block;n#Texture#0" expanded="false" />
@@ -911,20 +901,21 @@
       <option name="project" value="LOCAL" />
       <updated>1477824834520</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="update">
+      <created>1477824924853</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1477824924853</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="core - 2016.10.29 at 18h 38m 04s.xml">
-      <configuration name="core" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="core - 2016.10.29 at 18h 41m 34s.xml">
-      <configuration name="core" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="core - 2016.10.29 at 18h 42m 00s.xml">
-      <configuration name="core" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="core - 2016.10.29 at 18h 42m 59s.xml">
+      <configuration name="core" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="core - 2016.10.30 at 11h 58m 52s.xml">
       <configuration name="core" configurationId="JUnit" />
     </history-entry>
     <history-entry file="coreAddressing - 2016.10.29 at 18h 43m 18s.xml">
@@ -936,6 +927,9 @@
     <history-entry file="coreAddressing - 2016.10.29 at 18h 43m 41s.xml">
       <configuration name="coreAddressing" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="coreAddressing - 2016.10.30 at 11h 58m 55s.xml">
+      <configuration name="coreAddressing" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="coreClear - 2016.10.29 at 18h 53m 50s.xml">
       <configuration name="coreClear" configurationId="JUnit" />
     </history-entry>
@@ -943,6 +937,9 @@
       <configuration name="coreClear" configurationId="JUnit" />
     </history-entry>
     <history-entry file="coreClear - 2016.10.29 at 19h 19m 58s.xml">
+      <configuration name="coreClear" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="coreClear - 2016.10.30 at 11h 58m 59s.xml">
       <configuration name="coreClear" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -966,7 +963,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32814237" sideWeight="0.54907405" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13959956" sideWeight="0.47685185" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13959956" sideWeight="0.47685185" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.18981482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="1145" y="941" width="341" height="998" />
@@ -975,7 +972,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21968855" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21968855" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1005,7 +1002,8 @@
     <MESSAGE value="vec ready" />
     <MESSAGE value="upd" />
     <MESSAGE value="Merge branch 'master' of https://github.com/elect86/kt&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/gli/dx.kt&#10;#&#9;src/gli/gli.kt&#10;#&#9;src/glm/glm.kt&#10;#&#9;src/glm/vec/_3/Vec3ub.kt&#10;#&#9;src/glm/vec/_3/Vec3ui.kt&#10;#&#9;src/glm/vec/_3/Vec3ul.kt&#10;#&#9;src/glm/vec/_3/Vec3us.kt&#10;#&#9;src/glm/vec/_4/Vec4ub.kt&#10;#&#9;src/glm/vec/_4/Vec4ui.kt&#10;#&#9;src/glm/vec/_4/Vec4ul.kt&#10;#&#9;src/glm/vec/_4/Vec4us.kt&#10;#&#9;src/unsigned.kt&#10;#&#9;test/unsigned.kt&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/elect86/kt&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/gli/dx.kt&#10;#&#9;src/gli/gli.kt&#10;#&#9;src/glm/glm.kt&#10;#&#9;src/glm/vec/_3/Vec3ub.kt&#10;#&#9;src/glm/vec/_3/Vec3ui.kt&#10;#&#9;src/glm/vec/_3/Vec3ul.kt&#10;#&#9;src/glm/vec/_3/Vec3us.kt&#10;#&#9;src/glm/vec/_4/Vec4ub.kt&#10;#&#9;src/glm/vec/_4/Vec4ui.kt&#10;#&#9;src/glm/vec/_4/Vec4ul.kt&#10;#&#9;src/glm/vec/_4/Vec4us.kt&#10;#&#9;src/unsigned.kt&#10;#&#9;test/unsigned.kt&#10;" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1411,20 +1409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gli/gli.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="605" column="219" selection-start-line="605" selection-start-column="198" selection-end-line="605" selection-end-column="219" />
-          <folding>
-            <element signature="e#13#141#0" expanded="true" />
-            <element signature="n#!!block;n#Target#0" expanded="false" />
-            <element signature="n#!!block;n#Swizzle#0" expanded="false" />
-            <element signature="n#!!block;n#Swizzles#0" expanded="false" />
-            <element signature="n#!!block;n#Cap#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../glm/src/main/glm.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -1472,10 +1456,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/gli/gli.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="605" column="219" selection-start-line="605" selection-start-column="198" selection-end-line="605" selection-end-column="219" />
+          <folding>
+            <element signature="e#13#141#0" expanded="true" />
+            <element signature="n#!!block;n#Target#0" expanded="false" />
+            <element signature="n#!!block;n#Swizzle#0" expanded="false" />
+            <element signature="n#!!block;n#Swizzles#0" expanded="false" />
+            <element signature="n#!!block;n#Cap#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gli/texture.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+        <state relative-caret-position="724">
+          <caret line="355" column="22" selection-start-line="355" selection-start-column="22" selection-end-line="355" selection-end-column="22" />
           <folding>
             <element signature="e#13#188#0" expanded="true" />
             <element signature="n#!!doc;n#Texture#0" expanded="false" />
@@ -1492,7 +1490,6 @@
             <element signature="n#!!block;n#data#1;n#!!block;n#Texture#0" expanded="false" />
             <element signature="n#!!block;n#extent#0;n#!!block;n#Texture#0" expanded="false" />
             <element signature="n#!!block;n#extent#1;n#!!block;n#Texture#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0;n#!!block;n#Texture#0" expanded="false" />
             <element signature="n#!!block;n#clear#1;n#!!block;n#Texture#0" expanded="false" />
             <element signature="n#!!block;n#clear#2;n#!!block;n#Texture#0" expanded="false" />
             <element signature="n#!!block;n#clear#3;n#!!block;n#Texture#0" expanded="false" />

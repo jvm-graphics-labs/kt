@@ -176,7 +176,7 @@ open class Texture {
 
     fun clear() {
         assert(!empty())
-        for (i in 0..(storage!!.data.capacity() - 1)) storage.data.put(i, 0)
+        (0 .. storage!!.data.capacity() - 1).forEach { storage.data.put(it, 0) }
     }
 
     fun Number.BYTES() = when {
@@ -326,9 +326,7 @@ data class StorageLinear(val layers: Int = 0,
         val faceSize = faceSize(0, levels - 1)
         var baseOffset = layerSize * layer + faceSize * face
 
-        for (levelIndex in 0..(level - 1)) baseOffset += levelSize(levelIndex)
-
-        return baseOffset
+        return baseOffset + (0.. level - 1).map { levelSize(it) }.sum()
     }
 
     override fun equals(other: Any?) = when {
