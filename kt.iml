@@ -8,10 +8,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="javaUnofficialOpenglSDK" level="application" />
     <orderEntry type="library" name="junit:junit:4.12" level="project" />
-    <orderEntry type="library" name="kotlin" level="project" />
+    <orderEntry type="library" name="kotlin" level="application" />
+    <orderEntry type="module" module-name="glm" />
+    <orderEntry type="module" module-name="kotlin-unsigned" />
     <orderEntry type="library" name="jogamp-all-platforms" level="application" />
-    <orderEntry type="module" module-name="kotlin-unsigned" exported="" />
+    <orderEntry type="library" name="java-unofficial-opengl-SDK" level="application" />
   </component>
 </module>

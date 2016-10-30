@@ -1,6 +1,11 @@
 package gli
 
-import glm.vec._4.Vec4i
+import gli.gl.ExternalFormat.*
+import gli.gl.InternalFormat.*
+import gli.gl.Profile.PROFILE_ES20
+import gli.gl.Swizzle.*
+import gli.gl.Target.*
+import gli.gl.TypeFormat.*
 
 /**
  * Created by GBarbieri on 12.10.2016.
@@ -335,10 +340,341 @@ class gl {
         PROFILE_ES30,
         PROFILE_GL32,
         PROFILE_GL33,
-        PROFILE_KTX
+        PROFILE_KTX;
+
+        fun hasSwizzle() = this == PROFILE_ES30 || this == PROFILE_GL33
     }
 
-    typealias Swizzles = Vec4i
+    class Swizzles(val r: Swizzle, val g: Swizzle, val b: Swizzle, val a: Swizzle)
 
-    class Format(internal: InternalFormat, external: ExternalFormat, type: TypeFormat, swizzles: Swizzles)
+    class Format(val internal: InternalFormat, val external: ExternalFormat, val type: TypeFormat, val swizzles: Swizzles)
+
+    fun translate(swizzles: gli.Swizzles) = Swizzles(swizzleTable[swizzles.r.i], swizzleTable[swizzles.g.i], swizzleTable[swizzles.b.i], swizzleTable[swizzles.a.i])
+
+    class FormatDesc(val internal: InternalFormat, val external: ExternalFormat, val type: TypeFormat, val properties: Int)
+
+    fun translate(target: gli.Target) = targetTable[target.i]
+
+    fun translate(format: gli.Format, swizzles: gli.Swizzles): Format {
+
+        assert(format >= gli.Format.FORMAT_FIRST && format <= gli.Format.FORMAT_LAST)
+
+        val formatDesc = formatTable[format - gli.Format.FORMAT_FIRST]
+
+        return Format(formatDesc.internal, formatDesc.external, formatDesc.type, computeSwizzle(formatDesc, swizzles))
+    }
+
+    fun find(internalFormat: InternalFormat, externalFormat: ExternalFormat, type: TypeFormat): gli.Format {
+
+        for (currenFormat in gli.Format.FORMAT_FIRST..gli.Format.FORMAT_LAST) {
+
+            val index = currenFormat - gli.Format.FORMAT_FIRST
+            if (formatTable[index].internal != internalFormat) continue
+            if (formatTable[index].external != externalFormat) continue
+            if (formatTable[index].type != type) continue
+
+            return currenFormat
+        }
+        return gli.Format.FORMAT_INVALID
+    }
+
+    fun computeSwizzle(formatDesc: FormatDesc, swizzles: gli.Swizzles): Swizzles {
+
+        if (!profile.hasSwizzle()) return Swizzles(SWIZZLE_RED, SWIZZLE_GREEN, SWIZZLE_BLUE, SWIZZLE_ALPHA)
+
+        val isExternalBGRA = ((formatDesc.properties has FORMAT_PROPERTY_BGRA_FORMAT_BIT) && !profile.hasSwizzle() ||
+                (formatDesc.properties has FORMAT_PROPERTY_BGRA_TYPE_BIT))
+
+        return translate(if (isExternalBGRA) gli.Swizzles(swizzles.b, swizzles.g, swizzles.r, swizzles.a) else swizzles)
+    }
+
+    companion object {
+
+        val FORMAT_PROPERTY_BGRA_FORMAT_BIT = 1 shl 0
+        val FORMAT_PROPERTY_BGRA_TYPE_BIT = 1 shl 1
+
+        var profile = Profile.PROFILE_GL32
+            set(value) {
+
+                val hasSwizzle = value.hasSwizzle()
+                val externalBGR = if (hasSwizzle) EXTERNAL_RGB else EXTERNAL_BGR
+                val externalBGRA = if (hasSwizzle) EXTERNAL_RGBA else EXTERNAL_BGRA
+                val externalBGRInt = if (hasSwizzle) EXTERNAL_RGB_INTEGER else EXTERNAL_BGR_INTEGER
+                val externalBGRAInt = if (hasSwizzle) EXTERNAL_RGBA_INTEGER else EXTERNAL_BGRA_INTEGER
+
+                val externalSRGB8 = if (profile != PROFILE_ES20) EXTERNAL_RGB else EXTERNAL_SRGB_EXT
+                val externalSRGB8_A8 = if (profile != PROFILE_ES20) EXTERNAL_RGBA else EXTERNAL_SRGB_ALPHA_EXT
+
+                val internalBGRA = if (profile == PROFILE_ES20) INTERNAL_BGRA8_UNORM else INTERNAL_RGBA8_UNORM
+                val internalRGBETC = if (profile == PROFILE_ES20) INTERNAL_RGB_ETC else INTERNAL_RGB_ETC2
+
+                val internalLuminance8 = if (hasSwizzle) INTERNAL_R8_UNORM else INTERNAL_LUMINANCE8
+                val internalAlpha8 = if (hasSwizzle) INTERNAL_R8_UNORM else INTERNAL_ALPHA8
+                val internalLuminanceAlpha8 = if (hasSwizzle) INTERNAL_RG8_UNORM else INTERNAL_LUMINANCE8_ALPHA8
+
+                val internalLuminance16 = if (hasSwizzle) INTERNAL_R16_UNORM else INTERNAL_LUMINANCE16
+                val internalAlpha16 = if (hasSwizzle) INTERNAL_R16_UNORM else INTERNAL_ALPHA16
+                val internalLuminanceAlpha16 = if (hasSwizzle) INTERNAL_RG16_UNORM else INTERNAL_LUMINANCE16_ALPHA16
+
+                val externalLuminance = if (hasSwizzle) EXTERNAL_RED else EXTERNAL_LUMINANCE
+                val externalAlpha = if (hasSwizzle) EXTERNAL_RED else EXTERNAL_ALPHA
+                val externalLuminanceAlpha = if (hasSwizzle) EXTERNAL_RG else EXTERNAL_LUMINANCE_ALPHA
+
+                val typeF16 = if (profile == PROFILE_ES20) TYPE_F16_OES else TYPE_F16
+
+                formatTable = arrayOf(
+                        FormatDesc(INTERNAL_RG4_EXT, EXTERNAL_RG, TYPE_UINT8_RG4_REV_GTC, 0), //FORMAT_R4G4_UNORM,
+                        FormatDesc(INTERNAL_RGBA4, EXTERNAL_RGBA, TYPE_UINT16_RGBA4_REV, 0), //FORMAT_RGBA4_UNORM,
+                        FormatDesc(INTERNAL_RGBA4, EXTERNAL_RGBA, TYPE_UINT16_RGBA4, FORMAT_PROPERTY_BGRA_TYPE_BIT), //FORMAT_BGRA4_UNORM,
+                        FormatDesc(INTERNAL_R5G6B5, EXTERNAL_RGB, TYPE_UINT16_R5G6B5_REV, 0), //FORMAT_R5G6B5_UNORM,
+                        FormatDesc(INTERNAL_R5G6B5, EXTERNAL_RGB, TYPE_UINT16_R5G6B5, FORMAT_PROPERTY_BGRA_TYPE_BIT), //FORMAT_B5G6R5_UNORM,
+                        FormatDesc(INTERNAL_RGB5A1, EXTERNAL_RGBA, TYPE_UINT16_RGB5A1_REV, 0), //FORMAT_RGB5A1_UNORM,
+                        FormatDesc(INTERNAL_RGB5A1, EXTERNAL_RGBA, TYPE_UINT16_RGB5A1, FORMAT_PROPERTY_BGRA_TYPE_BIT), //FORMAT_BGR5A1_UNORM,
+                        FormatDesc(INTERNAL_RGB5A1, EXTERNAL_RGBA, TYPE_UINT16_A1RGB5_GTC, 0), //FORMAT_A1RGB5_UNORM,
+
+                        FormatDesc(INTERNAL_R8_UNORM, EXTERNAL_RED, TYPE_U8, 0), //FORMAT_R8_UNORM,
+                        FormatDesc(INTERNAL_R8_SNORM, EXTERNAL_RED, TYPE_I8, 0), //FORMAT_R8_SNORM,
+                        FormatDesc(INTERNAL_R8_USCALED_GTC, EXTERNAL_RED, TYPE_U8, 0), //FORMAT_R8_USCALED,
+                        FormatDesc(INTERNAL_R8_SSCALED_GTC, EXTERNAL_RED, TYPE_I8, 0), //FORMAT_R8_SSCALED,
+                        FormatDesc(INTERNAL_R8U, EXTERNAL_RED_INTEGER, TYPE_U8, 0), //FORMAT_R8_UINT,
+                        FormatDesc(INTERNAL_R8I, EXTERNAL_RED_INTEGER, TYPE_I8, 0), //FORMAT_R8_SINT,
+                        FormatDesc(INTERNAL_SR8, EXTERNAL_RED, TYPE_U8, 0), //FORMAT_R8_SRGB,
+
+                        FormatDesc(INTERNAL_RG8_UNORM, EXTERNAL_RG, TYPE_U8, 0), //FORMAT_RG8_UNORM,
+                        FormatDesc(INTERNAL_RG8_SNORM, EXTERNAL_RG, TYPE_I8, 0), //FORMAT_RG8_SNORM,
+                        FormatDesc(INTERNAL_RG8_USCALED_GTC, EXTERNAL_RG, TYPE_U8, 0), //FORMAT_RG8_USCALED,
+                        FormatDesc(INTERNAL_RG8_SSCALED_GTC, EXTERNAL_RG, TYPE_I8, 0), //FORMAT_RG8_SSCALED,
+                        FormatDesc(INTERNAL_RG8U, EXTERNAL_RG_INTEGER, TYPE_U8, 0), //FORMAT_RG8_UINT,
+                        FormatDesc(INTERNAL_RG8I, EXTERNAL_RG_INTEGER, TYPE_I8, 0), //FORMAT_RG8_SINT,
+                        FormatDesc(INTERNAL_SRG8, EXTERNAL_RG, TYPE_U8, 0), //FORMAT_RG8_SRGB,
+
+                        FormatDesc(INTERNAL_RGB8_UNORM, EXTERNAL_RGB, TYPE_U8, 0), //FORMAT_RGB8_UNORM,
+                        FormatDesc(INTERNAL_RGB8_SNORM, EXTERNAL_RGB, TYPE_I8, 0), //FORMAT_RGB8_SNORM,
+                        FormatDesc(INTERNAL_RGB8_USCALED_GTC, EXTERNAL_RGB, TYPE_U8, 0), //FORMAT_RGB8_USCALED,
+                        FormatDesc(INTERNAL_RGB8_SSCALED_GTC, EXTERNAL_RGB, TYPE_I8, 0), //FORMAT_RGB8_SSCALED,
+                        FormatDesc(INTERNAL_RGB8U, EXTERNAL_RGB_INTEGER, TYPE_U8, 0), //FORMAT_RGB8_UINT,
+                        FormatDesc(INTERNAL_RGB8I, EXTERNAL_RGB_INTEGER, TYPE_I8, 0), //FORMAT_RGB8_SINT,
+                        FormatDesc(INTERNAL_SRGB8, externalSRGB8, TYPE_U8, 0), //FORMAT_RGB8_SRGB,
+
+                        FormatDesc(INTERNAL_RGB8_UNORM, externalBGR, TYPE_U8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGR8_UNORM_PACK8,
+                        FormatDesc(INTERNAL_RGB8_SNORM, externalBGR, TYPE_I8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGR8_SNORM_PACK8,
+                        FormatDesc(INTERNAL_RGB8_USCALED_GTC, externalBGR, TYPE_U8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGR8_USCALED_PACK8,
+                        FormatDesc(INTERNAL_RGB8_SSCALED_GTC, externalBGR, TYPE_I8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGR8_SSCALED_PACK8,
+                        FormatDesc(INTERNAL_RGB8U, externalBGRInt, TYPE_U8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGR8_UINT_PACK8,
+                        FormatDesc(INTERNAL_RGB8I, externalBGRInt, TYPE_I8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGR8_SINT_PACK8,
+                        FormatDesc(INTERNAL_SRGB8, externalBGR, TYPE_U8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGR8_SRGB_PACK8,
+
+                        FormatDesc(INTERNAL_RGBA8_UNORM, EXTERNAL_RGBA, TYPE_U8, 0), //FORMAT_RGBA8_UNORM_PACK8,
+                        FormatDesc(INTERNAL_RGBA8_SNORM, EXTERNAL_RGBA, TYPE_I8, 0), //FORMAT_RGBA8_SNORM_PACK8,
+                        FormatDesc(INTERNAL_RGBA8_USCALED_GTC, EXTERNAL_RGBA, TYPE_U8, 0), //FORMAT_RGBA8_USCALED_PACK8,
+                        FormatDesc(INTERNAL_RGBA8_SSCALED_GTC, EXTERNAL_RGBA, TYPE_I8, 0), //FORMAT_RGBA8_SSCALED_PACK8,
+                        FormatDesc(INTERNAL_RGBA8U, EXTERNAL_RGBA_INTEGER, TYPE_U8, 0), //FORMAT_RGBA8_UINT_PACK8,
+                        FormatDesc(INTERNAL_RGBA8I, EXTERNAL_RGBA_INTEGER, TYPE_I8, 0), //FORMAT_RGBA8_SINT_PACK8,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8, externalSRGB8_A8, TYPE_U8, 0), //FORMAT_RGBA8_SRGB_PACK8,
+
+                        FormatDesc(internalBGRA, externalBGRA, TYPE_U8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGRA8_UNORM_PACK8,
+                        FormatDesc(INTERNAL_RGBA8_SNORM, externalBGRA, TYPE_I8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGRA8_SNORM_PACK8,
+                        FormatDesc(INTERNAL_RGBA8_USCALED_GTC, externalBGRA, TYPE_U8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGRA8_USCALED_PACK8,
+                        FormatDesc(INTERNAL_RGBA8_SSCALED_GTC, externalBGRA, TYPE_I8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGRA8_SSCALED_PACK8,
+                        FormatDesc(INTERNAL_RGBA8U, externalBGRAInt, TYPE_U8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGRA8_UINT_PACK8,
+                        FormatDesc(INTERNAL_RGBA8I, externalBGRAInt, TYPE_I8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGRA8_SINT_PACK8,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8, externalBGRA, TYPE_U8, FORMAT_PROPERTY_BGRA_FORMAT_BIT), //FORMAT_BGRA8_SRGB_PACK8,
+
+                        FormatDesc(INTERNAL_RGBA8_UNORM, EXTERNAL_RGBA, TYPE_UINT32_RGBA8_REV, 0), //FORMAT_ABGR8_UNORM_PACK32,
+                        FormatDesc(INTERNAL_RGBA8_SNORM, EXTERNAL_RGBA, TYPE_UINT32_RGBA8_REV, 0), //FORMAT_ABGR8_SNORM_PACK32,
+                        FormatDesc(INTERNAL_RGBA8_USCALED_GTC, EXTERNAL_RGBA, TYPE_UINT32_RGBA8_REV, 0), //FORMAT_ABGR8_USCALED_PACK32,
+                        FormatDesc(INTERNAL_RGBA8_SSCALED_GTC, EXTERNAL_RGBA, TYPE_UINT32_RGBA8_REV, 0), //FORMAT_ABGR8_SSCALED_PACK32,
+                        FormatDesc(INTERNAL_RGBA8U, EXTERNAL_RGBA_INTEGER, TYPE_UINT32_RGBA8_REV, 0), //FORMAT_ABGR8_UINT_PACK32,
+                        FormatDesc(INTERNAL_RGBA8I, EXTERNAL_RGBA_INTEGER, TYPE_UINT32_RGBA8_REV, 0), //FORMAT_ABGR8_SINT_PACK32,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8, EXTERNAL_RGBA, TYPE_UINT32_RGBA8_REV, 0), //FORMAT_ABGR8_SRGB_PACK32,
+
+                        FormatDesc(INTERNAL_RGB10A2_UNORM, EXTERNAL_RGBA, TYPE_UINT32_RGB10A2_REV, 0), //FORMAT_RGB10A2_UNORM_PACK32,
+                        FormatDesc(INTERNAL_RGB10A2_SNORM_EXT, EXTERNAL_RGBA, TYPE_UINT32_RGB10A2_REV, 0), //FORMAT_RGB10A2_SNORM_PACK32,
+                        FormatDesc(INTERNAL_RGB10A2_USCALED_GTC, EXTERNAL_RGBA, TYPE_UINT32_RGB10A2_REV, 0), //FORMAT_RGB10A2_USCALE_PACK32,
+                        FormatDesc(INTERNAL_RGB10A2_SSCALED_GTC, EXTERNAL_RGBA, TYPE_UINT32_RGB10A2_REV, 0), //FORMAT_RGB10A2_SSCALE_PACK32,
+                        FormatDesc(INTERNAL_RGB10A2U, EXTERNAL_RGBA_INTEGER, TYPE_UINT32_RGB10A2_REV, 0), //FORMAT_RGB10A2_UINT_PACK32,
+                        FormatDesc(INTERNAL_RGB10A2I_EXT, EXTERNAL_RGBA_INTEGER, TYPE_UINT32_RGB10A2_REV, 0), //FORMAT_RGB10A2_SINT_PACK32,
+
+                        FormatDesc(INTERNAL_RGB10A2_UNORM, EXTERNAL_RGBA, TYPE_UINT32_RGB10A2, FORMAT_PROPERTY_BGRA_TYPE_BIT), //FORMAT_BGR10A2_UNORM_PACK32,
+                        FormatDesc(INTERNAL_RGB10A2_SNORM_EXT, EXTERNAL_RGBA, TYPE_UINT32_RGB10A2, FORMAT_PROPERTY_BGRA_TYPE_BIT), //FORMAT_BGR10A2_SNORM_PACK32,
+                        FormatDesc(INTERNAL_RGB10A2_USCALED_GTC, EXTERNAL_RGBA, TYPE_UINT32_RGB10A2, FORMAT_PROPERTY_BGRA_TYPE_BIT), //FORMAT_BGR10A2_USCALE_PACK32,
+                        FormatDesc(INTERNAL_RGB10A2_SSCALED_GTC, EXTERNAL_RGBA, TYPE_UINT32_RGB10A2, FORMAT_PROPERTY_BGRA_TYPE_BIT), //FORMAT_BGR10A2_SSCALE_PACK32,
+                        FormatDesc(INTERNAL_RGB10A2U, EXTERNAL_RGBA_INTEGER, TYPE_UINT32_RGB10A2, FORMAT_PROPERTY_BGRA_TYPE_BIT), //FORMAT_BGR10A2_UINT_PACK32,
+                        FormatDesc(INTERNAL_RGB10A2I_EXT, EXTERNAL_RGBA_INTEGER, TYPE_UINT32_RGB10A2, FORMAT_PROPERTY_BGRA_TYPE_BIT), //FORMAT_BGR10A2_SINT_PACK32,
+
+                        FormatDesc(INTERNAL_R16_UNORM, EXTERNAL_RED, TYPE_U16, 0), //FORMAT_R16_UNORM_PACK16,
+                        FormatDesc(INTERNAL_R16_SNORM, EXTERNAL_RED, TYPE_I16, 0), //FORMAT_R16_SNORM_PACK16,
+                        FormatDesc(INTERNAL_R16_USCALED_GTC, EXTERNAL_RED, TYPE_U16, 0), //FORMAT_R16_USCALED_PACK16,
+                        FormatDesc(INTERNAL_R16_SSCALED_GTC, EXTERNAL_RED, TYPE_I16, 0), //FORMAT_R16_SSCALED_PACK16,
+                        FormatDesc(INTERNAL_R16U, EXTERNAL_RED_INTEGER, TYPE_U16, 0), //FORMAT_R16_UINT_PACK16,
+                        FormatDesc(INTERNAL_R16I, EXTERNAL_RED_INTEGER, TYPE_I16, 0), //FORMAT_R16_SINT_PACK16,
+                        FormatDesc(INTERNAL_R16F, EXTERNAL_RED, typeF16, 0), //FORMAT_R16_SFLOAT_PACK16,
+
+                        FormatDesc(INTERNAL_RG16_UNORM, EXTERNAL_RG, TYPE_U16, 0), //FORMAT_RG16_UNORM_PACK16,
+                        FormatDesc(INTERNAL_RG16_SNORM, EXTERNAL_RG, TYPE_I16, 0), //FORMAT_RG16_SNORM_PACK16,
+                        FormatDesc(INTERNAL_RG16_USCALED_GTC, EXTERNAL_RG, TYPE_U16, 0), //FORMAT_RG16_USCALED_PACK16,
+                        FormatDesc(INTERNAL_RG16_SSCALED_GTC, EXTERNAL_RG, TYPE_I16, 0), //FORMAT_RG16_SSCALED_PACK16,
+                        FormatDesc(INTERNAL_RG16U, EXTERNAL_RG_INTEGER, TYPE_U16, 0), //FORMAT_RG16_UINT_PACK16,
+                        FormatDesc(INTERNAL_RG16I, EXTERNAL_RG_INTEGER, TYPE_I16, 0), //FORMAT_RG16_SINT_PACK16,
+                        FormatDesc(INTERNAL_RG16F, EXTERNAL_RG, typeF16, 0), //FORMAT_RG16_SFLOAT_PACK16,
+
+                        FormatDesc(INTERNAL_RGB16_UNORM, EXTERNAL_RGB, TYPE_U16, 0), //FORMAT_RGB16_UNORM_PACK16,
+                        FormatDesc(INTERNAL_RGB16_SNORM, EXTERNAL_RGB, TYPE_I16, 0), //FORMAT_RGB16_SNORM_PACK16,
+                        FormatDesc(INTERNAL_RGB16_USCALED_GTC, EXTERNAL_RGB, TYPE_U16, 0), //FORMAT_RGB16_USCALED_PACK16,
+                        FormatDesc(INTERNAL_RGB16_SSCALED_GTC, EXTERNAL_RGB, TYPE_I16, 0), //FORMAT_RGB16_USCALED_PACK16,
+                        FormatDesc(INTERNAL_RGB16U, EXTERNAL_RGB_INTEGER, TYPE_U16, 0), //FORMAT_RGB16_UINT_PACK16,
+                        FormatDesc(INTERNAL_RGB16I, EXTERNAL_RGB_INTEGER, TYPE_I16, 0), //FORMAT_RGB16_SINT_PACK16,
+                        FormatDesc(INTERNAL_RGB16F, EXTERNAL_RGB, typeF16, 0), //FORMAT_RGB16_SFLOAT_PACK16,
+
+                        FormatDesc(INTERNAL_RGBA16_UNORM, EXTERNAL_RGBA, TYPE_U16, 0), //FORMAT_RGBA16_UNORM_PACK16,
+                        FormatDesc(INTERNAL_RGBA16_SNORM, EXTERNAL_RGBA, TYPE_I16, 0), //FORMAT_RGBA16_SNORM_PACK16,
+                        FormatDesc(INTERNAL_RGBA16_USCALED_GTC, EXTERNAL_RGBA, TYPE_U16, 0), //FORMAT_RGBA16_USCALED_PACK16,
+                        FormatDesc(INTERNAL_RGBA16_SSCALED_GTC, EXTERNAL_RGBA, TYPE_I16, 0), //FORMAT_RGBA16_SSCALED_PACK16,
+                        FormatDesc(INTERNAL_RGBA16U, EXTERNAL_RGBA_INTEGER, TYPE_U16, 0), //FORMAT_RGBA16_UINT_PACK16,
+                        FormatDesc(INTERNAL_RGBA16I, EXTERNAL_RGBA_INTEGER, TYPE_I16, 0), //FORMAT_RGBA16_SINT_PACK16,
+                        FormatDesc(INTERNAL_RGBA16F, EXTERNAL_RGBA, typeF16, 0), //FORMAT_RGBA16_SFLOAT_PACK16,
+
+                        FormatDesc(INTERNAL_R32U, EXTERNAL_RED_INTEGER, TYPE_U32, 0), //FORMAT_R32_UINT_PACK32,
+                        FormatDesc(INTERNAL_R32I, EXTERNAL_RED_INTEGER, TYPE_I32, 0), //FORMAT_R32_SINT_PACK32,
+                        FormatDesc(INTERNAL_R32F, EXTERNAL_RED, TYPE_F32, 0), //FORMAT_R32_SFLOAT_PACK32,
+
+                        FormatDesc(INTERNAL_RG32U, EXTERNAL_RG_INTEGER, TYPE_U32, 0), //FORMAT_RG32_UINT_PACK32,
+                        FormatDesc(INTERNAL_RG32I, EXTERNAL_RG_INTEGER, TYPE_I32, 0), //FORMAT_RG32_SINT_PACK32,
+                        FormatDesc(INTERNAL_RG32F, EXTERNAL_RG, TYPE_F32, 0), //FORMAT_RG32_SFLOAT_PACK32,
+
+                        FormatDesc(INTERNAL_RGB32U, EXTERNAL_RGB_INTEGER, TYPE_U32, 0), //FORMAT_RGB32_UINT_PACK32,
+                        FormatDesc(INTERNAL_RGB32I, EXTERNAL_RGB_INTEGER, TYPE_I32, 0), //FORMAT_RGB32_SINT_PACK32,
+                        FormatDesc(INTERNAL_RGB32F, EXTERNAL_RGB, TYPE_F32, 0), //FORMAT_RGB32_SFLOAT_PACK32,
+
+                        FormatDesc(INTERNAL_RGBA32U, EXTERNAL_RGBA_INTEGER, TYPE_U32, 0), //FORMAT_RGBA32_UINT_PACK32,
+                        FormatDesc(INTERNAL_RGBA32I, EXTERNAL_RGBA_INTEGER, TYPE_I32, 0), //FORMAT_RGBA32_SINT_PACK32,
+                        FormatDesc(INTERNAL_RGBA32F, EXTERNAL_RGBA, TYPE_F32, 0), //FORMAT_RGBA32_SFLOAT_PACK32,
+
+                        FormatDesc(INTERNAL_R64F_EXT, EXTERNAL_RED, TYPE_U64, 0), //FORMAT_R64_UINT_PACK64,
+                        FormatDesc(INTERNAL_R64F_EXT, EXTERNAL_RED, TYPE_I64, 0), //FORMAT_R64_SINT_PACK64,
+                        FormatDesc(INTERNAL_R64F_EXT, EXTERNAL_RED, TYPE_F64, 0), //FORMAT_R64_SFLOAT_PACK64,
+
+                        FormatDesc(INTERNAL_RG64F_EXT, EXTERNAL_RG, TYPE_U64, 0), //FORMAT_RG64_UINT_PACK64,
+                        FormatDesc(INTERNAL_RG64F_EXT, EXTERNAL_RG, TYPE_I64, 0), //FORMAT_RG64_SINT_PACK64,
+                        FormatDesc(INTERNAL_RG64F_EXT, EXTERNAL_RG, TYPE_F64, 0), //FORMAT_RG64_SFLOAT_PACK64,
+
+                        FormatDesc(INTERNAL_RGB64F_EXT, EXTERNAL_RGB, TYPE_U64, 0), //FORMAT_RGB64_UINT_PACK64,
+                        FormatDesc(INTERNAL_RGB64F_EXT, EXTERNAL_RGB, TYPE_I64, 0), //FORMAT_RGB64_SINT_PACK64,
+                        FormatDesc(INTERNAL_RGB64F_EXT, EXTERNAL_RGB, TYPE_F64, 0), //FORMAT_RGB64_SFLOAT_PACK64,
+
+                        FormatDesc(INTERNAL_RGBA64F_EXT, EXTERNAL_RGBA, TYPE_U64, 0), //FORMAT_RGBA64_UINT_PACK64,
+                        FormatDesc(INTERNAL_RGBA64F_EXT, EXTERNAL_RGBA, TYPE_I64, 0), //FORMAT_RGBA64_SINT_PACK64,
+                        FormatDesc(INTERNAL_RGBA64F_EXT, EXTERNAL_RGBA, TYPE_F64, 0), //FORMAT_RGBA64_SFLOAT_PACK64,
+
+                        FormatDesc(INTERNAL_RG11B10F, EXTERNAL_RGB, TYPE_UINT32_RG11B10F_REV, 0), //FORMAT_RG11B10_UFLOAT_PACK32,
+                        FormatDesc(INTERNAL_RGB9E5, EXTERNAL_RGB, TYPE_UINT32_RGB9_E5_REV, 0), //FORMAT_RGB9E5_UFLOAT_PACK32,
+
+                        FormatDesc(INTERNAL_D16, EXTERNAL_DEPTH, TYPE_NONE, 0), //FORMAT_D16_UNORM_PACK16,
+                        FormatDesc(INTERNAL_D24, EXTERNAL_DEPTH, TYPE_NONE, 0), //FORMAT_D24_UNORM,
+                        FormatDesc(INTERNAL_D32F, EXTERNAL_DEPTH, TYPE_NONE, 0), //FORMAT_D32_UFLOAT,
+                        FormatDesc(INTERNAL_S8_EXT, EXTERNAL_STENCIL, TYPE_NONE, 0), //FORMAT_S8_UNORM,
+                        FormatDesc(INTERNAL_D16S8_EXT, EXTERNAL_DEPTH, TYPE_NONE, 0), //FORMAT_D16_UNORM_S8_UINT_PACK32,
+                        FormatDesc(INTERNAL_D24S8, EXTERNAL_DEPTH_STENCIL, TYPE_NONE, 0), //FORMAT_D24_UNORM_S8_UINT_PACK32,
+                        FormatDesc(INTERNAL_D32FS8X24, EXTERNAL_DEPTH_STENCIL, TYPE_NONE, 0), //FORMAT_D32_SFLOAT_S8_UINT_PACK64,
+
+                        FormatDesc(INTERNAL_RGB_DXT1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_DXT1_UNORM_BLOCK8,
+                        FormatDesc(INTERNAL_SRGB_DXT1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_DXT1_SRGB_BLOCK8,
+                        FormatDesc(INTERNAL_RGBA_DXT1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_DXT1_UNORM_BLOCK8,
+                        FormatDesc(INTERNAL_SRGB_ALPHA_DXT1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_DXT1_SRGB_BLOCK8,
+                        FormatDesc(INTERNAL_RGBA_DXT3, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_DXT3_UNORM_BLOCK16,
+                        FormatDesc(INTERNAL_SRGB_ALPHA_DXT3, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_DXT3_SRGB_BLOCK16,
+                        FormatDesc(INTERNAL_RGBA_DXT5, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_DXT5_UNORM_BLOCK16,
+                        FormatDesc(INTERNAL_SRGB_ALPHA_DXT5, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_DXT5_SRGB_BLOCK16,
+                        FormatDesc(INTERNAL_R_ATI1N_UNORM, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_R_ATI1N_UNORM_BLOCK8,
+                        FormatDesc(INTERNAL_R_ATI1N_SNORM, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_R_ATI1N_SNORM_BLOCK8,
+                        FormatDesc(INTERNAL_RG_ATI2N_UNORM, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RG_ATI2N_UNORM_BLOCK16,
+                        FormatDesc(INTERNAL_RG_ATI2N_SNORM, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RG_ATI2N_SNORM_BLOCK16,
+                        FormatDesc(INTERNAL_RGB_BP_UNSIGNED_FLOAT, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_BP_UFLOAT_BLOCK16,
+                        FormatDesc(INTERNAL_RGB_BP_SIGNED_FLOAT, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_BP_SFLOAT_BLOCK16,
+                        FormatDesc(INTERNAL_RGB_BP_UNORM, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_BP_UNORM,
+                        FormatDesc(INTERNAL_SRGB_BP_UNORM, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_BP_SRGB,
+
+                        FormatDesc(internalRGBETC, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_ETC2_UNORM_BLOCK8,
+                        FormatDesc(INTERNAL_SRGB8_ETC2, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_ETC2_SRGB_BLOCK8,
+                        FormatDesc(INTERNAL_RGBA_PUNCHTHROUGH_ETC2, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ETC2_PUNCHTHROUGH_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ETC2_PUNCHTHROUGH_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ETC2, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ETC2_UNORM_BLOCK16,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ETC2_EAC, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ETC2_SRGB_BLOCK16,
+                        FormatDesc(INTERNAL_R11_EAC, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_R11_EAC_UNORM,
+                        FormatDesc(INTERNAL_SIGNED_R11_EAC, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_R11_EAC_SNORM,
+                        FormatDesc(INTERNAL_RG11_EAC, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RG11_EAC_UNORM,
+                        FormatDesc(INTERNAL_SIGNED_RG11_EAC, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RG11_EAC_SNORM,
+
+                        FormatDesc(INTERNAL_RGBA_ASTC_4x4, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC4X4_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_4x4, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC4X4_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_5x4, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC5X4_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_5x4, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC5X4_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_5x5, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC5X5_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_5x5, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC5X5_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_6x5, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC6X5_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_6x5, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC6X5_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_6x6, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC6X6_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_6x6, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC6X6_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_8x5, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC8X5_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_8x5, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC8X5_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_8x6, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC8X6_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_8x6, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC8X6_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_8x8, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC8X8_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_8x8, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC8X8_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_10x5, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC10X5_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_10x5, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC10X5_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_10x6, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC10X6_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_10x6, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC10X6_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_10x8, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC10X8_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_10x8, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC10X8_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_10x10, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC10X10_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_10x10, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC10X10_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_12x10, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC12X10_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_12x10, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC12X10_SRGB,
+                        FormatDesc(INTERNAL_RGBA_ASTC_12x12, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC12X12_UNORM,
+                        FormatDesc(INTERNAL_SRGB8_ALPHA8_ASTC_12x12, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ASTC12X12_SRGB,
+
+                        FormatDesc(INTERNAL_RGB_PVRTC_4BPPV1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_PVRTC1_8X8_UNORM_BLOCK32,
+                        FormatDesc(INTERNAL_SRGB_PVRTC_2BPPV1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_PVRTC1_8X8_SRGB_BLOCK32,
+                        FormatDesc(INTERNAL_RGB_PVRTC_2BPPV1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_PVRTC1_16X8_UNORM_BLOCK32,
+                        FormatDesc(INTERNAL_SRGB_PVRTC_4BPPV1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_PVRTC1_16X8_SRGB_BLOCK32,
+                        FormatDesc(INTERNAL_RGBA_PVRTC_4BPPV1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_PVRTC1_8X8_UNORM_BLOCK32,
+                        FormatDesc(INTERNAL_SRGB_ALPHA_PVRTC_2BPPV1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_PVRTC1_8X8_SRGB_BLOCK32,
+                        FormatDesc(INTERNAL_RGBA_PVRTC_2BPPV1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_PVRTC1_16X8_UNORM_BLOCK32,
+                        FormatDesc(INTERNAL_SRGB_ALPHA_PVRTC_4BPPV1, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_PVRTC1_16X8_SRGB_BLOCK32,
+                        FormatDesc(INTERNAL_RGBA_PVRTC_4BPPV2, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_PVRTC2_4X4_UNORM_BLOCK8,
+                        FormatDesc(INTERNAL_SRGB_ALPHA_PVRTC_4BPPV2, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_PVRTC2_4X4_SRGB_BLOCK8,
+                        FormatDesc(INTERNAL_RGBA_PVRTC_2BPPV2, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_PVRTC2_8X4_UNORM_BLOCK8,
+                        FormatDesc(INTERNAL_SRGB_ALPHA_PVRTC_2BPPV2, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_PVRTC2_8X4_SRGB_BLOCK8,
+
+                        FormatDesc(INTERNAL_RGB_ETC, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_ETC_UNORM_BLOCK8,
+                        FormatDesc(INTERNAL_ATC_RGB, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGB_ATC_UNORM_BLOCK8,
+                        FormatDesc(INTERNAL_ATC_RGBA_EXPLICIT_ALPHA, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ATCA_UNORM_BLOCK16,
+                        FormatDesc(INTERNAL_ATC_RGBA_INTERPOLATED_ALPHA, EXTERNAL_NONE, TYPE_NONE, 0), //FORMAT_RGBA_ATCI_UNORM_BLOCK16,
+
+                        FormatDesc(internalLuminance8, externalLuminance, TYPE_U8, 0), //FORMAT_L8_UNORM_PACK8,
+                        FormatDesc(internalAlpha8, externalAlpha, TYPE_U8, 0), //FORMAT_A8_UNORM_PACK8,
+                        FormatDesc(internalLuminanceAlpha8, externalLuminanceAlpha, TYPE_U8, 0), //FORMAT_LA8_UNORM_PACK8,
+                        FormatDesc(internalLuminance16, externalLuminance, TYPE_U16, 0), //FORMAT_L16_UNORM_PACK16,
+                        FormatDesc(internalAlpha16, externalAlpha, TYPE_U16, 0), //FORMAT_A16_UNORM_PACK16,
+                        FormatDesc(internalLuminanceAlpha16, externalLuminanceAlpha, TYPE_U16, 0), //FORMAT_LA16_UNORM_PACK16,
+
+                        FormatDesc(INTERNAL_RGB8_UNORM, externalBGRA, TYPE_U8, 0), //FORMAT_BGRX8_UNORM,
+                        FormatDesc(INTERNAL_SRGB8, externalBGRA, TYPE_U8, 0), //FORMAT_BGRX8_SRGB,
+
+                        FormatDesc(INTERNAL_RG3B2, EXTERNAL_RGB, TYPE_UINT8_RG3B2_REV, 0) //FORMAT_RG3B2_UNORM
+                )
+            }
+
+        private var formatTable: Array<FormatDesc> = arrayOf()
+        private val swizzleTable = arrayOf(SWIZZLE_RED, SWIZZLE_GREEN, SWIZZLE_BLUE, SWIZZLE_ALPHA, SWIZZLE_ZERO, SWIZZLE_ONE)
+        private val targetTable = arrayOf(TARGET_1D, TARGET_1D_ARRAY, TARGET_2D, TARGET_2D_ARRAY, TARGET_3D, TARGET_RECT,
+                TARGET_RECT_ARRAY, TARGET_CUBE, TARGET_CUBE_ARRAY)
+
+        init {
+            assert(swizzleTable.size == gli.Swizzle.SWIZZLE_COUNT, { System.err.println("GLI error: swizzle descriptor list doesn't match number of supported swizzles") })
+            assert(formatTable.size == gli.Format.FORMAT_COUNT, { System.err.println("GLI error: format descriptor list doesn't match number of supported formats") })
+            assert(targetTable.size == gli.Target.TARGET_COUNT, { System.err.println("GLI error: target descriptor list doesn't match number of supported targets") })
+        }
+    }
 }
