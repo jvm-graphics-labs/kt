@@ -125,26 +125,34 @@ open class Texture {
         assert(target != TARGET_CUBE_ARRAY || (target == TARGET_CUBE_ARRAY && layers() >= 1 && faces() >= 1 && extent().y >= 1 && extent().z == 1))
     }
 
-    fun empty() = if (storage == null) true else storage.empty()
+    fun target() = target
+    fun empty() = storage?.empty() ?: true
     fun format() = format
-    // TODO swizzles
-    fun baseLayer() = baseLayer
+    fun swizzles(): Swizzles {
+        val formatSwizzle = format.getFormatInfo().swizzles
+        return Swizzles(
+                if (swizzles.r.isChannel()) formatSwizzle[swizzles.r] else swizzles.r,
+                if (swizzles.g.isChannel()) formatSwizzle[swizzles.g] else swizzles.g,
+                if (swizzles.b.isChannel()) formatSwizzle[swizzles.b] else swizzles.b,
+                if (swizzles.a.isChannel()) formatSwizzle[swizzles.a] else swizzles.a)
+    }
 
+    fun baseLayer() = baseLayer
     fun maxLayer() = maxLayer
     fun layers() = if (empty()) 0 else maxLayer - baseLayer + 1
-    fun baseFace() = baseFace
 
+    fun baseFace() = baseFace
     fun maxFace() = maxFace
     fun faces() = if (empty()) 0 else maxFace - baseFace + 1
-    fun baseLevel() = baseLevel
 
+    fun baseLevel() = baseLevel
     fun maxLevel() = maxLevel
     fun levels() = if (empty()) 0 else maxLevel - baseLevel + 1
+
     fun size(): Int {
         assert(!empty())
         return storage!!.data.capacity()
     }
-
     fun size(level: Int): Int {
         assert(!empty() && level >= 0 && level < levels())
         return storage!!.levelSize(level)
@@ -154,18 +162,13 @@ open class Texture {
         assert(!empty())
         return storage!!.data
     }
-
     fun data(layer: Int, face: Int, level: Int): ByteBuffer {
         assert(!empty())
         assert(layer >= 0 && layer < layers() && face >= 0 && face < faces() && level >= 0 && level < levels())
         return storage!!.data(layer, face, level)
     }
 
-    fun extent(): Vec3i {
-        return extent(0)
-    }
-
-    fun extent(level: Int): Vec3i {
+    fun extent(level: Int = 0): Vec3i {
         assert(!empty())
         assert(level >= 0 && level < levels())
 
@@ -176,7 +179,7 @@ open class Texture {
 
     fun clear() {
         assert(!empty())
-        (0 .. storage!!.data.capacity() - 1).forEach { storage.data.put(it, 0) }
+        (0..storage!!.data.capacity() - 1).forEach { storage.data.put(it, 0) }
     }
 
     fun Number.BYTES() = when {
@@ -186,13 +189,13 @@ open class Texture {
         else -> java.lang.Double.BYTES
     }
 
-    fun clear(texel: Vec4b) {
+    infix fun clear(texel: Vec4b) {
 
         assert(!empty())
 
         val size = storage!!.data.capacity()
 
-        for (i in 0..(size - 1) step 4) {
+        for (i in 0..size - 1 step 4) {
             storage.data.put(i + 0, texel.x)
             storage.data.put(i + 1, texel.y)
             storage.data.put(i + 2, texel.z)
@@ -207,7 +210,7 @@ open class Texture {
 
         val size = storage!!.data.capacity()
 
-        for (i in 0..(size - 1) step texel.BYTES()) when (texel) {
+        for (i in 0..size - 1 step texel.BYTES()) when (texel) {
             is Byte -> storage.data.put(i, texel)
             is Short -> storage.data.putShort(i, texel)
             is Float -> storage.data.putFloat(i, texel)
@@ -218,7 +221,7 @@ open class Texture {
     }
 
     // TODO check if ok
-    fun clear(layer: Int, face: Int, level: Int, texel: Number) {
+    fun clear(layer: Int, face: Int, level: Int, texel: Vec4b) {
 
         assert(!empty())
         assert(layer >= 0 && layer < layers() && face >= 0 && face < faces() && level >= 0 && level < levels())
@@ -226,14 +229,20 @@ open class Texture {
         val offset = storage!!.baseOffset(layer, face, level)
         val size = storage.levelSize(level)
 
-        for (i in offset..(offset + size - 1) step texel.BYTES()) when (texel) {
-            is Byte -> storage.data.put(i, texel)
-            is Short -> storage.data.putShort(i, texel)
-            is Float -> storage.data.putFloat(i, texel)
-            is Int -> storage.data.putInt(i, texel)
-            is Double -> storage.data.putDouble(i, texel)
-            else -> storage.data.putLong(i, texel.toLong())
+        for (i in offset..offset + size - 1 step 4) {
+            storage.data.put(i + 0, texel.x)
+            storage.data.put(i + 1, texel.y)
+            storage.data.put(i + 2, texel.z)
+            storage.data.put(i + 3, texel.w)
         }
+    }
+
+    override operator fun equals(other: Any?) = when {
+        this === other -> true
+        other !is Texture -> false
+        else -> storage == other.storage && target == other.target && format == other.format() && baseLayer == other.baseLayer
+                && maxLayer == other.maxLayer && baseFace == other.baseFace && maxFace == other.maxFace
+                && baseLevel == other.baseLevel && maxLevel == other.maxLevel && swizzles == other.swizzles
     }
 }
 
@@ -275,7 +284,7 @@ data class StorageLinear(val layers: Int = 0,
         assert(maxLevel >= 0 && maxLevel < levels && baseLevel >= 0 && baseLevel < levels && baseLevel <= maxLevel)
 
         // The size of a face is the sum of the size of each level.
-        return (baseLevel .. maxLevel).map{ levelSize(it) }.sum()
+        return (baseLevel..maxLevel).map { levelSize(it) }.sum()
     }
 
     fun levelSize(level: Int): Int {
@@ -326,20 +335,13 @@ data class StorageLinear(val layers: Int = 0,
         val faceSize = faceSize(0, levels - 1)
         var baseOffset = layerSize * layer + faceSize * face
 
-        return baseOffset + (0.. level - 1).map { levelSize(it) }.sum()
+        return baseOffset + (0..level - 1).map { levelSize(it) }.sum()
     }
 
     override fun equals(other: Any?) = when {
         this === other -> true
-        else -> true
-//        if (other is StorageLinear)
-//            if (data.capacity() == other.data.capacity())
-//                for (i in 0..data.capacity()) {
-//                    if (data.get(i) != other.data.get(i)) return false
-//                }
-//            else return false
-//        else return false
-//        return true
+        other !is StorageLinear -> false
+        else -> data == other.data
     }
 }
 
@@ -379,7 +381,7 @@ class Image {
         size = image.size
     }
 
-    fun empty() = if (storage == null) true else storage.empty()
+    fun empty() = storage?.empty() ?: true
 
     fun size(): Int {
         assert(!empty())
@@ -458,3 +460,5 @@ class Texture2d : Texture {
 
     operator fun get(level: Int): Image = Image(storage!!, format, baseLayer, baseFace, baseLevel + level)
 }
+
+//fun duplicate(texture: Texture) = Texture(texture.target())

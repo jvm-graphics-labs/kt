@@ -5,6 +5,7 @@ import gli.Swizzle.*
 import gli.Format.Companion.FORMAT_COUNT
 import main.vec._2.Vec2i
 import main.vec._3.Vec3i
+import main.vec._4.Vec4b
 
 /**
  * Created by elect on 09/10/16.
@@ -405,9 +406,17 @@ enum class Swizzle {
     fun isChannel() = this >= SWIZZLE_CHANNEL_FIRST && this <= SWIZZLE_CHANNEL_LAST
 }
 
-class Swizzles(val r: Swizzle, val g: Swizzle, val b: Swizzle, val a: Swizzle) {
+data class Swizzles(val r: Swizzle, val g: Swizzle, val b: Swizzle, val a: Swizzle) {
 
     constructor(s: Swizzle) : this(s, s, s, s)
+
+    operator fun get(s: Swizzle) = when(s){
+        SWIZZLE_RED -> r
+        SWIZZLE_GREEN -> g
+        SWIZZLE_BLUE -> b
+        SWIZZLE_ALPHA -> a
+        else -> throw IllegalAccessError("index out of range")
+    }
 }
 
 enum class Cap(val i: Int) {
@@ -693,3 +702,6 @@ val table: Array<FormatInfo> by lazy {
     assert(t.size == FORMAT_COUNT, { System.err.println("GLI error: format descriptor list doesn't match number of supported formats") })
     t
 }
+
+fun clear(texture: Texture, texel: Vec4b) = texture.clear(texel)
+fun clear(texture: Texture, layer: Int, face: Int, level: Int, texel: Vec4b) = texture.clear(layer, face, level, texel)
